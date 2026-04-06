@@ -1,6 +1,30 @@
 # CHANGELOG
 
 
+## v0.6.0 (2026-04-06)
+
+### Chores
+
+* chore: professional-grade library, 98% coverage and robust error handling ([`cfbe004`](https://github.com/luisfarfan/openrouter-insights/commit/cfbe0047aba3f8da59687f98c70ab653875f310c))
+
+### Documentation
+
+* docs: update README with DX features, substitution engine, and 95% test coverage stats ([`0952de5`](https://github.com/luisfarfan/openrouter-insights/commit/0952de5102a1f31c4ee07f3d1d69a4d8edb92b6b))
+
+### Features
+
+* feat: professionalize LLM registry with DX upgrades and high-fidelity reliability
+
+- Promoted 'intelligence_score' and 'is_virtual' to top-level LLMModel properties for easier access.
+- Implemented 'Substitution Engine' (get_best_alternative) across all repositories and facades.
+- Hardened SyncRegistryUseCase to safely handle non-numeric benchmarks and prevent empty data objects.
+- Modernized SQLiteModelRepository using 'session.exec(select())' and '.is_(False)' for SQLModel compliance.
+- Ensured 100% test suite stability (63/63 passing) with 95% coverage.
+- Resolved all remaining ruff and formatting lints.🦾🤖🚀✨��👣🧹🦾🦾✨🤞🤖🦾🚀🥂 ([`dac0d6b`](https://github.com/luisfarfan/openrouter-insights/commit/dac0d6b76b4d5813df12d243cb2cbb1eb8ab1f79))
+
+* feat: enhance DX with intelligence_score, virtual model filtering, and get_best_alternative substitution engine ([`5ed9b64`](https://github.com/luisfarfan/openrouter-insights/commit/5ed9b64f058b251a93125ab31f65366df3df9836))
+
+
 ## v0.5.1 (2026-04-06)
 
 ### Bug Fixes

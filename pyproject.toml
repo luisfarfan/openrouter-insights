@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "openrouter-insights"
-version = "0.5.1"
+version = "0.6.0"
 description = "Professional, unified, and enhanced index for LLM models based on OpenRouter with ArtificialAnalysis intelligence."
 authors = ["Luis Eduardo Farfan Melgar <lucho.farfan9@gmail.com>"]
 readme = "README.md"
