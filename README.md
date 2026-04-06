@@ -81,6 +81,18 @@ for m in cheap_pro:
 
 ---
 
+## 🕒 Data Freshness & Automation (Git-Ops)
+
+OpenRouter Insights is not a static file. We run an **automated 24-hour synchronization job** via GitHub Actions (CRON) that:
+1.  **Fetches** the latest models and pricing from OpenRouter.
+2.  **Unifies** benchmark data from ArtificialAnalysis.
+3.  **Processes** the results via our Matching Engine.
+4.  **Commits** the fresh `openrouter_insights.sqlite` and `.json` back to the repository.
+
+This ensures you always have access to the latest frontier models as they are released.
+
+---
+
 ## 🧠 Smart Query Methods
 
 OpenRouter Insights comes with pre-built logic to discover models based on real-world capabilities:
