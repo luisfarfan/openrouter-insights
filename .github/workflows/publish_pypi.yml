@@ -36,12 +36,13 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Publish to PyPI
+    - name: Build and Publish to PyPI
       if: steps.semantic.outputs.released == 'true'
       env:
         POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
       run: |
         curl -sSL https://install.python-poetry.org | python3 -
         echo "$HOME/.local/bin" >> $GITHUB_PATH
-        poetry config pypi-token.pypi $POETRY_PYPI_TOKEN_PYPI
-        poetry publish --build
+        poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }}
+        rm -rf dist
+        poetry publish --build --no-interaction
