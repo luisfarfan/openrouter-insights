@@ -2,7 +2,7 @@
 name = "openrouter-insights"
 version = "0.4.0"
 description = "Professional, unified, and enhanced index for LLM models based on OpenRouter with ArtificialAnalysis intelligence."
-authors = ["OpenRouter Insights Maintainers <maintainers@llmindex.ai>"]
+authors = ["Luis Eduardo Farfan Melgar <lucho.farfan9@gmail.com>"]
 readme = "README.md"
 homepage = "https://github.com/luisfarfan/llmindex"
 repository = "https://github.com/luisfarfan/llmindex"
