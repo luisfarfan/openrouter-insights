@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     ARTIFICIAL_ANALYSIS_MODELS_URL: str = "https://artificialanalysis.ai/api/v2/data/llms/models"
 
     # Database
-    DATABASE_URL: str = "sqlite:///./data/llmindex.sqlite"
+    DATABASE_URL: str = "sqlite:///./data/openrouter_insights.sqlite"
 
     # API Server
     HOST: str = "0.0.0.0"

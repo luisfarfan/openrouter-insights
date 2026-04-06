@@ -3,9 +3,9 @@ import tempfile
 import json
 import os
 import pytest
-from llmindex.adapters.persistence.json_repository import JSONModelRepository
-from llmindex.adapters.persistence.sqlite_repository import SQLiteModelRepository
-from llmindex.domain.entities import LLMModel, Pricing
+from openrouter_insights.adapters.persistence.json_repository import JSONModelRepository
+from openrouter_insights.adapters.persistence.sqlite_repository import SQLiteModelRepository
+from openrouter_insights.domain.entities import LLMModel, Pricing
 
 @pytest.fixture
 def temp_dir():
@@ -14,7 +14,7 @@ def temp_dir():
     shutil.rmtree(dirpath)
 
 def test_json_repo_save_and_get(temp_dir):
-    json_path = os.path.join(temp_dir, "llmindex.json")
+    json_path = os.path.join(temp_dir, "openrouter_insights.json")
     
     # Pre-seed JSON
     model_data = [

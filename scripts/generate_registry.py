@@ -30,7 +30,7 @@ async def main():
         async def save_batch(self, models): pass
         
     engine = MatchingEngine()
-    exporter = JSONExporter("llmindex.json") # The SINGLE UNIFIED FILE in root
+    exporter = JSONExporter("openrouter_insights.json") # The SINGLE UNIFIED FILE in root
     gateway = LocalFileGateway()
     
     use_case = SyncRegistryUseCase(
@@ -43,7 +43,7 @@ async def main():
     print("--- Running Unified Registry Generation ---")
     models = await use_case.execute()
     print(f"Created {len(models)} unified models.")
-    print("Check 'llmindex.json' in the root directory.")
+    print("Check 'openrouter_insights.json' in the root directory.")
 
 if __name__ == "__main__":
     asyncio.run(main())

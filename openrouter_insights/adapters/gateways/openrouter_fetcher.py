@@ -1,8 +1,8 @@
 import logging
 from typing import List, Optional
-from llmindex.domain.interfaces import IFetcherGateway
-from llmindex.adapters.gateways.http_fetcher import BaseHTTPFetcher
-from llmindex.infrastructure.config import get_settings
+from openrouter_insights.domain.interfaces import IFetcherGateway
+from openrouter_insights.adapters.gateways.http_fetcher import BaseHTTPFetcher
+from openrouter_insights.infrastructure.config import get_settings
 
 logger = logging.getLogger(__name__)
 
@@ -17,7 +17,7 @@ class OpenRouterFetcher(BaseHTTPFetcher, IFetcherGateway):
         """Fetch models catalog from OpenRouter."""
         headers = {
             "Authorization": f"Bearer {self.settings.OPENROUTER_API_KEY}",
-            "HTTP-Referer": "https://llmindex.ai", # Required by OpenRouter for ranking
+            "HTTP-Referer": "https://openrouter_insights.ai", # Required by OpenRouter for ranking
             "X-Title": "LLMIndex"
         }
         

@@ -29,7 +29,7 @@ Aggregated statistics for the registry (average price per provider, context leng
 
 ### Consumption Patterns
 
-- **Direct JSON**: For frontend/client-side apps, they can skip the API and `fetch` the `llmindex.json` directly from the repo.
+- **Direct JSON**: For frontend/client-side apps, they can skip the API and `fetch` the `openrouter_insights.json` directly from the repo.
 - **REST API**: For server-to-server integrations requiring dynamic filtering and sorting at the engine level.
 - **Local SQLite**: For power users or local scripts that want to run complex SQL queries from the derived database.
 
@@ -39,4 +39,4 @@ The API includes an interactive **Swagger UI** (available at `/docs`) and a **Re
 ## Deployment & Hosting
 - **Backend**: Containerized with **Docker** for easy deployment as a standalone service.
 - **Serverless**: Fully compatible with **Vercel** or **AWS Lambda** (FastAPI with Mangum) for low-cost, on-demand hosting.
-- **Static Assets**: The `llmindex.json` is synced to a public URL (GitHub Raw or Vercel Edge Cache) for lightning-fast delivery.
+- **Static Assets**: The `openrouter_insights.json` is synced to a public URL (GitHub Raw or Vercel Edge Cache) for lightning-fast delivery.

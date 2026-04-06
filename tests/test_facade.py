@@ -3,12 +3,12 @@ import os
 import json
 import tempfile
 import shutil
-from llmindex import LLMIndexSync, LLMIndex
+from openrouter_insights import LLMIndexSync, LLMIndex
 
 @pytest.fixture
 def temp_json():
     dirpath = tempfile.mkdtemp()
-    json_path = os.path.join(dirpath, "llmindex.json")
+    json_path = os.path.join(dirpath, "openrouter_insights.json")
     
     # Mock some data
     data = [

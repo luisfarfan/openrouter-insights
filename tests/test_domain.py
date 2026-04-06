@@ -1,5 +1,5 @@
 import pytest
-from llmindex.domain.entities import LLMModel, Pricing, Benchmarks
+from openrouter_insights.domain.entities import LLMModel, Pricing, Benchmarks
 
 def test_llm_model_tier_frontier():
     # Test high-end frontier model

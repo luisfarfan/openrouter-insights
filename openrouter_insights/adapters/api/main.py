@@ -4,7 +4,7 @@ from enum import Enum
 
 from fastapi import FastAPI, Query, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
-from llmindex import LLMIndex, LLMModel
+from openrouter_insights import LLMIndex, LLMModel
 
 
 # Enum Definitions for better Swagger UI
@@ -144,4 +144,4 @@ async def trigger_sync(index: LLMIndex = Depends(get_index)):
 
 def run_server():
     import uvicorn
-    uvicorn.run("llmindex.adapters.api.main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("openrouter_insights.adapters.api.main:app", host="0.0.0.0", port=8000, reload=True)

@@ -2,15 +2,15 @@ import json
 import logging
 from pathlib import Path
 from typing import List
-from llmindex.domain.entities import LLMModel
-from llmindex.domain.interfaces import IStaticExporter
+from openrouter_insights.domain.entities import LLMModel
+from openrouter_insights.domain.interfaces import IStaticExporter
 
 logger = logging.getLogger(__name__)
 
 class JSONExporter(IStaticExporter):
     """Adapter: Export entities to a static JSON file (Git-Ops)."""
 
-    def __init__(self, output_path: str = "llmindex.json"):
+    def __init__(self, output_path: str = "openrouter_insights.json"):
         self.output_path = Path(output_path)
 
     def export(self, models: List[LLMModel]) -> None:

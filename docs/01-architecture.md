@@ -13,8 +13,8 @@ The core logic resides in a set of **Services** and **Pipelines** that execute i
 3.  **Matching Engine**: A fuzzy and deterministic engine that identifies that `openai/gpt-4.5-preview` (OpenRouter) is the same as `gpt45-preview` (ArtificialAnalysis).
 4.  **Classification Engine**: Calculates derived fields (`efficiency_score`, `best_for`, `performance_tier`).
 5.  **Exporters**:
-    - `SQLiteExporter`: Stores the unified data into a single-file `llmindex.sqlite` for local queries.
-    - `JSONExporter`: Generates a static `llmindex.json` for global consumption and Git versioning.
+    - `SQLiteExporter`: Stores the unified data into a single-file `openrouter_insights.sqlite` for local queries.
+    - `JSONExporter`: Generates a static `openrouter_insights.json` for global consumption and Git versioning.
 
 ### 2. Tech Stack
 - **Language**: Python 3.11+.
@@ -30,7 +30,7 @@ The project uses **GitHub Actions** to maintain a "Living Registry" without manu
 1.  **Schedule**: A cron job defined in `.github/workflows/sync.yml` triggers once every 24 hours (or as configured).
 2.  **Environment**: GitHub spins up an Ubuntu runner, installs Python dependencies, and injects **API Keys** via **GitHub Secrets**.
 3.  **Command**: The action runs `python main.py sync`, which pulls from OpenRouter and ArtificialAnalysis.
-4.  **Auto-Commit**: If the script modifies `data/llmindex.json` or `data/llmindex.sqlite`, the action automatically commits and pushes the changes back to the `main` branch.
+4.  **Auto-Commit**: If the script modifies `data/openrouter_insights.json` or `data/openrouter_insights.sqlite`, the action automatically commits and pushes the changes back to the `main` branch.
 5.  **Distribution**: The updated data is immediately served via "GitHub Raw" URLs, making it a globally available, zero-cost API.
 
 ### 4. API Keys & Security

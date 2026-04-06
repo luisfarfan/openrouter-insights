@@ -1,10 +1,10 @@
 import asyncio
 import os
-from llmindex import LLMIndex, LLMIndexSync
+from openrouter_insights import LLMIndex, LLMIndexSync
 
 def test_sync_mode():
     print("\n--- Testing Sync Mode (No await) ---")
-    client = LLMIndexSync(mode="json", path="llmindex.json")
+    client = LLMIndexSync(mode="json", path="openrouter_insights.json")
     
     # Smart Methods
     smartest = client.get_smartest(limit=3)
@@ -24,7 +24,7 @@ def test_sync_mode():
 
 async def test_async_mode():
     print("\n--- Testing Async Mode (With await) ---")
-    client = LLMIndex(mode="json", path="llmindex.json")
+    client = LLMIndex(mode="json", path="openrouter_insights.json")
     
     # Smart Methods
     smartest = await client.get_smartest(limit=3)
@@ -38,7 +38,7 @@ async def main():
     await test_async_mode()
 
 if __name__ == "__main__":
-    if os.path.exists("llmindex.json"):
+    if os.path.exists("openrouter_insights.json"):
         asyncio.run(main())
     else:
-        print("llmindex.json not found. Run a sync first or provide the file.")
+        print("openrouter_insights.json not found. Run a sync first or provide the file.")

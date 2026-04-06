@@ -16,10 +16,10 @@ LLMIndex provides a "Single Source of Truth" for LLM metadata and performance ti
 
 ```bash
 # Basic installation (Library only)
-pip install llmindex
+pip install openrouter_insights
 
 # With API support (FastAPI + Uvicorn)
-pip install "llmindex[api]"
+pip install "openrouter_insights[api]"
 ```
 
 ## Library Usage
@@ -31,11 +31,11 @@ If you just want to query the pre-generated registry file:
 
 ```python
 import asyncio
-from llmindex import LLMIndex
+from openrouter_insights import LLMIndex
 
 async def main():
-    # 'llmindex.json' should be in your project root or provide the full path
-    client = LLMIndex(mode="json", path="llmindex.json")
+    # 'openrouter_insights.json' should be in your project root or provide the full path
+    client = LLMIndex(mode="json", path="openrouter_insights.json")
     
     models = await client.get_models(best_for="coding", sort_by="price")
     for m in models:
@@ -48,9 +48,9 @@ asyncio.run(main())
 Use SQLite if you need to run synchronization or prefer a database-backed store:
 
 ```python
-from llmindex import LLMIndex
+from openrouter_insights import LLMIndex
 
-client = LLMIndex(mode="sqlite", path="data/llmindex.sqlite")
+client = LLMIndex(mode="sqlite", path="data/openrouter_insights.sqlite")
 
 # Get counts
 total = await client.get_count(provider="OpenAI")
@@ -64,7 +64,7 @@ await client.sync()
 If you installed with `[api]`, you can run the unified registry server:
 
 ```bash
-llmindex  # or uvicorn llmindex.adapters.api.main:app --reload
+openrouter_insights  # or uvicorn openrouter_insights.adapters.api.main:app --reload
 ```
 
 ## Documentation

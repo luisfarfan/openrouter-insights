@@ -2,14 +2,14 @@ import asyncio
 from typing import List, Optional, Literal
 
 __version__ = "0.2.0"
-from llmindex.domain.entities import LLMModel, Pricing, Benchmarks
-from llmindex.adapters.persistence.sqlite_repository import SQLiteModelRepository
-from llmindex.adapters.persistence.json_repository import JSONModelRepository
-from llmindex.use_cases.sync_registry import SyncRegistryUseCase
-from llmindex.adapters.gateways.openrouter_fetcher import OpenRouterFetcher
-from llmindex.adapters.gateways.artificial_analysis_fetcher import ArtificialAnalysisFetcher
-from llmindex.domain.services.matching_engine import MatchingEngine
-from llmindex.adapters.persistence.json_exporter import JSONExporter
+from openrouter_insights.domain.entities import LLMModel, Pricing, Benchmarks
+from openrouter_insights.adapters.persistence.sqlite_repository import SQLiteModelRepository
+from openrouter_insights.adapters.persistence.json_repository import JSONModelRepository
+from openrouter_insights.use_cases.sync_registry import SyncRegistryUseCase
+from openrouter_insights.adapters.gateways.openrouter_fetcher import OpenRouterFetcher
+from openrouter_insights.adapters.gateways.artificial_analysis_fetcher import ArtificialAnalysisFetcher
+from openrouter_insights.domain.services.matching_engine import MatchingEngine
+from openrouter_insights.adapters.persistence.json_exporter import JSONExporter
 
 class LLMIndexSync:
     """
@@ -22,7 +22,7 @@ class LLMIndexSync:
         if mode == "sqlite":
             self.repository = SQLiteModelRepository(database_url=path)
         else:
-            self.repository = JSONModelRepository(file_path=path or "llmindex.json")
+            self.repository = JSONModelRepository(file_path=path or "openrouter_insights.json")
 
     def get_models(self, **kwargs) -> List[LLMModel]:
         """Base query method."""
@@ -92,7 +92,7 @@ class LLMIndexSync:
             repository=self.repository, 
             gateways=fetchers, 
             matching_engine=MatchingEngine(85.0),
-            exporter=JSONExporter("llmindex.json")
+            exporter=JSONExporter("openrouter_insights.json")
         )
         return await use_case.execute()
 
@@ -108,7 +108,7 @@ class LLMIndex:
         if mode == "sqlite":
             self.repository = SQLiteModelRepository(database_url=path)
         else:
-            self.repository = JSONModelRepository(file_path=path or "llmindex.json")
+            self.repository = JSONModelRepository(file_path=path or "openrouter_insights.json")
 
     async def get_models(self, **kwargs) -> List[LLMModel]:
         return self.repository.get_all(**kwargs)
@@ -164,7 +164,7 @@ class LLMIndex:
             repository=self.repository, 
             gateways=fetchers, 
             matching_engine=MatchingEngine(85.0),
-            exporter=JSONExporter("llmindex.json")
+            exporter=JSONExporter("openrouter_insights.json")
         )
         return await use_case.execute()
 

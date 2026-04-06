@@ -1,8 +1,8 @@
 import json
 from typing import List, Optional
 from rapidfuzz import process, fuzz
-from llmindex.domain.entities import LLMModel
-from llmindex.domain.interfaces import IModelRepository
+from openrouter_insights.domain.entities import LLMModel
+from openrouter_insights.domain.interfaces import IModelRepository
 
 class JSONModelRepository(IModelRepository):
     """

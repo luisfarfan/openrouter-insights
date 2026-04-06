@@ -1,8 +1,8 @@
 import logging
 from typing import List, Dict, Any, Optional
-from llmindex.domain.interfaces import IFetcherGateway
-from llmindex.adapters.gateways.http_fetcher import BaseHTTPFetcher
-from llmindex.infrastructure.config import get_settings
+from openrouter_insights.domain.interfaces import IFetcherGateway
+from openrouter_insights.adapters.gateways.http_fetcher import BaseHTTPFetcher
+from openrouter_insights.infrastructure.config import get_settings
 from rapidfuzz import process, fuzz
 
 logger = logging.getLogger(__name__)
