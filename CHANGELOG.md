@@ -1,6 +1,17 @@
 # CHANGELOG
 
 
+## v0.4.0 (2026-04-06)
+
+### Documentation
+
+* docs: modernize README with professional branding, badges, and examples ([`6be554c`](https://github.com/luisfarfan/llmindex/commit/6be554c1487036671c0a1705e6ba7a850c9a2b13))
+
+### Features
+
+* feat: implement daily git-ops sync and professionalize maintainer identity ([`8ebf708`](https://github.com/luisfarfan/llmindex/commit/8ebf708a081cddfd1eb76ab2ea2e97e33bda4d10))
+
+
 ## v0.3.0 (2026-04-06)
 
 ### Features

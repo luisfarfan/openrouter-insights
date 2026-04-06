@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "openrouter-insights"
-version = "0.2.1"
+version = "0.4.0"
 description = "Professional, unified, and enhanced index for LLM models based on OpenRouter with ArtificialAnalysis intelligence."
 authors = ["OpenRouter Insights Maintainers <maintainers@llmindex.ai>"]
 readme = "README.md"
