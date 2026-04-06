@@ -12,13 +12,14 @@ class OpenRouterFetcher(BaseHTTPFetcher, IFetcherGateway):
     def __init__(self):
         super().__init__()
         self.settings = get_settings()
+        self.project_name = "OpenRouter Insights"
 
     async def fetch_catalog(self) -> List[dict]:
         """Fetch models catalog from OpenRouter."""
         headers = {
             "Authorization": f"Bearer {self.settings.OPENROUTER_API_KEY}",
             "HTTP-Referer": "https://openrouter_insights.ai", # Required by OpenRouter for ranking
-            "X-Title": "LLMIndex"
+            "X-Title": self.project_name
         }
         
         logger.info(f"Fetching OpenRouter catalog from {self.settings.OPENROUTER_MODELS_URL}")

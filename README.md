@@ -5,95 +5,61 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tests](https://github.com/luisfarfan/openrouter-insights/actions/workflows/tests.yml/badge.svg)](https://github.com/luisfarfan/openrouter-insights/actions/workflows/tests.yml)
 
-**OpenRouter Insights** is a professional, production-ready Python library that provides a unified, high-fidelity index of Large Language Models. 
+**OpenRouter Insights** is a professional, unified LLM registry that supercharges the official **OpenRouter** catalog with high-fidelity intelligence and benchmarks.
+
+It provides a "Single Source of Truth" for model capabilities, pricing, and performance, designed for production-grade AI agents and high-performance applications.
 
 ---
 
-## 🚀 Quick Start
+## 📖 Table of Contents
+- [🔥 OpenRouter with Superpowers](#-openrouter-with-superpowers)
+- [🛠️ Installation](#️-installation)
+- [💡 Quick Start](#-quick-start)
+- [🧠 Data Intelligence (Providers)](#-data-intelligence-providers)
+- [🕒 Data Freshness & Automation](#-data-freshness--automation-git-ops)
+- [✨ Smart Query Methods](#-smart-query-methods)
+- [🧪 Verified Reliability](#-verified-reliability)
+- [🔮 Future Roadmap](#-future-roadmap)
+- [🤝 Contributing](#-contributing)
 
-### Installation
+---
+
+## 🔥 OpenRouter with "Superpowers"
+
+Why use this instead of the raw OpenRouter API?
+
+| Feature | Raw OpenRouter API | **OpenRouter Insights** |
+|---------|-------------------|-------------------------|
+| **Model Catalog** | ✅ Yes | ✅ Yes (Auto-synced) |
+| **Pricing** | ✅ Yes | ✅ Yes (Normalized) |
+| **Intelligence Scores** | ❌ No | ✅ Yes (ArtificialAnalysis) |
+| **Performance Tiers** | ❌ No | ✅ Yes (Frontier/Pro/Lite) |
+| **Smart Discovery** | ❌ No | ✅ Yes (`get_smartest`, `get_cheapest`) |
+| **Fuzzy Search** | ❌ Limited | ✅ Yes (RapidFuzz integrated) |
+| **Sync/Async Facades** | ❌ No | ✅ Yes (Plug & Play) |
+
+---
+
+## 🛠️ Installation
 
 ```bash
+# Basic installation (Library only)
 pip install openrouter-insights
-```
 
-### Usage
-
-```python
-from openrouter_insights import LLMIndexSync
-
-# Initialize (Uses local registry by default)
-index = LLMIndexSync()
-
-# 1. Find the best model for a specific task
-best_coder = index.get_best_models(tag="coding", limit=1)[0]
-print(f"Recommended for code: {best_coder.name} (${best_coder.pricing.input}/1M tokens)")
-
-# 2. Advanced Filtering
-frontier_models = index.filter_models(
-    tier="frontier",
-    min_intelligence=80,
-    modalities=["image"]
-)
-```
-
-## 🛠️ Data Freshness (Git-Ops)
-
-This library uses a **Git-Ops automation workflow**. Every 24 hours, a GitHub Action:
-1. Fetches the latest data from **OpenRouter** and **ArtificialAnalysis**.
-2. Performs fuzzy matching and data unification.
-3. Updates the local SQLite and JSON registries.
-4. **Idempotent Sync**: Only commits changes if the model intelligence or pricing has actually evolved.
-
----
-
-## 📈 Key Advantages
-
-| Feature | OpenRouter Insights | Standard API List |
-| :--- | :--- | :--- |
-| **Intelligence Scores** | ✅ Included (from ArtificialAnalysis) | ❌ Missing |
-| **Performance Tiers** | ✅ Categorized (Frontier/Pro/Lite) | ❌ Raw list |
-| **Efficiency Metrics** | ✅ Bang-for-buck calculation | ❌ Manual calc |
-| **Fuzzy Discovery** | ✅ Advanced Search & Ranking | ❌ Exact match only |
-
----
-
-## 🧪 Testing & Reliability
-
-The library is backed by a comprehensive test suite (Unit, Integration, and Facade tests) to ensure data integrity and interface stability.
-
-```bash
-# Run tests
-pytest
+# With API support (FastAPI + Uvicorn)
+pip install "openrouter-insights[api]"
 ```
 
 ---
 
-## 📄 License
+## 💡 Quick Start
 
-Distributed under the **MIT License**. See `LICENSE` for more information.
-
----
-
-## 🤝 Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-**Luis Eduardo Farfan Melgar** - [lucho.farfan9@gmail.com](mailto:lucho.farfan9@gmail.com)  
-Project Link: [https://github.com/luisfarfan/openrouter-insights](https://github.com/luisfarfan/openrouter-insights)
-Ideal for modern asynchronous applications.
+### ⚡ Async Facade (For FastAPI / High Performance)
 
 ```python
 import asyncio
 from openrouter_insights import LLMIndex
+
 async def main():
     # Uses local JSON registry (no DB setup required)
     client = LLMIndex(mode="json")
@@ -112,7 +78,6 @@ asyncio.run(main())
 ```
 
 ### 🕒 Sync Facade (For Scripts / Notebooks)
-No `async/await` boilerplate. Pure simplicity.
 
 ```python
 from openrouter_insights import LLMIndexSync
@@ -127,6 +92,15 @@ for m in cheap_pro:
 
 ---
 
+## 🧠 Data Intelligence (Providers)
+
+OpenRouter Insights aggregates data from world-class sources to provide high-fidelity metrics:
+
+*   **[ArtificialAnalysis.ai](https://artificialanalysis.ai/)**: Our primary source for model performance. We integrate their independent benchmarks for **Intelligence, Quality (V2 ELO), and Speed (TPS)** to power our ranking logic.
+*   **[OpenRouter.ai](https://openrouter.ai/)**: Our core model catalog. We sync directly with their API to provide real-time pricing and availability for hundreds of models.
+
+---
+
 ## 🕒 Data Freshness & Automation (Git-Ops)
 
 OpenRouter Insights is not a static file. We run an **automated 24-hour synchronization job** via GitHub Actions (CRON) that:
@@ -135,11 +109,11 @@ OpenRouter Insights is not a static file. We run an **automated 24-hour synchron
 3.  **Processes** the results via our Matching Engine.
 4.  **Commits** the fresh `openrouter_insights.sqlite` and `.json` back to the repository.
 
-This ensures you always have access to the latest frontier models as they are released.
+*This ensures you always have access to the latest frontier models as they are released.*
 
 ---
 
-## 🧠 Smart Query Methods
+## ✨ Smart Query Methods
 
 OpenRouter Insights comes with pre-built logic to discover models based on real-world capabilities:
 
@@ -151,24 +125,33 @@ OpenRouter Insights comes with pre-built logic to discover models based on real-
 
 ---
 
-## ✅ Verified Reliability
+## 🧪 Verified Reliability
 
-We take production stability seriously. Every release is validated against a comprehensive test suite:
-
-*   **Unit Tests**: Logic for classification, tiers, and matching engine.
-*   **Integration Tests**: Mocked gateway verification for OpenRouter and ArtificialAnalysis.
-*   **Persistence Tests**: Integrity checks for both SQLite and JSON engines.
-*   **Facade Tests**: Sync/Async interface consistency.
+We take production stability seriously. Every release is validated against a comprehensive test suite (Unit, Integration, Persistence, and Facade tests).
 
 **Current Status**: 19 tests passed (100% success rate).
 
 ---
 
-## 📖 Documentation
-Detailed architectural and domain documentation can be found in the `docs/` folder:
-- [Architecture & Design](docs/01-architecture.md)
-- [Data Schema](docs/02-data-schema.md)
-- [Matching & Unification Engine](docs/03-matching-engine.md)
+## 🔮 Future Roadmap
+
+We are committed to making this the most comprehensive LLM index in the industry. Future data sources planned for integration include:
+- **Hugging Face**: Open LLM Leaderboard scores.
+- **Vercel AI**: Comprehensive provider metrics.
+- **LMSYS Chatbot Arena**: Live ELO ratings.
 
 ---
-*Developed with ❤️ for the AI Engineering community.*
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## 📄 License
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
+---
+**Luis Eduardo Farfan Melgar** - [lucho.farfan9@gmail.com](mailto:lucho.farfan9@gmail.com)  
+Project Link: [https://github.com/luisfarfan/openrouter-insights](https://github.com/luisfarfan/openrouter-insights)
