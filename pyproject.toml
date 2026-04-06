@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "llmindex"
-version = "0.2.0"
+version = "0.1.0"
 description = "A unified, open-source LLM registry merging OpenRouter and ArtificialAnalysis."
 authors = ["Antigravity Agent <agent@gemini.ai>"]
 readme = "README.md"
