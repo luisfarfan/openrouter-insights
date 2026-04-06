@@ -237,7 +237,7 @@ files = [
 name = "click"
 version = "8.3.2"
 description = "Composable command line interface toolkit"
-optional = false
+optional = true
 python-versions = ">=3.10"
 files = [
     {file = "click-8.3.2-py3-none-any.whl", hash = "sha256:1924d2c27c5653561cd2cae4548d1406039cb79b858b747cfea24924bbc1616d"},
@@ -262,7 +262,7 @@ files = [
 name = "fastapi"
 version = "0.110.3"
 description = "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
-optional = false
+optional = true
 python-versions = ">=3.8"
 files = [
     {file = "fastapi-0.110.3-py3-none-any.whl", hash = "sha256:fd7600612f755e4050beb74001310b5a7e1796d149c2ee363124abdfa0289d32"},
@@ -1346,7 +1346,7 @@ SQLAlchemy = ">=2.0.0,<2.1.0"
 name = "starlette"
 version = "0.37.2"
 description = "The little ASGI library that shines."
-optional = false
+optional = true
 python-versions = ">=3.8"
 files = [
     {file = "starlette-0.37.2-py3-none-any.whl", hash = "sha256:6fe59f29268538e5d0d182f2791a479a0c64638e6935d1c6989e63fb2699c6ee"},
@@ -1388,7 +1388,7 @@ typing-extensions = ">=4.12.0"
 name = "uvicorn"
 version = "0.27.1"
 description = "The lightning-fast ASGI server."
-optional = false
+optional = true
 python-versions = ">=3.8"
 files = [
     {file = "uvicorn-0.27.1-py3-none-any.whl", hash = "sha256:5c89da2f3895767472a35556e539fd59f7edbe9b1e9c0e1c99eebeadc61838e4"},
@@ -1544,7 +1544,10 @@ idna = ">=2.0"
 multidict = ">=4.0"
 propcache = ">=0.2.1"
 
+[extras]
+api = ["fastapi", "uvicorn"]
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "68e7b34fe13eb296da162682eb63c2cdc0b0164c7269ab8d95ffe35bd97fb17d"
+content-hash = "c9464c69efa43076140f7358d38363d73b378bdd4f496245d0eda77dd0079822"
