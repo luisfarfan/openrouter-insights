@@ -31,3 +31,15 @@ httpx = "^0.27.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.semantic_release]
+version_variable = "llmindex/__init__.py:__version__" # Use __version__ in init
+version_toml = ["pyproject.toml:tool.poetry.version"]
+major_on_zero = false
+branch = "main"
+upload_to_PyPI = true
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
+commit_subject = "chore: release v{version}"
+commit_message = "chore: automated release version {version}"
+commit_author = "github-actions-bot <actions@github.com>"

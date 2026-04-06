@@ -1,0 +1,40 @@
+name: Semantic Release & Publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release & Publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to push version bump and tags
+      id-token: write
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Needed for semantic-release to read history
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Python Semantic Release
+      uses: python-semantic-release/python-semantic-release@v8.0.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Publish to PyPI
+      if: steps.release.outputs.released == 'true'
+      env:
+        POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+        poetry config pypi-token.pypi $POETRY_PYPI_TOKEN_PYPI
+        poetry publish --build

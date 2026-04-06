@@ -1,5 +1,7 @@
 import asyncio
 from typing import List, Optional, Literal
+
+__version__ = "0.2.0"
 from llmindex.domain.entities import LLMModel, Pricing, Benchmarks
 from llmindex.adapters.persistence.sqlite_repository import SQLiteModelRepository
 from llmindex.adapters.persistence.json_repository import JSONModelRepository
