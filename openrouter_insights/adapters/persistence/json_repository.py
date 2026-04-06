@@ -37,6 +37,7 @@ class JSONModelRepository(IModelRepository):
         best_for: Optional[str] = None,
         is_free: bool = False,
         min_intelligence: Optional[float] = None,
+        filter_virtual: bool = True,
         sort_by: Optional[str] = None,
         sort_order: str = "desc",
         page: int = 1,
@@ -44,6 +45,8 @@ class JSONModelRepository(IModelRepository):
     ) -> List[LLMModel]:
         # Filtering
         filtered = self._models
+        if filter_virtual:
+            filtered = [m for m in filtered if not m.is_virtual]
         if provider:
             filtered = [m for m in filtered if m.provider.lower() == provider.lower()]
         if is_free:
@@ -75,14 +78,35 @@ class JSONModelRepository(IModelRepository):
                 return model
         return None
 
+    def get_best_alternative(self, model_id: str, max_price: Optional[float] = None) -> Optional[LLMModel]:
+        source = self.get_by_id(model_id)
+        if not source:
+            return None
+        
+        candidates = [
+            m for m in self._models 
+            if m.id != model_id and not m.is_virtual and source.performance_tier in m.best_for
+        ]
+        
+        if max_price is not None:
+            candidates = [m for m in candidates if (m.pricing.input + m.pricing.output) <= max_price]
+            
+        if not candidates:
+            return None
+        
+        # Sort by intelligence
+        candidates.sort(key=lambda m: m.intelligence_score, reverse=True)
+        return candidates[0]
+
     def get_count(
         self,
         provider: Optional[str] = None,
         best_for: Optional[str] = None,
         is_free: bool = False,
-        min_intelligence: Optional[float] = None
+        min_intelligence: Optional[float] = None,
+        filter_virtual: bool = True
     ) -> int:
-        return len(self.get_all(provider, best_for, is_free, min_intelligence, page_size=1000000))
+        return len(self.get_all(provider, best_for, is_free, min_intelligence, filter_virtual, page_size=1000000))
 
     def search(self, query: str, limit: int = 10) -> List[LLMModel]:
         """Fuzzy search models by name or provider."""

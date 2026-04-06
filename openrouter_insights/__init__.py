@@ -24,9 +24,9 @@ class LLMIndexSync:
         else:
             self.repository = JSONModelRepository(file_path=path or "openrouter_insights.json")
 
-    def get_models(self, **kwargs) -> List[LLMModel]:
-        """Base query method."""
-        return self.repository.get_all(**kwargs)
+    def get_models(self, filter_virtual: bool = True, **kwargs) -> List[LLMModel]:
+        """Base query method. Excludes routers like openrouter/auto by default."""
+        return self.repository.get_all(filter_virtual=filter_virtual, **kwargs)
 
     def get_model(self, model_id: str) -> Optional[LLMModel]:
         return self.repository.get_by_id(model_id)
@@ -37,9 +37,9 @@ class LLMIndexSync:
         """Top models by overall intelligence score."""
         return self.get_models(sort_by="intelligence", page_size=limit)
 
-    def get_cheapest(self, best_for: Optional[str] = None, limit: int = 10) -> List[LLMModel]:
+    def get_cheapest(self, best_for: Optional[str] = None, filter_virtual: bool = True, limit: int = 10) -> List[LLMModel]:
         """Models sorted by price (input + output) ascending."""
-        return self.get_models(best_for=best_for, sort_by="price", sort_order="asc", page_size=limit)
+        return self.get_models(best_for=best_for, filter_virtual=filter_virtual, sort_by="price", sort_order="asc", page_size=limit)
 
     def get_fastest(self, limit: int = 10) -> List[LLMModel]:
         """Top models by Output TPS (Tokens Per Second)."""
@@ -69,9 +69,13 @@ class LLMIndexSync:
         all_models = self.get_models(sort_by="intelligence", page_size=50)
         return [m for m in all_models if m.performance_tier == "frontier"][:limit]
 
-    def get_by_tier(self, tier: Literal["frontier", "pro", "lite"], limit: int = 10) -> List[LLMModel]:
-        all_models = self.get_models(sort_by="intelligence", page_size=100)
-        return [m for m in all_models if m.performance_tier == tier][:limit]
+    def get_by_tier(self, tier: Literal["frontier", "pro", "lite"], filter_virtual: bool = True, limit: int = 10) -> List[LLMModel]:
+        """Get models from a specific performance tier (using native DB filtering)."""
+        return self.get_models(best_for=tier, filter_virtual=filter_virtual, sort_by="intelligence", page_size=limit)
+
+    def get_best_alternative(self, model_id: str, max_price: Optional[float] = None) -> Optional[LLMModel]:
+        """Find the best substitute for a given model (same tier, under budget)."""
+        return self.repository.get_best_alternative(model_id, max_price)
 
     def get_by_provider(self, provider: str, limit: int = 10) -> List[LLMModel]:
         return self.get_models(provider=provider, page_size=limit)
@@ -110,8 +114,8 @@ class LLMIndex:
         else:
             self.repository = JSONModelRepository(file_path=path or "openrouter_insights.json")
 
-    async def get_models(self, **kwargs) -> List[LLMModel]:
-        return self.repository.get_all(**kwargs)
+    async def get_models(self, filter_virtual: bool = True, **kwargs) -> List[LLMModel]:
+        return self.repository.get_all(filter_virtual=filter_virtual, **kwargs)
 
     async def get_model(self, model_id: str) -> Optional[LLMModel]:
         return self.repository.get_by_id(model_id)
@@ -121,8 +125,8 @@ class LLMIndex:
     async def get_smartest(self, limit: int = 10) -> List[LLMModel]:
         return await self.get_models(sort_by="intelligence", page_size=limit)
 
-    async def get_cheapest(self, best_for: Optional[str] = None, limit: int = 10) -> List[LLMModel]:
-        return await self.get_models(best_for=best_for, sort_by="price", sort_order="asc", page_size=limit)
+    async def get_cheapest(self, best_for: Optional[str] = None, filter_virtual: bool = True, limit: int = 10) -> List[LLMModel]:
+        return await self.get_models(best_for=best_for, filter_virtual=filter_virtual, sort_by="price", sort_order="asc", page_size=limit)
 
     async def get_fastest(self, limit: int = 10) -> List[LLMModel]:
         return await self.get_models(sort_by="speed", page_size=limit)
@@ -146,9 +150,11 @@ class LLMIndex:
         all_models = await self.get_models(sort_by="intelligence", page_size=50)
         return [m for m in all_models if m.performance_tier == "frontier"][:limit]
 
-    async def get_by_tier(self, tier: Literal["frontier", "pro", "lite"], limit: int = 10) -> List[LLMModel]:
-        all_models = await self.get_models(sort_by="intelligence", page_size=100)
-        return [m for m in all_models if m.performance_tier == tier][:limit]
+    async def get_by_tier(self, tier: Literal["frontier", "pro", "lite"], filter_virtual: bool = True, limit: int = 10) -> List[LLMModel]:
+        return await self.get_models(best_for=tier, filter_virtual=filter_virtual, sort_by="intelligence", page_size=limit)
+
+    async def get_best_alternative(self, model_id: str, max_price: Optional[float] = None) -> Optional[LLMModel]:
+        return self.repository.get_best_alternative(model_id, max_price)
 
     async def get_by_provider(self, provider: str, limit: int = 10) -> List[LLMModel]:
         return await self.get_models(provider=provider, page_size=limit)

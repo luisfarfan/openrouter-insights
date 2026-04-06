@@ -26,6 +26,8 @@ class LLMModelORM(SQLModel, table=True):
     coding_score: Optional[float] = Field(default=None)
     elo_score: Optional[float] = Field(default=None, index=True) # Multimodal ELO
     
+    is_virtual: bool = Field(default=False, index=True)
+    
     # Pre-calculated tags for faster API queries
     best_for: str = Field(default="[]") # JSON string of tags
 
@@ -57,6 +59,7 @@ class SQLiteModelRepository(IModelRepository):
             reasoning_score=m.benchmarks.reasoning_score if m.benchmarks else None,
             coding_score=m.benchmarks.coding_score if m.benchmarks else None,
             elo_score=m.benchmarks.elo_score if m.benchmarks else None,
+            is_virtual=m.is_virtual,
             best_for=json.dumps(m.best_for)
         )
 
@@ -77,6 +80,7 @@ class SQLiteModelRepository(IModelRepository):
         best_for: Optional[str] = None,
         is_free: bool = False,
         min_intelligence: Optional[float] = None,
+        filter_virtual: bool = True,
         sort_by: Optional[str] = None,
         sort_order: str = "desc",
         page: int = 1,
@@ -84,7 +88,7 @@ class SQLiteModelRepository(IModelRepository):
     ) -> List[LLMModel]:
         with Session(self.engine) as session:
             query = session.query(LLMModelORM)
-            query = self._apply_filters(query, provider, best_for, is_free, min_intelligence)
+            query = self._apply_filters(query, provider, best_for, is_free, min_intelligence, filter_virtual)
 
             direction = desc if sort_order == "desc" else asc
             if sort_by == "price":
@@ -105,17 +109,40 @@ class SQLiteModelRepository(IModelRepository):
         provider: Optional[str] = None,
         best_for: Optional[str] = None,
         is_free: bool = False,
-        min_intelligence: Optional[float] = None
+        min_intelligence: Optional[float] = None,
+        filter_virtual: bool = True
     ) -> int:
         with Session(self.engine) as session:
             query = session.query(LLMModelORM)
-            query = self._apply_filters(query, provider, best_for, is_free, min_intelligence)
+            query = self._apply_filters(query, provider, best_for, is_free, min_intelligence, filter_virtual)
             return query.count()
 
     def get_by_id(self, model_id: str) -> Optional[LLMModel]:
         with Session(self.engine) as session:
             orm = session.get(LLMModelORM, model_id)
             return self._to_entity(orm) if orm else None
+
+    def get_best_alternative(self, model_id: str, max_price: Optional[float] = None) -> Optional[LLMModel]:
+        source = self.get_by_id(model_id)
+        if not source:
+            return None
+        
+        with Session(self.engine) as session:
+            query = session.query(LLMModelORM).filter(LLMModelORM.id != model_id)
+            query = query.filter(~LLMModelORM.is_virtual)
+            
+            # Try same tier (highly recommended)
+            tier = source.performance_tier
+            query = query.filter(LLMModelORM.best_for.like(f'%"{tier}"%'))
+            
+            if max_price is not None:
+                query = query.filter((LLMModelORM.pricing_input + LLMModelORM.pricing_output) <= max_price)
+            
+            # Sort by intelligence
+            query = query.order_by(desc(LLMModelORM.intelligence_score))
+            
+            best = query.first()
+            return self._to_entity(best) if best else None
 
     def search(self, query: str, limit: int = 10) -> List[LLMModel]:
         """Hybrid search: SQL filter + Fuzzy ranking."""
@@ -135,7 +162,7 @@ class SQLiteModelRepository(IModelRepository):
             results = process.extract(query, model_names, scorer=fuzz.WRatio, limit=limit)
             return [models[res[2]] for res in results]
 
-    def _apply_filters(self, query, provider, best_for, is_free, min_intelligence):
+    def _apply_filters(self, query, provider, best_for, is_free, min_intelligence, filter_virtual):
         if provider:
             query = query.filter(LLMModelORM.provider == provider)
         if is_free:
@@ -144,6 +171,9 @@ class SQLiteModelRepository(IModelRepository):
             query = query.filter(LLMModelORM.intelligence_score >= min_intelligence)
         if best_for:
             query = query.filter(LLMModelORM.best_for.like(f'%"{best_for}"%'))
+        if filter_virtual:
+            query = query.filter(~LLMModelORM.is_virtual)
+            query = query.filter(LLMModelORM.pricing_input >= 0)
         return query
 
     def _to_entity(self, orm: LLMModelORM) -> LLMModel:

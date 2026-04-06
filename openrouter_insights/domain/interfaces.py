@@ -15,6 +15,7 @@ class IModelRepository(ABC):
         best_for: Optional[str] = None,
         is_free: bool = False,
         min_intelligence: Optional[float] = None,
+        filter_virtual: bool = True,
         sort_by: Optional[str] = None,
         sort_order: str = "desc",
         page: int = 1,
@@ -27,8 +28,18 @@ class IModelRepository(ABC):
         provider: Optional[str] = None,
         best_for: Optional[str] = None,
         is_free: bool = False,
-        min_intelligence: Optional[float] = None
+        min_intelligence: Optional[float] = None,
+        filter_virtual: bool = True
     ) -> int: ...
+
+    @abstractmethod
+    def get_best_alternative(
+        self, 
+        model_id: str, 
+        max_price: Optional[float] = None
+    ) -> Optional[LLMModel]:
+        """Find the best substitute for a given model within budget."""
+        ...
 
     @abstractmethod
     def search(self, query: str, limit: int = 10) -> List[LLMModel]: ...

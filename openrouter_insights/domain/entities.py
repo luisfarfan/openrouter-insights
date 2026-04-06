@@ -52,8 +52,27 @@ class LLMModel(BaseModel):
         # Context-based tags
         if self.context_length >= 128000:
             tags.append("rag")
+        
+        # PRO-GRADE: Inject performance tier as a search tag
+        tags.append(self.performance_tier)
             
         return tags
+
+    @property
+    def intelligence_score(self) -> float:
+        """Top-level access to overall intelligence benchmark."""
+        if self.benchmarks and self.benchmarks.intelligence_score:
+            return round(self.benchmarks.intelligence_score, 2)
+        return 0.0
+
+    @property
+    def is_virtual(self) -> bool:
+        """Identify routers (e.g. openrouter/auto) or models with negative price placeholders."""
+        if "/auto" in self.id or self.id.endswith("/auto"):
+            return True
+        if self.pricing.input < 0 or self.pricing.output < 0:
+            return True
+        return False
 
     @computed_field
     @property
