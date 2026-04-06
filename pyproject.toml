@@ -4,6 +4,9 @@ version = "0.3.0"
 description = "Professional, unified, and enhanced index for LLM models based on OpenRouter with ArtificialAnalysis intelligence."
 authors = ["Luis Farfan <lfarfan@gmail.com>"]
 readme = "README.md"
+homepage = "https://github.com/luisfarfan/llmindex"
+repository = "https://github.com/luisfarfan/llmindex"
+documentation = "https://github.com/luisfarfan/llmindex#readme"
 packages = [{include = "openrouter_insights"}]
 
 [tool.poetry.dependencies]

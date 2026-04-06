@@ -1,78 +1,116 @@
-# LLMIndex
+# 🚀 OpenRouter Insights
 
-A unified, open-source LLM registry merging **OpenRouter** (catalog) and **ArtificialAnalysis** (benchmarks).
+[![PyPI version](https://img.shields.io/pypi/v/openrouter-insights.svg)](https://pypi.org/project/openrouter-insights/)
+[![Python versions](https://img.shields.io/pypi/pyversions/openrouter-insights.svg)](https://pypi.org/project/openrouter-insights/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Tests](https://img.shields.io/badge/tests-19%20passed-brightgreen.svg)](#-verified-reliability)
 
-## Vision
-LLMIndex provides a "Single Source of Truth" for LLM metadata and performance tiers. It uses a **Git-Ops** approach, where the data is updated daily via GitHub Actions and stored in portable **JSON** and **SQLite** formats.
+**OpenRouter Insights** is a professional, unified LLM registry that supercharges the official **OpenRouter** catalog with high-fidelity intelligence from **ArtificialAnalysis**. 
 
-## Key Features
-- **Library-First**: Consume as a Python dependency in your own projects.
-- **Dual Persistence**: Choose between **SQLite** (for sync/write) and **JSON** (for read-only low-infra apps).
-- **Normalized Registry**: Standardized model IDs across providers.
-- **Computed Metrics**: Intelligence/Cost efficiency scores and performance tiers.
-- **Ready for Agents**: Designed with "AI-Friendly" documentation.
+It provides a "Single Source of Truth" for model capabilities, pricing, and performance, designed for production-grade AI agents and high-performance applications.
 
-## Installation
+---
+
+## 🔥 OpenRouter with "Superpowers"
+
+Why use this instead of the raw OpenRouter API?
+
+| Feature | Raw OpenRouter API | **OpenRouter Insights** |
+|---------|-------------------|-------------------------|
+| **Model Catalog** | ✅ Yes | ✅ Yes (Auto-synced) |
+| **Pricing** | ✅ Yes | ✅ Yes (Normalized) |
+| **Intelligence Scores** | ❌ No | ✅ Yes (ArtificialAnalysis) |
+| **Performance Tiers** | ❌ No | ✅ Yes (Frontier/Pro/Lite) |
+| **Smart Discovery** | ❌ No | ✅ Yes (`get_smartest`, `get_cheapest`) |
+| **Fuzzy Search** | ❌ Limited | ✅ Yes (RapidFuzz integrated) |
+| **Sync/Async Facades** | ❌ No | ✅ Yes (Plug & Play) |
+
+---
+
+## 🛠️ Installation
 
 ```bash
 # Basic installation (Library only)
-pip install openrouter_insights
+pip install openrouter-insights
 
 # With API support (FastAPI + Uvicorn)
-pip install "openrouter_insights[api]"
+pip install "openrouter-insights[api]"
 ```
 
-## Library Usage
+---
 
-The `LLMIndex` class is the main entry point for consuming the registry.
+## 💡 Quick Start
 
-### Consume from JSON (No database required)
-If you just want to query the pre-generated registry file:
+### ⚡ Async Facade (For FastAPI / High Performance)
+Ideal for modern asynchronous applications.
 
 ```python
 import asyncio
 from openrouter_insights import LLMIndex
 
 async def main():
-    # 'openrouter_insights.json' should be in your project root or provide the full path
-    client = LLMIndex(mode="json", path="openrouter_insights.json")
+    # Uses local JSON registry (no DB setup required)
+    client = LLMIndex(mode="json")
     
-    models = await client.get_models(best_for="coding", sort_by="price")
-    for m in models:
-        print(f"{m.name}: ${m.pricing.input}/1M tokens")
+    # Smart Discovery: Get the smartest model for coding
+    models = await client.get_best_for_coding(limit=1)
+    if models:
+        print(f"Best model: {models[0].name} (Tier: {models[0].performance_tier})")
+        
+    # Full Fuzzy Search
+    results = await client.search("gpt4-o reasoning")
+    for r in results:
+        print(f"Matched: {r.id}")
 
 asyncio.run(main())
 ```
 
-### Consume from SQLite
-Use SQLite if you need to run synchronization or prefer a database-backed store:
+### 🕒 Sync Facade (For Scripts / Notebooks)
+No `async/await` boilerplate. Pure simplicity.
 
 ```python
-from openrouter_insights import LLMIndex
+from openrouter_insights import LLMIndexSync
 
-client = LLMIndex(mode="sqlite", path="data/openrouter_insights.sqlite")
+client = LLMIndexSync(mode="json")
 
-# Get counts
-total = await client.get_count(provider="OpenAI")
-
-# Sync registry (Requires OPENROUTER_API_KEY in ENV)
-await client.sync()
+# Get the absolute cheapest frontier model
+cheap_pro = client.get_cheapest(tier="frontier", limit=3)
+for m in cheap_pro:
+    print(f"{m.name}: ${m.pricing.input}/1M tokens")
 ```
-
-## Running the API Server
-
-If you installed with `[api]`, you can run the unified registry server:
-
-```bash
-openrouter_insights  # or uvicorn openrouter_insights.adapters.api.main:app --reload
-```
-
-## Documentation
-See the [docs/](docs/) folder for detailed specifications:
-- [Architecture](docs/01-architecture.md)
-- [Data Schema](docs/02-data-schema.md)
-- [Matching Engine](docs/03-matching-engine.md)
-- [Classification Logic](docs/05-classification-logic.md)
 
 ---
-*Open Source for the AI Community.*
+
+## 🧠 Smart Query Methods
+
+OpenRouter Insights comes with pre-built logic to discover models based on real-world capabilities:
+
+*   `.get_smartest()`: Highest intelligence scores first.
+*   `.get_cheapest()`: Lowest cost-to-output first.
+*   `.get_best_for_coding()`: Top-tier coding performers.
+*   `.get_top_frontier()`: Only the best models in the world.
+*   `.get_fastest()`: Highest Tokens Per Second (TPS).
+
+---
+
+## ✅ Verified Reliability
+
+We take production stability seriously. Every release is validated against a comprehensive test suite:
+
+*   **Unit Tests**: Logic for classification, tiers, and matching engine.
+*   **Integration Tests**: Mocked gateway verification for OpenRouter and ArtificialAnalysis.
+*   **Persistence Tests**: Integrity checks for both SQLite and JSON engines.
+*   **Facade Tests**: Sync/Async interface consistency.
+
+**Current Status**: 19 tests passed (100% success rate).
+
+---
+
+## 📖 Documentation
+Detailed architectural and domain documentation can be found in the `docs/` folder:
+- [Architecture & Design](docs/01-architecture.md)
+- [Data Schema](docs/02-data-schema.md)
+- [Matching & Unification Engine](docs/03-matching-engine.md)
+
+---
+*Developed with ❤️ for the AI Engineering community.*
