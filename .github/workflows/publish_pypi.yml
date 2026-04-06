@@ -42,11 +42,10 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Build and Publish to PyPI
+    - name: Publish to PyPI
       if: steps.semantic.outputs.released == 'true'
       env:
         POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
       run: |
         poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }}
-        rm -rf dist
-        poetry publish --build --no-interaction
+        poetry publish --no-interaction
