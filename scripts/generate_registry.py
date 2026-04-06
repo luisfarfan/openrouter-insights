@@ -2,11 +2,11 @@ import asyncio
 import json
 import logging
 from pathlib import Path
-from src.domain.interfaces import IFetcherGateway
-from src.domain.services.matching_engine import MatchingEngine
-from src.adapters.persistence.sqlite_repository import SQLiteModelRepository
-from src.adapters.persistence.json_exporter import JSONExporter
-from src.use_cases.sync_registry import SyncRegistryUseCase
+from openrouter_insights.domain.interfaces import IFetcherGateway
+from openrouter_insights.domain.services.matching_engine import MatchingEngine
+from openrouter_insights.adapters.persistence.sqlite_repository import SQLiteModelRepository
+from openrouter_insights.adapters.persistence.json_exporter import JSONExporter
+from openrouter_insights.use_cases.sync_registry import SyncRegistryUseCase
 
 # Dependency Mock for the demo
 class LocalFileGateway(IFetcherGateway):

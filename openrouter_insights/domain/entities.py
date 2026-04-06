@@ -28,7 +28,7 @@ class LLMModel(BaseModel):
     pricing: Pricing
     modalities: List[str] = ["text"]
     benchmarks: Optional[Benchmarks] = None
-    last_synced: datetime = Field(default_factory=datetime.now)
+    last_synced: datetime = Field(default_factory=datetime.now, exclude=True)
 
     @computed_field
     @property
@@ -63,8 +63,10 @@ class LLMModel(BaseModel):
         if self.benchmarks and self.benchmarks.intelligence_score:
             base_score = self.benchmarks.intelligence_score
             
-        if base_score > 90: return "frontier"
-        if base_score > 70: return "pro"
+        if base_score > 90:
+            return "frontier"
+        if base_score > 70:
+            return "pro"
         return "lite"
 
 
@@ -75,5 +77,6 @@ class LLMModel(BaseModel):
         if not self.benchmarks or not self.benchmarks.intelligence_score:
             return 0.0
         total_cost = self.pricing.input + self.pricing.output
-        if total_cost == 0: return 1.0 # Free is max efficiency
+        if total_cost == 0:
+            return 1.0 # Free is max efficiency
         return round(self.benchmarks.intelligence_score / (total_cost + 0.01), 4)

@@ -42,6 +42,12 @@ jobs:
         run: |
           git config --global user.name "github-actions-bot"
           git config --global user.email "actions@github.com"
-          git add data/openrouter_insights.sqlite openrouter_insights.json
-          git commit -m "chore: automated daily registry update [skip ci]" || echo "No changes to commit"
-          git push origin main
+          
+          # Check for real changes in the registry files
+          if [[ -n $(git status --porcelain data/openrouter_insights.sqlite openrouter_insights.json) ]]; then
+            git add data/openrouter_insights.sqlite openrouter_insights.json
+            git commit -m "chore: automated daily registry update [skip ci]"
+            git push origin main
+          else
+            echo "No meaningful changes detected in the registry. Skipping commit."
+          fi
