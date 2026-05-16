@@ -4,6 +4,7 @@ import pytest
 from aioresponses import aioresponses
 
 from scripts.sync_pricing_catalog import (
+    FAL_MODELS_URL,
     FAL_PRICING_URL,
     OPENROUTER_MODELS_URL,
     sync_pricing_catalog,
@@ -19,7 +20,20 @@ async def test_sync_pricing_catalog_generates_deterministic_json(tmp_path, monke
 
     with aioresponses() as mock:
         mock.get(
-            FAL_PRICING_URL,
+            f"{FAL_MODELS_URL}?limit=100",
+            payload={
+                "models": [
+                    {
+                        "endpoint_id": "fal-ai/flux/dev",
+                        "metadata": {"status": "active"},
+                    }
+                ],
+                "next_cursor": None,
+                "has_more": False,
+            },
+        )
+        mock.get(
+            f"{FAL_PRICING_URL}?endpoint_id=fal-ai%2Fflux%2Fdev",
             payload={
                 "prices": [
                     {
@@ -71,7 +85,15 @@ async def test_sync_pricing_catalog_does_not_rewrite_when_prices_unchanged(tmp_p
     async def run_once():
         with aioresponses() as mock:
             mock.get(
-                FAL_PRICING_URL,
+                f"{FAL_MODELS_URL}?limit=100",
+                payload={
+                    "models": [{"endpoint_id": "fal-ai/model"}],
+                    "next_cursor": None,
+                    "has_more": False,
+                },
+            )
+            mock.get(
+                f"{FAL_PRICING_URL}?endpoint_id=fal-ai%2Fmodel",
                 payload={
                     "prices": [
                         {

@@ -13,6 +13,7 @@ import aiohttp
 
 DEFAULT_OUTPUT = "ai_provider_tracker/data/pricing_catalog.json"
 FAL_PRICING_URL = "https://api.fal.ai/v1/models/pricing"
+FAL_MODELS_URL = "https://api.fal.ai/v1/models"
 OPENROUTER_MODELS_URL = "https://openrouter.ai/api/v1/models"
 
 
@@ -34,13 +35,11 @@ async def fetch_json(session: aiohttp.ClientSession, url: str, headers: Optional
 async def fetch_fal_prices(session: aiohttp.ClientSession) -> List[Dict[str, Any]]:
     key = os.getenv("FAL_KEY") or os.getenv("FAL_API_KEY")
     headers = {"Authorization": f"Key {key}"} if key else {}
+    endpoint_ids = await fetch_fal_endpoint_ids(session, headers)
     prices: List[Dict[str, Any]] = []
-    cursor: Optional[str] = None
 
-    while True:
-        url = FAL_PRICING_URL
-        if cursor:
-            url = f"{url}?{urlencode({'cursor': cursor})}"
+    for batch in chunked(endpoint_ids, 50):
+        url = f"{FAL_PRICING_URL}?{urlencode({'endpoint_id': ','.join(batch)})}"
         data = await fetch_json(session, url, headers=headers)
         raw_prices = data.get("prices", data if isinstance(data, list) else [])
 
@@ -61,11 +60,38 @@ async def fetch_fal_prices(session: aiohttp.ClientSession) -> List[Dict[str, Any
                 }
             )
 
+    return prices
+
+
+async def fetch_fal_endpoint_ids(
+    session: aiohttp.ClientSession,
+    headers: Dict[str, str],
+) -> List[str]:
+    endpoint_ids: List[str] = []
+    cursor: Optional[str] = None
+
+    while True:
+        params = {"limit": "100"}
+        if cursor:
+            params["cursor"] = cursor
+        url = f"{FAL_MODELS_URL}?{urlencode(params)}"
+        data = await fetch_json(session, url, headers=headers)
+        models = data.get("models", data if isinstance(data, list) else [])
+
+        for item in models:
+            endpoint_id = item.get("endpoint_id")
+            if endpoint_id:
+                endpoint_ids.append(endpoint_id)
+
         cursor = data.get("next_cursor") if isinstance(data, dict) else None
         if not cursor:
             break
 
-    return prices
+    return endpoint_ids
+
+
+def chunked(items: List[str], size: int) -> List[List[str]]:
+    return [items[index : index + size] for index in range(0, len(items), size)]
 
 
 async def fetch_openrouter_prices(session: aiohttp.ClientSession) -> List[Dict[str, Any]]:
