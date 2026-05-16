@@ -27,9 +27,16 @@ def decimal_string(value: Any) -> Optional[str]:
 
 
 async def fetch_json(session: aiohttp.ClientSession, url: str, headers: Optional[Dict[str, str]] = None) -> Any:
-    async with session.get(url, headers=headers or {}) as response:
-        response.raise_for_status()
-        return await response.json()
+    for attempt in range(4):
+        async with session.get(url, headers=headers or {}) as response:
+            if response.status == 429 and attempt < 3:
+                retry_after = response.headers.get("Retry-After")
+                delay = float(retry_after) if retry_after else 2 ** attempt
+                await asyncio.sleep(delay)
+                continue
+            response.raise_for_status()
+            return await response.json()
+    raise RuntimeError(f"Failed to fetch {url}")
 
 
 async def fetch_fal_prices(session: aiohttp.ClientSession) -> List[Dict[str, Any]]:
@@ -38,7 +45,7 @@ async def fetch_fal_prices(session: aiohttp.ClientSession) -> List[Dict[str, Any
     endpoint_ids = await fetch_fal_endpoint_ids(session, headers)
     prices: List[Dict[str, Any]] = []
 
-    for batch in chunked(endpoint_ids, 50):
+    for batch in chunked(endpoint_ids, 10):
         url = f"{FAL_PRICING_URL}?{urlencode({'endpoint_id': ','.join(batch)})}"
         data = await fetch_json(session, url, headers=headers)
         raw_prices = data.get("prices", data if isinstance(data, list) else [])
@@ -59,6 +66,7 @@ async def fetch_fal_prices(session: aiohttp.ClientSession) -> List[Dict[str, Any
                     "raw": item,
                 }
             )
+        await asyncio.sleep(0.25)
 
     return prices
 
