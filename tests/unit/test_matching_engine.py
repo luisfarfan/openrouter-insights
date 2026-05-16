@@ -1,5 +1,5 @@
 import pytest
-from openrouter_insights.domain.services.matching_engine import MatchingEngine
+from ai_provider_tracker.domain.services.matching_engine import MatchingEngine
 
 @pytest.fixture
 def engine():

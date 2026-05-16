@@ -1,35 +1,41 @@
-# 00 - LLMIndex: Overview
+# 00 - AI Provider Tracker Overview
 
-## Vision
-**LLMIndex** is an open-source, lightweight "Single Source of Truth" for Large Language Models (LLMs). It automates the discovery, benchmarking, and classification of models by merging institutional-grade data from **OpenRouter** and **ArtificialAnalysis**.
+## Purpose
 
-The project is designed with a **"Git-Ops"** and **"Lite & Portable"** philosophy:
-- **Git-Ops**: Database results are version-controlled in the repository as JSON and SQLite files.
-- **Portability**: No heavy infrastructure (like PostgreSQL) is required. Developers can use the data by simply importing a JSON file or querying a local SQLite DB.
-- **Transparency**: Clear, mathematical classification for what models are "best for" (Coding, Reasoning, Agents, etc.).
+**AI Provider Tracker** is a Python library for AI usage and cost tracking.
 
-## Core Objectives
-1. **Model Discovery**: Track all models available via OpenRouter (Context length, Pricing, Modalities).
-2. **Performance Benchmarking**: Link these models to ArtificialAnalysis performance metrics (Reasoning, Coding, Speed scores).
-3. **Automated Classification**: Use an engine to categorize models by "Efficiency", "Performance Tier", and "Best Use Case".
-4. **Public Registry**: Provide a globally accessible JSON file and a lightweight FastAPI query engine for consumption.
+It is not a provider SDK and it is not a microservice. Applications keep calling providers such as FAL.AI and OpenRouter directly, then pass the request/response payloads to this library to normalize usage, calculate costs, and optionally persist analytics.
 
-## Data Sources
-### 1. OpenRouter API
-Provides the "Catalog" data:
-- `model_id`, `name`, `provider`.
-- `context_length`.
-- `pricing` (tokens: input/output).
-- `modalities` (text, image, audio).
-- `parameters` (tools, reasoning support).
+## Primary Goals
 
-### 2. ArtificialAnalysis API/Dataset
-Provides the "Metrics" data:
-- `reasoning_score`.
-- `coding_score`.
-- `intelligence_score`.
-- `speed` (tokens/sec).
-- `cost_efficiency`.
+1. **Per-generation cost tracking**
+   - Estimate the cost of a single FAL.AI generation from pricing snapshots and request/response metadata.
+   - Use OpenRouter provider-reported cost when available.
 
-## Value Proposition
-For developers and AI companies, **LLMIndex** solves the "which model to use?" problem by providing a verifiable, data-driven index that balances cost vs. intelligence.
+2. **Provider-neutral usage normalization**
+   - Convert heterogeneous usage models into `UsageUnit` records such as `image`, `video_second`, `megapixel`, `input_token`, and `output_token`.
+
+3. **Runtime independence from pricing APIs**
+   - Runtime cost calculations use a bundled/local pricing catalog.
+   - Pricing APIs are called by sync scripts, not by `CostTracker.track_generation()`.
+
+4. **Auditability**
+   - Optional SQLite persistence stores normalized usage, cost breakdown, raw request, raw response, and caller metadata.
+
+5. **Open-source distribution**
+   - Bundled public pricing catalog ships with the PyPI package.
+   - Users can provide their own catalog path for account-specific or private pricing.
+
+## Supported Providers in v1
+
+- **FAL.AI**
+  - Main value case.
+  - Costs are locally estimated from pricing unit + inferred quantity.
+
+- **OpenRouter**
+  - Uses `usage.cost` as primary cost when present.
+  - Falls back to token-based calculation from the pricing catalog.
+
+## Legacy Registry
+
+The package still includes the original OpenRouter model registry functionality (`LLMIndex`, `LLMIndexSync`) for compatibility. New development should treat cost tracking as the primary product surface.

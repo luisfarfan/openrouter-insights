@@ -2,11 +2,11 @@ import asyncio
 import json
 import logging
 from pathlib import Path
-from openrouter_insights.domain.interfaces import IFetcherGateway
-from openrouter_insights.domain.services.matching_engine import MatchingEngine
-from openrouter_insights.adapters.persistence.sqlite_repository import SQLiteModelRepository
-from openrouter_insights.adapters.persistence.json_exporter import JSONExporter
-from openrouter_insights.use_cases.sync_registry import SyncRegistryUseCase
+from ai_provider_tracker.domain.interfaces import IFetcherGateway
+from ai_provider_tracker.domain.services.matching_engine import MatchingEngine
+from ai_provider_tracker.adapters.persistence.sqlite_repository import SQLiteModelRepository
+from ai_provider_tracker.adapters.persistence.json_exporter import JSONExporter
+from ai_provider_tracker.use_cases.sync_registry import SyncRegistryUseCase
 
 # Dependency Mock for the demo
 class LocalFileGateway(IFetcherGateway):
@@ -30,7 +30,7 @@ async def main():
         async def save_batch(self, models): pass
         
     engine = MatchingEngine()
-    exporter = JSONExporter("openrouter_insights.json") # The SINGLE UNIFIED FILE in root
+    exporter = JSONExporter("ai_provider_tracker.json") # The SINGLE UNIFIED FILE in root
     gateway = LocalFileGateway()
     
     use_case = SyncRegistryUseCase(
@@ -43,7 +43,7 @@ async def main():
     print("--- Running Unified Registry Generation ---")
     models = await use_case.execute()
     print(f"Created {len(models)} unified models.")
-    print("Check 'openrouter_insights.json' in the root directory.")
+    print("Check 'ai_provider_tracker.json' in the root directory.")
 
 if __name__ == "__main__":
     asyncio.run(main())

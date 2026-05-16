@@ -1,9 +1,9 @@
 import pytest
 from aioresponses import aioresponses
-from openrouter_insights.use_cases.sync_registry import SyncRegistryUseCase
-from openrouter_insights.adapters.gateways.openrouter_fetcher import OpenRouterFetcher
-from openrouter_insights.adapters.gateways.artificial_analysis_fetcher import ArtificialAnalysisFetcher
-from openrouter_insights.domain.services.matching_engine import MatchingEngine
+from ai_provider_tracker.use_cases.sync_registry import SyncRegistryUseCase
+from ai_provider_tracker.adapters.gateways.openrouter_fetcher import OpenRouterFetcher
+from ai_provider_tracker.adapters.gateways.artificial_analysis_fetcher import ArtificialAnalysisFetcher
+from ai_provider_tracker.domain.services.matching_engine import MatchingEngine
 from unittest.mock import MagicMock
 
 @pytest.fixture

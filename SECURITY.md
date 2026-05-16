@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-We currently support the latest stable release of **OpenRouter Insights**.
+We currently support the latest stable release of **AI Provider Tracker**.
 
 ## Reporting a Vulnerability
 

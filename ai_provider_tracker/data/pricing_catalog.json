@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "generated_at": "1970-01-01T00:00:00Z",
+    "format_version": "1.0"
+  },
+  "prices": [
+    {
+      "provider": "fal",
+      "model": "fal-ai/flux/dev",
+      "metric_type": "image",
+      "unit_price": "0.025",
+      "currency": "USD",
+      "raw": {}
+    },
+    {
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+      "metric_type": "input_token",
+      "unit_price": "0.000003",
+      "currency": "USD",
+      "raw": {}
+    },
+    {
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+      "metric_type": "output_token",
+      "unit_price": "0.000015",
+      "currency": "USD",
+      "raw": {}
+    }
+  ]
+}

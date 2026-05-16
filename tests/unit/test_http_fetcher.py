@@ -1,7 +1,7 @@
 import asyncio
 import pytest
 from aioresponses import aioresponses
-from openrouter_insights.adapters.gateways.http_fetcher import BaseHTTPFetcher
+from ai_provider_tracker.adapters.gateways.http_fetcher import BaseHTTPFetcher
 
 @pytest.mark.asyncio
 async def test_base_http_fetcher_success():

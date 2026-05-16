@@ -1,11 +1,11 @@
 import asyncio
 import os
 import pytest
-from openrouter_insights import LLMIndex, LLMIndexSync
+from ai_provider_tracker import LLMIndex, LLMIndexSync
 
 def test_sync_mode():
     print("\n--- Testing Sync Mode (No await) ---")
-    client = LLMIndexSync(mode="json", path="openrouter_insights.json")
+    client = LLMIndexSync(mode="json", path="ai_provider_tracker.json")
     
     # Smart Methods
     smartest = client.get_smartest(limit=3)
@@ -26,7 +26,7 @@ def test_sync_mode():
 @pytest.mark.asyncio
 async def test_async_mode():
     print("\n--- Testing Async Mode (With await) ---")
-    client = LLMIndex(mode="json", path="openrouter_insights.json")
+    client = LLMIndex(mode="json", path="ai_provider_tracker.json")
     
     # Smart Methods
     smartest = await client.get_smartest(limit=3)
@@ -40,7 +40,7 @@ async def main():
     await test_async_mode()
 
 if __name__ == "__main__":
-    if os.path.exists("openrouter_insights.json"):
+    if os.path.exists("ai_provider_tracker.json"):
         asyncio.run(main())
     else:
-        print("openrouter_insights.json not found. Run a sync first or provide the file.")
+        print("ai_provider_tracker.json not found. Run a sync first or provide the file.")

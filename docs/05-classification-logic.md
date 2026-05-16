@@ -1,35 +1,62 @@
-# 05 - LLMIndex: Classification Logic
+# 05 - Pricing Catalog and Automation
 
-## The Classification Engine
-**LLMIndex** calculates several derived fields from the raw **OpenRouter** and **ArtificialAnalysis** data to help users find the "best" model for their specific needs.
+## Bundled Catalog
 
-### 1. `best_for` (Array)
-A model is tagged based on its benchmarking scores and context length:
-- **`coding`**: `coding_score` >= 90 OR `intelligence_score` >= 95.
-- **`reasoning`**: `reasoning_score` >= 92.
-- **`rag`**: `context_length` >= 128,000 AND `intelligence_score` >= 80.
-- **`real-time`**: `speed_score` >= 150 AND `intelligence_score` >= 70.
-- **`multimodal`**: Supports `image` or `audio` AND `intelligence_score` >= 85.
+The package ships:
 
-### 2. `cost_level` (String)
-The system calculates the distribution of input pricing (1M tokens) across all models:
-- **`low`**: Bottom 33% (e.g., `< $0.1`).
-- **`mid`**: Middle 33% (e.g., `$0.1` to `$5.0`).
-- **`high`**: Top 33% (e.g., `> $5.0`).
+```text
+ai_provider_tracker/data/pricing_catalog.json
+```
 
-### 3. `performance_tier` (String)
-Computed relative to all models in the index:
-- **`frontier`**: Top 5% of `intelligence_score` (e.g., GPT-4.5, Claude 3.5 Sonnet).
-- **`high`**: Next 15%.
-- **`mid`**: Next 30%.
-- **`low`**: Remaining 50%.
+Shape:
 
-### 4. `efficiency_score` (Float 0-1)
-A combined metric of performance and cost:
-- **Formula**: `(Intelligence Score / Cost per 1M Output Tokens)`
-- **Normalized**: The result is scaled from 0 to 1 based on the min/max values in the entire registry.
-- **Usage**: Perfect for finding "The smartest model for my budget".
+```json
+{
+  "metadata": {
+    "generated_at": "2026-05-16T00:00:00Z",
+    "format_version": "1.0"
+  },
+  "prices": [
+    {
+      "provider": "fal",
+      "model": "fal-ai/flux/dev",
+      "metric_type": "image",
+      "unit_price": "0.025",
+      "currency": "USD",
+      "raw": {}
+    }
+  ]
+}
+```
 
-## Algorithm Recalculation
-- **Global Context**: Classification logic is executed **after** all models are fetched and merged.
-- **Automatic Thresholds**: Fields like `cost_level` and `performance_tier` use dynamic percentiles, so they stay accurate even as the market prices drop or new tier-1 models are released.
+## Sync Script
+
+```bash
+python scripts/sync_pricing_catalog.py
+```
+
+The script fetches:
+
+- FAL pricing from `https://api.fal.ai/v1/models/pricing`
+- OpenRouter model pricing from `https://openrouter.ai/api/v1/models`
+
+Environment variables:
+
+- `FAL_KEY` or `FAL_API_KEY`
+- `OPENROUTER_API_KEY`
+
+## GitHub Actions
+
+`.github/workflows/pricing_sync.yml` runs daily.
+
+It commits only when `prices` changed. Metadata-only timestamp changes do not trigger commits.
+
+## Accuracy
+
+The public bundled catalog is a reference snapshot. Users with account-specific pricing should generate and pass their own catalog:
+
+```python
+tracker = CostTracker(pricing_catalog_path="my_pricing_catalog.json")
+```
+
+For invoice-grade accounting, reconcile against provider billing exports or usage APIs.

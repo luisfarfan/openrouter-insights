@@ -1,8 +1,8 @@
 import logging
 from typing import List, Optional
-from openrouter_insights.domain.interfaces import IFetcherGateway
-from openrouter_insights.adapters.gateways.http_fetcher import BaseHTTPFetcher
-from openrouter_insights.infrastructure.config import get_settings
+from ai_provider_tracker.domain.interfaces import IFetcherGateway
+from ai_provider_tracker.adapters.gateways.http_fetcher import BaseHTTPFetcher
+from ai_provider_tracker.infrastructure.config import get_settings
 
 logger = logging.getLogger(__name__)
 
@@ -12,13 +12,13 @@ class OpenRouterFetcher(BaseHTTPFetcher, IFetcherGateway):
     def __init__(self):
         super().__init__()
         self.settings = get_settings()
-        self.project_name = "OpenRouter Insights"
+        self.project_name = "AI Provider Tracker"
 
     async def fetch_catalog(self) -> List[dict]:
         """Fetch models catalog from OpenRouter."""
         headers = {
             "Authorization": f"Bearer {self.settings.OPENROUTER_API_KEY}",
-            "HTTP-Referer": "https://openrouter_insights.ai", # Required by OpenRouter for ranking
+            "HTTP-Referer": "https://ai_provider_tracker.ai", # Required by OpenRouter for ranking
             "X-Title": self.project_name
         }
         

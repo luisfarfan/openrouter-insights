@@ -1,46 +1,83 @@
-# 01 - LLMIndex: Architecture
+# 01 - Architecture
 
-## High-Level Architecture (Pure Backend)
-**LLMIndex** is built as a **Multi-Stage Data Pipeline** using **FastAPI (Python)** for its logic and **SQLite/JSON** for data delivery.
+## Package Shape
 
-### 1. Data Processing Pipeline (Stages)
-The core logic resides in a set of **Services** and **Pipelines** that execute in sequence:
+```text
+ai_provider_tracker/
+  cost_tracking/
+    models.py         # Public Pydantic models
+    pricing.py        # Bundled/custom pricing catalog loader
+    normalizers.py    # Provider-specific usage extraction
+    calculator.py     # Decimal-based cost engine
+    repository.py     # Optional SQLite event persistence
+    tracker.py        # Public CostTracker facade
+  data/
+    pricing_catalog.json
+  adapters/           # Legacy OpenRouter registry API/adapters
+  domain/             # Legacy LLM model entities and matching
+  use_cases/          # Legacy registry sync pipeline
+```
 
-1.  **Fetchers**: 
-    - `OpenRouterFetcher`: Retrieves the latest model catalog via HTTP.
-    - `ArtificialAnalysisFetcher`: Retrieves the latest benchmarking dataset.
-2.  **Normalizers**: Standardizes the naming conventions and modalities from both sources.
-3.  **Matching Engine**: A fuzzy and deterministic engine that identifies that `openai/gpt-4.5-preview` (OpenRouter) is the same as `gpt45-preview` (ArtificialAnalysis).
-4.  **Classification Engine**: Calculates derived fields (`efficiency_score`, `best_for`, `performance_tier`).
-5.  **Exporters**:
-    - `SQLiteExporter`: Stores the unified data into a single-file `openrouter_insights.sqlite` for local queries.
-    - `JSONExporter`: Generates a static `openrouter_insights.json` for global consumption and Git versioning.
+## Runtime Flow
 
-### 2. Tech Stack
-- **Language**: Python 3.11+.
-- **Engine**: FastAPI (API layer + Dependency Injection).
-- **Persistence**: 
-    - **Primary**: `SQLite` (one file).
-    - **Distribution**: `JSON` (version-controlled).
-- **Automation**: GitHub Actions (to trigger the periodic "Sync" command).
+```text
+Provider SDK call happens in user app
+        |
+        v
+CostTracker.track_generation(provider, model, request, response)
+        |
+        v
+Provider normalizer extracts NormalizedUsage
+        |
+        v
+PricingCatalog selects local pricing entries
+        |
+        v
+CostCalculator creates CostResult
+        |
+        v
+Optional SQLiteUsageRepository saves GenerationUsageEvent
+```
 
-### 3. Automated Sync (GitHub Actions & Git-Ops)
-The project uses **GitHub Actions** to maintain a "Living Registry" without manual intervention:
+## Pricing Sync Flow
 
-1.  **Schedule**: A cron job defined in `.github/workflows/sync.yml` triggers once every 24 hours (or as configured).
-2.  **Environment**: GitHub spins up an Ubuntu runner, installs Python dependencies, and injects **API Keys** via **GitHub Secrets**.
-3.  **Command**: The action runs `python main.py sync`, which pulls from OpenRouter and ArtificialAnalysis.
-4.  **Auto-Commit**: If the script modifies `data/openrouter_insights.json` or `data/openrouter_insights.sqlite`, the action automatically commits and pushes the changes back to the `main` branch.
-5.  **Distribution**: The updated data is immediately served via "GitHub Raw" URLs, making it a globally available, zero-cost API.
+```text
+GitHub Actions daily schedule
+        |
+        v
+scripts/sync_pricing_catalog.py
+        |
+        +--> FAL Pricing API
+        +--> OpenRouter Models API
+        |
+        v
+ai_provider_tracker/data/pricing_catalog.json
+        |
+        v
+Commit only if prices changed
+```
 
-### 4. API Keys & Security
-- **Production**: Keys are stored as **GitHub Secrets** (`OPENROUTER_API_KEY`, etc.).
-- **Local**: Developers use an `.env` file (ignored by Git) for local testing.
+Runtime requests never call provider pricing APIs.
 
-### 4. Error Handling & Fallbacks
-- **API Failure**: If one data source is down, the system uses the last cached/committed version and alerts in the logs.
-- **Matching Miss**: Models that cannot be matched are stored in a "Pending Review" log and excluded from calculations until added to the `fallback_mapping.json`.
+## Key Design Rules
 
-## Performance Considerations
-- **No Heavy Loads**: Since the data is small (hundreds of models), all indexing and classification are done in-memory before exporting.
-- **FastAPI Metadata**: The API layer uses Pydantic to serve requests from the local SQLite/JSON with negligible latency.
+- Keep provider-specific extraction inside normalizers.
+- Keep cost math inside `CostCalculator`.
+- Use `Decimal` for money and quantities.
+- Store raw request/response only when SQLite persistence is enabled.
+- Treat bundled public pricing as an estimate, not invoice-grade truth.
+- Prefer provider-reported cost where available, especially for OpenRouter.
+
+## Compatibility
+
+`openrouter_insights` remains as a temporary import shim:
+
+```python
+from openrouter_insights import CostTracker
+```
+
+New code must import:
+
+```python
+from ai_provider_tracker import CostTracker
+```

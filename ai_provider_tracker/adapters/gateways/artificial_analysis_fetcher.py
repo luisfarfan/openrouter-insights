@@ -1,8 +1,8 @@
 import logging
 from typing import List, Dict, Any, Optional
-from openrouter_insights.domain.interfaces import IFetcherGateway
-from openrouter_insights.adapters.gateways.http_fetcher import BaseHTTPFetcher
-from openrouter_insights.infrastructure.config import get_settings
+from ai_provider_tracker.domain.interfaces import IFetcherGateway
+from ai_provider_tracker.adapters.gateways.http_fetcher import BaseHTTPFetcher
+from ai_provider_tracker.infrastructure.config import get_settings
 from rapidfuzz import process, fuzz
 
 logger = logging.getLogger(__name__)

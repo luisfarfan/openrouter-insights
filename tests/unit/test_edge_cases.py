@@ -4,10 +4,10 @@ import pytest
 import tempfile
 import shutil
 from unittest.mock import patch
-from openrouter_insights.adapters.persistence.sqlite_repository import SQLiteModelRepository
-from openrouter_insights.adapters.persistence.json_exporter import JSONExporter
-from openrouter_insights.adapters.persistence.json_repository import JSONModelRepository
-from openrouter_insights.domain.entities import LLMModel, Pricing, Benchmarks
+from ai_provider_tracker.adapters.persistence.sqlite_repository import SQLiteModelRepository
+from ai_provider_tracker.adapters.persistence.json_exporter import JSONExporter
+from ai_provider_tracker.adapters.persistence.json_repository import JSONModelRepository
+from ai_provider_tracker.domain.entities import LLMModel, Pricing, Benchmarks
 
 @pytest.fixture
 def temp_dir():
@@ -17,7 +17,7 @@ def temp_dir():
 
 def test_sqlite_defaults(temp_dir):
     # Patch the get_settings in the repository module itself
-    with patch("openrouter_insights.adapters.persistence.sqlite_repository.get_settings") as mock_get:
+    with patch("ai_provider_tracker.adapters.persistence.sqlite_repository.get_settings") as mock_get:
         mock_get.return_value.DATABASE_URL = os.path.join(temp_dir, "default.db")
         repo = SQLiteModelRepository()
         assert "default.db" in str(repo.engine.url)

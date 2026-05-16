@@ -1,48 +1,49 @@
-# 03 - LLMIndex: Matching Engine
+# 03 - Provider Normalization and Cost Rules
 
-## The Challenge
-**OpenRouter** and **ArtificialAnalysis** use different naming conventions for the same models.
-- **OpenRouter**: `anthropic/claude-3.5-sonnet`
-- **ArtificialAnalysis**: `claude-3.5-sonnet` or `claude-3-5-sonnet`
+## FAL.AI
 
-The **Matching Engine** is responsible for ensuring data integrity during the merge stage.
+FAL pricing entries define the billing unit for each model/endpoint. The tracker infers quantity from request/response payloads.
 
-## Strategy (Multi-Tier)
+Supported v1 units:
 
-### Tier 1: Deterministic Mapping (`static_mapping.json`)
-A hard-coded configuration file for complex cases that are impossible to match automatically.
-```json
-{
-  "openai/gpt-4o-2024-05-13": "gpt-4o",
-  "google/gemini-pro-1.5": "gemini-1.5-pro"
-}
-```
+- `image`
+  - Quantity priority: `request.num_images`, then `len(response.images)`, then fallback `1`.
 
-### Tier 2: Normalization Rules
-Before matching, both IDs are cleaned:
-1.  **Strip Provider**: Remove `openai/`, `anthropic/`, etc.
-2.  **Lowercase**: `GPT-4` becomes `gpt-4`.
-3.  **Alpha-Numeric**: Replace spaces, dots, and slashes with dashes.
-4.  **Version Stripping**: Remove date suffixes (e.g., `-20240513`) for base model comparison.
+- `request`
+  - Quantity is `1`.
 
-### Tier 3: Fuzzy Matching (Levenshtein)
-If no direct match is found after normalization:
-1.  Calculate **Levenshtein Distance** between the cleaned OpenRouter ID and all known ArtificialAnalysis models.
-2.  **Threshold**: Match only if confidence is > 95%.
-3.  **Validation**: If confidence is between 85% and 94%, it's logged as "Potential Match" for human manual review.
+- `video_second`
+  - Quantity from response/request duration fields.
 
-## Pipeline Integration
-```mermaid
-graph TD
-    A[OpenRouter ID] --> B{Static Mapping?}
-    B -- Yes --> C[Match Found]
-    B -- No --> D[Normalize ID]
-    D --> E{Direct Match?}
-    E -- Yes --> C
-    E -- No --> F[Fuzzy Matching]
-    F -- Confidence > 95% --> C
-    F -- Confidence < 95% --> G[Log for Review]
-```
+- `megapixel`
+  - Quantity is `width * height / 1_000_000`.
+  - Width/height may come from explicit request fields or `image_size` / `resolution`.
 
-## Review Process
-The matching failures are stored in `matching_failures.log`. For an Open Source project, users can contribute by adding missing mappings to the repository via PR.
+Unsupported or ambiguous units:
+
+- Example: `gpu_second`
+  - Cost is marked `unknown` unless a future normalizer can reliably infer execution seconds.
+
+## OpenRouter
+
+OpenRouter normalization extracts:
+
+- `usage.cost`
+- `usage.prompt_tokens` / `usage.input_tokens`
+- `usage.completion_tokens` / `usage.output_tokens`
+
+Rules:
+
+1. If provider-reported cost exists, it becomes `CostResult.total`.
+2. If token counts and local pricing exist, `estimated_total` is also calculated.
+3. If provider cost is missing, token-based estimate becomes the final total.
+4. If usage is missing, cost source is `unknown`.
+
+## Adding a Provider
+
+To add a provider:
+
+1. Add pricing sync support if public pricing exists.
+2. Add a provider normalizer that returns `NormalizedUsage`.
+3. Ensure `CostTracker.track_generation()` routes to it.
+4. Add tests for quantities, missing prices, and persistence.

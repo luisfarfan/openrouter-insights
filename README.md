@@ -1,173 +1,134 @@
-# 📊 OpenRouter Insights
+# AI Provider Tracker
 
-[![PyPI version](https://img.shields.io/pypi/v/openrouter-insights.svg)](https://pypi.org/project/openrouter-insights/)
-[![Python versions](https://img.shields.io/pypi/pyversions/openrouter-insights.svg)](https://pypi.org/project/openrouter-insights/)
+[![PyPI version](https://img.shields.io/pypi/v/ai-provider-tracker.svg)](https://pypi.org/project/ai-provider-tracker/)
+[![Python versions](https://img.shields.io/pypi/pyversions/ai-provider-tracker.svg)](https://pypi.org/project/ai-provider-tracker/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://github.com/luisfarfan/openrouter-insights/actions/workflows/tests.yml/badge.svg)](https://github.com/luisfarfan/openrouter-insights/actions/workflows/tests.yml)
 
-**OpenRouter Insights** is a professional, unified LLM registry that supercharges the official **OpenRouter** catalog with high-fidelity intelligence and benchmarks.
+**AI Provider Tracker** is a Python library for tracking AI provider usage and estimating per-generation costs across heterogeneous providers.
 
-It provides a "Single Source of Truth" for model capabilities, pricing, and performance, designed for production-grade AI agents and high-performance applications.
+It is designed for apps that already call providers such as **FAL.AI** and **OpenRouter**, but need a centralized way to:
 
----
+- normalize usage metadata
+- calculate request/generation costs
+- store raw request/response payloads for auditability
+- persist optional local analytics in SQLite
+- use bundled pricing snapshots without calling pricing APIs at runtime
 
-## 📖 Table of Contents
-- [🔥 OpenRouter with Superpowers](#-openrouter-with-superpowers)
-- [🛠️ Installation](#️-installation)
-- [💡 Quick Start](#-quick-start)
-- [🧠 Data Intelligence (Providers)](#-data-intelligence-providers)
-- [🕒 Data Freshness & Automation](#-data-freshness--automation-git-ops)
-- [✨ Smart Query Methods](#-smart-query-methods)
-- [🔄 Model Substitution](#-model-substitution)
-- [🧪 Verified Reliability](#-verified-reliability)
-- [🔮 Future Roadmap](#-future-roadmap)
-- [🤝 Contributing](#-contributing)
-
----
-
-## 🔥 OpenRouter with "Superpowers"
-
-Why use this instead of the raw OpenRouter API?
-
-| Feature | Raw OpenRouter API | **OpenRouter Insights** |
-|---------|-------------------|-------------------------|
-| **Model Catalog** | ✅ Yes | ✅ Yes (Auto-synced) |
-| **Pricing** | ✅ Yes | ✅ Yes (Normalized) |
-| **Intelligence Scores** | ❌ No | ✅ Yes (ArtificialAnalysis) |
-| **Performance Tiers** | ❌ No | ✅ Yes (Frontier/Pro/Lite) |
-| **Smart Discovery** | ❌ No | ✅ Yes (`get_smartest`, `get_cheapest`) |
-| **Virtual Filtering** | ❌ No | ✅ Yes (Excludes auto-routers by default) |
-| **Substitution Engine**| ❌ No | ✅ Yes (`get_best_alternative`) |
-| **Fuzzy Search** | ❌ Limited | ✅ Yes (RapidFuzz integrated) |
-| **Sync/Async Facades** | ❌ No | ✅ Yes (Plug & Play) |
-
----
-
-## 🛠️ Installation
+## Installation
 
 ```bash
-# Basic installation (Library only)
-pip install openrouter-insights
-
-# With API support (FastAPI + Uvicorn)
-pip install "openrouter-insights[api]"
+pip install ai-provider-tracker
 ```
 
----
+Optional FastAPI dependencies for the legacy model registry API:
 
-## 💡 Quick Start
-
-### ⚡ Async Facade (For FastAPI / High Performance)
-
-```python
-import asyncio
-from openrouter_insights import LLMIndex
-
-async def main():
-    # Uses local JSON registry (no DB setup required)
-    client = LLMIndex(mode="json")
-    
-    # Smart Discovery: Get the smartest model for coding
-    models = await client.get_best_for_coding(limit=1)
-    if models:
-        print(f"Best: {models[0].name} (Score: {models[0].intelligence_score})")
-        
-    # NEW: Find the best substitute for GPT-4 within budget
-    alt = await client.get_best_alternative("openai/gpt-4o", max_price=10.0)
-    if alt:
-        print(f"Fallback to: {alt.id}")
-
-asyncio.run(main())
+```bash
+pip install "ai-provider-tracker[api]"
 ```
 
-### 🕒 Sync Facade (For Scripts / Notebooks)
+## Cost Tracking
+
+Use your provider SDK as usual, then pass the request and response to the tracker.
 
 ```python
-from openrouter_insights import LLMIndexSync
+from ai_provider_tracker import CostTracker
+
+tracker = CostTracker()
+
+event = tracker.track_generation(
+    provider="fal",
+    model="fal-ai/flux/dev",
+    request={"prompt": "A cyberpunk city", "num_images": 2},
+    response={"images": [{"url": "a"}, {"url": "b"}]},
+)
+
+print(event.cost.total)       # 0.050
+print(event.cost.source)      # public_snapshot
+print(event.cost.confidence)  # high
+print(event.cost.breakdown)
+```
+
+Enable local SQLite persistence:
+
+```python
+tracker = CostTracker(sqlite_path="ai_usage.sqlite")
+```
+
+This stores generation events with normalized usage, cost breakdown, raw request, raw response, and metadata.
+
+## OpenRouter
+
+For OpenRouter, provider-reported usage cost is preferred when present:
+
+```python
+event = tracker.track_generation(
+    provider="openrouter",
+    model="anthropic/claude-sonnet-4.5",
+    request={"messages": [{"role": "user", "content": "Hello"}]},
+    response={
+        "usage": {
+            "prompt_tokens": 1200,
+            "completion_tokens": 800,
+            "cost": "0.015",
+        }
+    },
+)
+
+print(event.cost.total)   # provider-reported cost
+print(event.cost.source)  # provider_reported
+```
+
+If `usage.cost` is not present, the tracker falls back to token-based calculation using the bundled pricing catalog when possible.
+
+## Pricing Catalog
+
+The package ships with a bundled JSON pricing catalog:
+
+```text
+ai_provider_tracker/data/pricing_catalog.json
+```
+
+Runtime requests do not call pricing APIs. Pricing sync is handled by:
+
+```bash
+python scripts/sync_pricing_catalog.py
+```
+
+The GitHub Actions workflow `.github/workflows/pricing_sync.yml` runs daily and commits the catalog only when prices actually change.
+
+## Legacy Model Registry
+
+This package still includes the original OpenRouter model registry APIs:
+
+```python
+from ai_provider_tracker import LLMIndexSync
 
 client = LLMIndexSync(mode="json")
-
-# Get the absolute cheapest frontier model
-cheap_pro = client.get_cheapest(tier="frontier", limit=3)
-for m in cheap_pro:
-    print(f"{m.name}: ${m.pricing.input}/1M tokens")
+models = client.get_cheapest(limit=5)
 ```
 
----
-
-## 🧠 Data Intelligence (Providers)
-
-OpenRouter Insights aggregates data from world-class sources to provide high-fidelity metrics:
-
-*   **[ArtificialAnalysis.ai](https://artificialanalysis.ai/)**: Our primary source for model performance. We integrate their independent benchmarks for **Intelligence, Quality (V2 ELO), and Speed (TPS)** to power our ranking logic.
-*   **[OpenRouter.ai](https://openrouter.ai/)**: Our core model catalog. We sync directly with their API to provide real-time pricing and availability for hundreds of models.
-
----
-
-## 🕒 Data Freshness & Automation (Git-Ops)
-
-OpenRouter Insights is not a static file. We run an **automated 24-hour synchronization job** via GitHub Actions (CRON) that:
-1.  **Fetches** the latest models and pricing from OpenRouter.
-2.  **Unifies** benchmark data from ArtificialAnalysis.
-3.  **Processes** the results via our Matching Engine.
-4.  **Commits** the fresh `openrouter_insights.sqlite` and `.json` back to the repository.
-
-*This ensures you always have access to the latest frontier models as they are released.*
-
----
-
-## ✨ Smart Query Methods
-
-OpenRouter Insights comes with pre-built logic to discover models based on real-world capabilities:
-
-*   `.get_smartest()`: Highest intelligence scores first.
-*   `.get_cheapest()`: Lowest cost-to-output first (excludes virtual routers).
-*   `.get_best_for_coding()`: Top-tier coding performers.
-*   `.get_top_frontier()`: Only the best models in the world.
-*   `.get_by_tier("pro")`: Native DB-level filtering by performance tiers.
-*   `.get_fastest()`: Highest Tokens Per Second (TPS).
-
----
-
-## 🔄 Model Substitution
-
-One of the most powerful features is the **Substitution Engine**. It allows you to find valid fallbacks when a model is unavailable or exceeds your budget, ensuring your agents stay operational:
+The old import path remains available temporarily:
 
 ```python
-# Seek the highest performing alternative in the same tier
-fallback = client.get_best_alternative(
-    model_id="anthropic/claude-3.5-sonnet", 
-    max_price=15.0  # Optional cost ceiling
-)
+from openrouter_insights import CostTracker
 ```
 
----
+New code should use:
 
-We take production stability seriously. Every release is validated against a comprehensive test suite (Unit, Integration, Persistence, and Facade tests).
+```python
+from ai_provider_tracker import CostTracker
+```
 
-**Current Status**: 61 tests passed (**95% global coverage**).
+## Accuracy Contract
 
----
+Cost values are intended for product analytics, internal attribution, and budget monitoring.
 
-## 🔮 Future Roadmap
+- FAL.AI costs are locally estimated from pricing snapshots and normalized request/response metadata.
+- OpenRouter costs use provider-reported cost when available.
+- Public bundled pricing is a reference snapshot, not a guarantee of account-specific billing.
 
-We are committed to making this the most comprehensive LLM index in the industry. Future data sources planned for integration include:
-- **Hugging Face**: Open LLM Leaderboard scores.
-- **Vercel AI**: Comprehensive provider metrics.
-- **LMSYS Chatbot Arena**: Live ELO ratings.
+For invoice-grade accounting, reconcile against provider billing/usage APIs.
 
----
+## License
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
----
-
-## 📄 License
-
-Distributed under the **MIT License**. See `LICENSE` for more information.
-
----
-**Luis Eduardo Farfan Melgar** - [lucho.farfan9@gmail.com](mailto:lucho.farfan9@gmail.com)  
-Project Link: [https://github.com/luisfarfan/openrouter-insights](https://github.com/luisfarfan/openrouter-insights)
+MIT

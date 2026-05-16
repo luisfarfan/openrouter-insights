@@ -1,6 +1,6 @@
-# Contributing to OpenRouter Insights
+# Contributing to AI Provider Tracker
 
-First off, thank you for considering contributing to **OpenRouter Insights**! It's people like you that make this tool great.
+First off, thank you for considering contributing to **AI Provider Tracker**! It's people like you that make this tool great.
 
 ## How Can I Contribute?
 

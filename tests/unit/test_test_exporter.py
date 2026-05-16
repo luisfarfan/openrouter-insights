@@ -3,8 +3,8 @@ import json
 import tempfile
 import time
 import pytest
-from openrouter_insights.adapters.persistence.json_exporter import JSONExporter
-from openrouter_insights.domain.entities import LLMModel, Pricing
+from ai_provider_tracker.adapters.persistence.json_exporter import JSONExporter
+from ai_provider_tracker.domain.entities import LLMModel, Pricing
 
 @pytest.fixture
 def temp_json():

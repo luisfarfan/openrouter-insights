@@ -1,42 +1,75 @@
-# 04 - LLMIndex: API Service
+# 04 - Public APIs and Usage
 
-## API Strategy
-The **LLMIndex API** is a high-performance, lightweight **FastAPI** wrapper that serves as the query layer for the unified registry.
+## Primary API: `CostTracker`
 
-### Endpoints Specification
+```python
+from ai_provider_tracker import CostTracker
 
-#### 1. `GET /models`
-Retrieves the full registry or a filtered subset.
-- **Query Params**:
-  - `provider`: (e.g., `openai`) Filter by company.
-  - `modality`: (e.g., `image`) Filter by types supported.
-  - `max_price`: (float) Max input/output pricing.
-  - `min_intelligence`: (int 0-100) Min score required.
-  - `sort`: (e.g., `pricing`, `intelligence_score`, `speed_score`).
-  - `order`: (`asc`, `desc`).
+tracker = CostTracker()
 
-#### 2. `GET /models/{id}`
-Returns the full JSON detail for a single model ID.
+event = tracker.track_generation(
+    provider="fal",
+    model="fal-ai/flux/dev",
+    request={"prompt": "city", "num_images": 2},
+    response={"images": [{"url": "a"}, {"url": "b"}]},
+)
+```
 
-#### 3. `GET /models/best`
-Shortcut for top performers in key categories.
-- **Query Params**:
-  - `for`: (`coding`, `reasoning`, `rag`, `chat`).
-  - `limit`: (default: 5) Number of results.
+## Constructor
 
-#### 4. `GET /stats`
-Aggregated statistics for the registry (average price per provider, context length distribution).
+```python
+CostTracker(
+    pricing_catalog_path: str | None = None,
+    sqlite_path: str | None = None,
+)
+```
 
-### Consumption Patterns
+- `pricing_catalog_path`: optional custom pricing JSON path.
+- `sqlite_path`: optional local SQLite analytics database.
 
-- **Direct JSON**: For frontend/client-side apps, they can skip the API and `fetch` the `openrouter_insights.json` directly from the repo.
-- **REST API**: For server-to-server integrations requiring dynamic filtering and sorting at the engine level.
-- **Local SQLite**: For power users or local scripts that want to run complex SQL queries from the derived database.
+If no pricing path is passed, the bundled catalog is used.
 
-### API Documentation
-The API includes an interactive **Swagger UI** (available at `/docs`) and a **ReDoc** documentation page (at `/redoc`) generated automatically from the Pydantic models.
+## FAL Example
 
-## Deployment & Hosting
-- **Backend**: Containerized with **Docker** for easy deployment as a standalone service.
-- **Serverless**: Fully compatible with **Vercel** or **AWS Lambda** (FastAPI with Mangum) for low-cost, on-demand hosting.
-- **Static Assets**: The `openrouter_insights.json` is synced to a public URL (GitHub Raw or Vercel Edge Cache) for lightning-fast delivery.
+```python
+event = tracker.track_generation(
+    provider="fal",
+    model="fal-ai/flux/dev",
+    request={"prompt": "A cyberpunk city", "num_images": 1},
+    response={"images": [{"url": "https://example.com/image.png"}]},
+    metadata={"project_id": "demo"},
+)
+
+print(event.cost.total)
+print(event.cost.breakdown)
+```
+
+## OpenRouter Example
+
+```python
+event = tracker.track_generation(
+    provider="openrouter",
+    model="anthropic/claude-sonnet-4.5",
+    request={"messages": [{"role": "user", "content": "Hello"}]},
+    response={
+        "usage": {
+            "prompt_tokens": 1200,
+            "completion_tokens": 800,
+            "cost": "0.015",
+        }
+    },
+)
+```
+
+## Legacy Registry APIs
+
+The legacy model discovery APIs remain available:
+
+```python
+from ai_provider_tracker import LLMIndexSync
+
+client = LLMIndexSync(mode="json")
+models = client.get_smartest(limit=5)
+```
+
+These APIs are secondary to the cost tracking surface.

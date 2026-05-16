@@ -5,12 +5,8 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Ensure we can import from src
-import sys
-sys.path.append(str(Path(__file__).parent.parent))
-
-from src.adapters.gateways.openrouter_fetcher import OpenRouterFetcher
-from src.adapters.gateways.artificial_analysis_fetcher import ArtificialAnalysisFetcher
+from ai_provider_tracker.adapters.gateways.openrouter_fetcher import OpenRouterFetcher
+from ai_provider_tracker.adapters.gateways.artificial_analysis_fetcher import ArtificialAnalysisFetcher
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')

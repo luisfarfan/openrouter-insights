@@ -1,6 +1,6 @@
-from openrouter_insights.domain.entities import LLMModel, Pricing, Benchmarks
-from openrouter_insights.adapters.persistence.sqlite_repository import SQLiteModelRepository
-from openrouter_insights import LLMIndexSync
+from ai_provider_tracker.domain.entities import LLMModel, Pricing, Benchmarks
+from ai_provider_tracker.adapters.persistence.sqlite_repository import SQLiteModelRepository
+from ai_provider_tracker import LLMIndexSync
 
 def test_llm_model_top_level_props():
     model = LLMModel(

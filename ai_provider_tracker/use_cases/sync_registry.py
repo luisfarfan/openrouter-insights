@@ -1,8 +1,8 @@
 import logging
 from typing import List, Dict, Any, Optional
-from openrouter_insights.domain.entities import LLMModel, Pricing, Benchmarks
-from openrouter_insights.domain.interfaces import IModelRepository, IFetcherGateway, IStaticExporter
-from openrouter_insights.domain.services.matching_engine import MatchingEngine
+from ai_provider_tracker.domain.entities import LLMModel, Pricing, Benchmarks
+from ai_provider_tracker.domain.interfaces import IModelRepository, IFetcherGateway, IStaticExporter
+from ai_provider_tracker.domain.services.matching_engine import MatchingEngine
 
 logger = logging.getLogger(__name__)
 

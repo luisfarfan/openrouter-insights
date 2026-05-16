@@ -1,8 +1,8 @@
 import pytest
 import asyncio
 from unittest.mock import MagicMock, AsyncMock, patch
-from openrouter_insights import LLMIndex, LLMIndexSync
-from openrouter_insights.domain.interfaces import IModelRepository
+from ai_provider_tracker import LLMIndex, LLMIndexSync
+from ai_provider_tracker.domain.interfaces import IModelRepository
 
 @pytest.fixture
 def mock_repo():
@@ -74,11 +74,11 @@ async def test_async_facade_sync_error():
 def test_sync_facade_call(mock_repo):
     client = LLMIndexSync(mode="sqlite", path=":memory:")
     # We patch the use case execution
-    with patch("openrouter_insights.use_cases.sync_registry.SyncRegistryUseCase.execute", AsyncMock(return_value=[])):
+    with patch("ai_provider_tracker.use_cases.sync_registry.SyncRegistryUseCase.execute", AsyncMock(return_value=[])):
         client.sync()
 
 @pytest.mark.asyncio
 async def test_async_facade_sync_call(mock_repo):
     client = LLMIndex(mode="sqlite", path=":memory:")
-    with patch("openrouter_insights.use_cases.sync_registry.SyncRegistryUseCase.execute", AsyncMock(return_value=[])):
+    with patch("ai_provider_tracker.use_cases.sync_registry.SyncRegistryUseCase.execute", AsyncMock(return_value=[])):
         await client.sync()

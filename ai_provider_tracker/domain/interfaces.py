@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional
-from openrouter_insights.domain.entities import LLMModel
+from ai_provider_tracker.domain.entities import LLMModel
 
 class IModelRepository(ABC):
     """Port: Interface for LLMModel persistence."""

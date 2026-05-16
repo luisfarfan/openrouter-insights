@@ -2,8 +2,8 @@ import os
 import pytest
 import tempfile
 import shutil
-from openrouter_insights.adapters.persistence.sqlite_repository import SQLiteModelRepository
-from openrouter_insights.domain.entities import LLMModel, Pricing, Benchmarks
+from ai_provider_tracker.adapters.persistence.sqlite_repository import SQLiteModelRepository
+from ai_provider_tracker.domain.entities import LLMModel, Pricing, Benchmarks
 
 @pytest.fixture
 def temp_dir():

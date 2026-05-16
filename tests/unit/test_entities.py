@@ -1,5 +1,5 @@
 import pytest
-from openrouter_insights.domain.entities import LLMModel, Pricing, Benchmarks
+from ai_provider_tracker.domain.entities import LLMModel, Pricing, Benchmarks
 
 def test_llm_model_best_for_coding():
     """Verify that a model with high coding score is tagged as 'coding'."""

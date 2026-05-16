@@ -3,15 +3,15 @@ import logging
 from datetime import datetime
 from pathlib import Path
 from typing import List
-from openrouter_insights.domain.entities import LLMModel
-from openrouter_insights.domain.interfaces import IStaticExporter
+from ai_provider_tracker.domain.entities import LLMModel
+from ai_provider_tracker.domain.interfaces import IStaticExporter
 
 logger = logging.getLogger(__name__)
 
 class JSONExporter(IStaticExporter):
     """Adapter: Export entities to a static JSON file (Git-Ops)."""
 
-    def __init__(self, output_path: str = "openrouter_insights.json"):
+    def __init__(self, output_path: str = "ai_provider_tracker.json"):
         self.output_path = Path(output_path)
 
     def export(self, models: List[LLMModel]) -> None:

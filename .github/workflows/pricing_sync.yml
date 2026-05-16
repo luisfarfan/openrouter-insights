@@ -1,0 +1,52 @@
+name: Pricing Catalog Sync
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-pricing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "poetry"
+
+      - name: Install dependencies
+        run: poetry install --no-interaction
+
+      - name: Sync pricing catalog
+        env:
+          FAL_KEY: ${{ secrets.FAL_KEY }}
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: poetry run python scripts/sync_pricing_catalog.py
+
+      - name: Commit pricing catalog
+        run: |
+          git config --global user.name "github-actions-bot"
+          git config --global user.email "actions@github.com"
+
+          if [[ -n $(git status --porcelain ai_provider_tracker/data/pricing_catalog.json) ]]; then
+            git add ai_provider_tracker/data/pricing_catalog.json
+            git commit -m "chore: sync pricing catalog [skip ci]"
+            git push origin main
+          else
+            echo "Pricing catalog unchanged. Skipping commit."
+          fi
