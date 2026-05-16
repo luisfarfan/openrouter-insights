@@ -1,6 +1,13 @@
 # CHANGELOG
 
 
+## v0.7.1 (2026-05-16)
+
+### Bug Fixes
+
+* fix: fetch fal pricing by endpoint id ([`729d9b5`](https://github.com/luisfarfan/openrouter-insights/commit/729d9b5a4c4b0cb8d4dab32917a4077ecea8c183))
+
+
 ## v0.7.0 (2026-05-16)
 
 ### Breaking
