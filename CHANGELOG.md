@@ -1,6 +1,13 @@
 # CHANGELOG
 
 
+## v0.7.2 (2026-05-16)
+
+### Bug Fixes
+
+* fix: throttle fal pricing sync ([`6f9e14e`](https://github.com/luisfarfan/openrouter-insights/commit/6f9e14ede0b4c17986874bdc3453b17ad6f59974))
+
+
 ## v0.7.1 (2026-05-16)
 
 ### Bug Fixes
