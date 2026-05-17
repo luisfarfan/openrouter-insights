@@ -46,6 +46,7 @@ jobs:
           if [[ -n $(git status --porcelain ai_provider_tracker/data/pricing_catalog.json) ]]; then
             git add ai_provider_tracker/data/pricing_catalog.json
             git commit -m "chore: sync pricing catalog [skip ci]"
+            git pull --rebase origin main
             git push origin main
           else
             echo "Pricing catalog unchanged. Skipping commit."
