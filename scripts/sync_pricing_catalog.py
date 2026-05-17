@@ -9,12 +9,14 @@ from typing import Any, Dict, List, Optional
 from urllib.parse import urlencode
 
 import aiohttp
+from aiohttp import ClientResponseError
 
 
 DEFAULT_OUTPUT = "ai_provider_tracker/data/pricing_catalog.json"
 FAL_PRICING_URL = "https://api.fal.ai/v1/models/pricing"
 FAL_MODELS_URL = "https://api.fal.ai/v1/models"
 OPENROUTER_MODELS_URL = "https://openrouter.ai/api/v1/models"
+FAL_PRICING_BATCH_SIZE = 50
 
 
 def decimal_string(value: Any) -> Optional[str]:
@@ -39,35 +41,71 @@ async def fetch_json(session: aiohttp.ClientSession, url: str, headers: Optional
     raise RuntimeError(f"Failed to fetch {url}")
 
 
-async def fetch_fal_prices(session: aiohttp.ClientSession) -> List[Dict[str, Any]]:
+async def fetch_fal_prices(
+    session: aiohttp.ClientSession,
+    batch_size: int = FAL_PRICING_BATCH_SIZE,
+) -> List[Dict[str, Any]]:
     key = os.getenv("FAL_KEY") or os.getenv("FAL_API_KEY")
     headers = {"Authorization": f"Key {key}"} if key else {}
     endpoint_ids = await fetch_fal_endpoint_ids(session, headers)
     prices: List[Dict[str, Any]] = []
 
-    for batch in chunked(endpoint_ids, 10):
-        url = f"{FAL_PRICING_URL}?{urlencode({'endpoint_id': ','.join(batch)})}"
-        data = await fetch_json(session, url, headers=headers)
-        raw_prices = data.get("prices", data if isinstance(data, list) else [])
-
-        for item in raw_prices:
-            unit_price = decimal_string(item.get("unit_price"))
-            model = item.get("endpoint_id")
-            metric_type = item.get("unit")
-            if not model or not metric_type or unit_price is None:
-                continue
-            prices.append(
-                {
-                    "provider": "fal",
-                    "model": model,
-                    "metric_type": str(metric_type),
-                    "unit_price": unit_price,
-                    "currency": item.get("currency") or "USD",
-                    "raw": item,
-                }
-            )
+    print(f"found {len(endpoint_ids)} fal endpoint ids", flush=True)
+    for index, batch in enumerate(chunked(endpoint_ids, batch_size), start=1):
+        raw_prices = await fetch_fal_pricing_batch(session, headers, batch)
+        prices.extend(normalize_fal_price_items(raw_prices))
+        print(
+            f"synced fal pricing batch {index}: {len(batch)} endpoints, {len(raw_prices)} prices",
+            flush=True,
+        )
         await asyncio.sleep(0.25)
 
+    return prices
+
+
+async def fetch_fal_pricing_batch(
+    session: aiohttp.ClientSession,
+    headers: Dict[str, str],
+    endpoint_ids: List[str],
+) -> List[Dict[str, Any]]:
+    url = f"{FAL_PRICING_URL}?{urlencode({'endpoint_id': ','.join(endpoint_ids)})}"
+    try:
+        data = await fetch_json(session, url, headers=headers)
+    except ClientResponseError as error:
+        if error.status not in {400, 404}:
+            raise
+        if len(endpoint_ids) == 1:
+            print(f"skipping fal endpoint without pricing: {endpoint_ids[0]}", flush=True)
+            return []
+
+        midpoint = len(endpoint_ids) // 2
+        left, right = await asyncio.gather(
+            fetch_fal_pricing_batch(session, headers, endpoint_ids[:midpoint]),
+            fetch_fal_pricing_batch(session, headers, endpoint_ids[midpoint:]),
+        )
+        return [*left, *right]
+
+    return data.get("prices", data if isinstance(data, list) else [])
+
+
+def normalize_fal_price_items(raw_prices: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    prices: List[Dict[str, Any]] = []
+    for item in raw_prices:
+        unit_price = decimal_string(item.get("unit_price"))
+        model = item.get("endpoint_id")
+        metric_type = item.get("unit")
+        if not model or not metric_type or unit_price is None:
+            continue
+        prices.append(
+            {
+                "provider": "fal",
+                "model": model,
+                "metric_type": str(metric_type),
+                "unit_price": unit_price,
+                "currency": item.get("currency") or "USD",
+                "raw": item,
+            }
+        )
     return prices
 
 
@@ -168,10 +206,13 @@ def write_if_changed(output_path: Path, catalog: Dict[str, Any]) -> bool:
     return True
 
 
-async def sync_pricing_catalog(output: str = DEFAULT_OUTPUT) -> bool:
+async def sync_pricing_catalog(
+    output: str = DEFAULT_OUTPUT,
+    fal_batch_size: int = FAL_PRICING_BATCH_SIZE,
+) -> bool:
     async with aiohttp.ClientSession() as session:
         fal_prices, openrouter_prices = await asyncio.gather(
-            fetch_fal_prices(session),
+            fetch_fal_prices(session, batch_size=fal_batch_size),
             fetch_openrouter_prices(session),
         )
 
