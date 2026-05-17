@@ -1,6 +1,13 @@
 # CHANGELOG
 
 
+## v0.7.4 (2026-05-17)
+
+### Bug Fixes
+
+* fix: respect fal pricing rate limits ([`452ef04`](https://github.com/luisfarfan/openrouter-insights/commit/452ef043ce6c8daefa9deea789a803a51e96777c))
+
+
 ## v0.7.3 (2026-05-17)
 
 ### Bug Fixes
