@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ai-provider-tracker"
-version = "0.7.4"
+version = "0.7.5"
 description = "Unified usage and cost tracking for AI providers such as FAL.AI and OpenRouter."
 authors = ["Luis Eduardo Farfan Melgar <lucho.farfan9@gmail.com>"]
 readme = "README.md"
@@ -50,6 +50,7 @@ ad_to_release = true
 commit_subject = "chore: release v{version}"
 commit_message = "chore: automated release version {version}"
 commit_author = "github-actions-bot <actions@github.com>"
+
 
 
 

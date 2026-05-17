@@ -1,6 +1,13 @@
 # CHANGELOG
 
 
+## v0.7.5 (2026-05-17)
+
+### Bug Fixes
+
+* fix: rebase before pricing catalog push ([`adb4641`](https://github.com/luisfarfan/openrouter-insights/commit/adb46416c70a34fb6fab4fdd53f019669eb1b50d))
+
+
 ## v0.7.4 (2026-05-17)
 
 ### Bug Fixes
