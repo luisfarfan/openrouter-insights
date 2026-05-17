@@ -29,11 +29,12 @@ def decimal_string(value: Any) -> Optional[str]:
 
 
 async def fetch_json(session: aiohttp.ClientSession, url: str, headers: Optional[Dict[str, str]] = None) -> Any:
-    for attempt in range(4):
+    for attempt in range(8):
         async with session.get(url, headers=headers or {}) as response:
-            if response.status == 429 and attempt < 3:
+            if response.status == 429 and attempt < 7:
                 retry_after = response.headers.get("Retry-After")
-                delay = float(retry_after) if retry_after else 2 ** attempt
+                delay = float(retry_after) if retry_after else min(60, max(5, 2**attempt))
+                print(f"rate limited fetching {url}; retrying in {delay:.1f}s", flush=True)
                 await asyncio.sleep(delay)
                 continue
             response.raise_for_status()
@@ -79,10 +80,9 @@ async def fetch_fal_pricing_batch(
             return []
 
         midpoint = len(endpoint_ids) // 2
-        left, right = await asyncio.gather(
-            fetch_fal_pricing_batch(session, headers, endpoint_ids[:midpoint]),
-            fetch_fal_pricing_batch(session, headers, endpoint_ids[midpoint:]),
-        )
+        left = await fetch_fal_pricing_batch(session, headers, endpoint_ids[:midpoint])
+        await asyncio.sleep(0.25)
+        right = await fetch_fal_pricing_batch(session, headers, endpoint_ids[midpoint:])
         return [*left, *right]
 
     return data.get("prices", data if isinstance(data, list) else [])
