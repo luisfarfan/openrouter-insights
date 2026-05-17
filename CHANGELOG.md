@@ -1,6 +1,17 @@
 # CHANGELOG
 
 
+## v0.7.3 (2026-05-17)
+
+### Bug Fixes
+
+* fix: handle fal endpoints without pricing ([`48791b8`](https://github.com/luisfarfan/openrouter-insights/commit/48791b8f9cc81696f29461fbb7a3cb09958c4136))
+
+### Chores
+
+* chore: automated daily registry update [skip ci] ([`d8e8115`](https://github.com/luisfarfan/openrouter-insights/commit/d8e811561c3c16e093c82e657d78d326f67762bf))
+
+
 ## v0.7.2 (2026-05-16)
 
 ### Bug Fixes
