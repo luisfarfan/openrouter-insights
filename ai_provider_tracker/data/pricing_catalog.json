@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-05-18T00:28:01.390926+00:00"
+    "generated_at": "2026-05-19T00:31:02.271386+00:00"
   },
   "prices": [
     {
@@ -9965,19 +9965,6 @@
     {
       "currency": "USD",
       "metric_type": "generations",
-      "model": "fal-ai/meshy/v6-preview/text-to-3d",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/meshy/v6-preview/text-to-3d",
-        "unit": "generations",
-        "unit_price": 0.8
-      },
-      "unit_price": "0.8"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "generations",
       "model": "fal-ai/meshy/v6/image-to-3d",
       "provider": "fal",
       "raw": {
@@ -10000,6 +9987,19 @@
         "unit_price": 0.4
       },
       "unit_price": "0.4"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "generations",
+      "model": "fal-ai/meshy/v6/text-to-3d",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/meshy/v6/text-to-3d",
+        "unit": "generations",
+        "unit_price": 0.8
+      },
+      "unit_price": "0.8"
     },
     {
       "currency": "USD",
@@ -16237,9 +16237,9 @@
         "currency": "USD",
         "endpoint_id": "imagineart/imagineart-1.5-preview/text-to-image",
         "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit_price": 3e-05
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.00003"
     },
     {
       "currency": "USD",
@@ -16903,6 +16903,19 @@
         "unit_price": 0.000575
       },
       "unit_price": "0.000575"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "compute seconds",
+      "model": "veed/subtitles",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "veed/subtitles",
+        "unit": "compute seconds",
+        "unit_price": 7e-05
+      },
+      "unit_price": "0.00007"
     },
     {
       "currency": "USD",
