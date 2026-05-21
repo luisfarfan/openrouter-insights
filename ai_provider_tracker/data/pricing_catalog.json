@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-05-20T00:36:04.213766+00:00"
+    "generated_at": "2026-05-21T00:32:02.812713+00:00"
   },
   "prices": [
     {
@@ -4978,6 +4978,19 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/heygen/avatar4/image-to-video",
+        "unit": "seconds",
+        "unit_price": 0.1
+      },
+      "unit_price": "0.1"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "fal-ai/heygen/avatar5/digital-twin",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/heygen/avatar5/digital-twin",
         "unit": "seconds",
         "unit_price": 0.1
       },
@@ -20676,13 +20689,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000025",
-          "input_cache_read": "0.00000006",
-          "prompt": "0.0000003"
+          "completion": "0.000000625",
+          "input_cache_read": "0.000000015",
+          "prompt": "0.000000075"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "3E-7"
+      "unit_price": "7.5E-8"
     },
     {
       "currency": "USD",
@@ -20691,13 +20704,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000025",
-          "input_cache_read": "0.00000006",
-          "prompt": "0.0000003"
+          "completion": "0.000000625",
+          "input_cache_read": "0.000000015",
+          "prompt": "0.000000075"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.0000025"
+      "unit_price": "6.25E-7"
     },
     {
       "currency": "USD",
@@ -23199,7 +23212,8 @@
       "raw": {
         "pricing": {
           "completion": "0.00003",
-          "prompt": "0.00001"
+          "prompt": "0.00001",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -23213,7 +23227,8 @@
       "raw": {
         "pricing": {
           "completion": "0.00003",
-          "prompt": "0.00001"
+          "prompt": "0.00001",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -23284,7 +23299,8 @@
         "pricing": {
           "completion": "0.000008",
           "input_cache_read": "0.0000005",
-          "prompt": "0.000002"
+          "prompt": "0.000002",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -23299,7 +23315,8 @@
         "pricing": {
           "completion": "0.000008",
           "input_cache_read": "0.0000005",
-          "prompt": "0.000002"
+          "prompt": "0.000002",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -23644,7 +23661,8 @@
         "pricing": {
           "completion": "0.00001",
           "input_cache_read": "0.000000125",
-          "prompt": "0.00000125"
+          "prompt": "0.00000125",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -23659,7 +23677,8 @@
         "pricing": {
           "completion": "0.00001",
           "input_cache_read": "0.000000125",
-          "prompt": "0.00000125"
+          "prompt": "0.00000125",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -23706,7 +23725,8 @@
         "pricing": {
           "completion": "0.00001",
           "input_cache_read": "0.000000125",
-          "prompt": "0.00000125"
+          "prompt": "0.00000125",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -23721,7 +23741,8 @@
         "pricing": {
           "completion": "0.00001",
           "input_cache_read": "0.000000125",
-          "prompt": "0.00000125"
+          "prompt": "0.00000125",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -23832,7 +23853,8 @@
         "pricing": {
           "completion": "0.0000004",
           "input_cache_read": "0.00000001",
-          "prompt": "0.00000005"
+          "prompt": "0.00000005",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -23847,7 +23869,8 @@
         "pricing": {
           "completion": "0.0000004",
           "input_cache_read": "0.00000001",
-          "prompt": "0.00000005"
+          "prompt": "0.00000005",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -23892,7 +23915,8 @@
         "pricing": {
           "completion": "0.00001",
           "input_cache_read": "0.00000013",
-          "prompt": "0.00000125"
+          "prompt": "0.00000125",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -23907,7 +23931,8 @@
         "pricing": {
           "completion": "0.00001",
           "input_cache_read": "0.00000013",
-          "prompt": "0.00000125"
+          "prompt": "0.00000125",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -23954,7 +23979,8 @@
         "pricing": {
           "completion": "0.00001",
           "input_cache_read": "0.000000125",
-          "prompt": "0.00000125"
+          "prompt": "0.00000125",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -23969,7 +23995,8 @@
         "pricing": {
           "completion": "0.00001",
           "input_cache_read": "0.000000125",
-          "prompt": "0.00000125"
+          "prompt": "0.00000125",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -24016,7 +24043,8 @@
         "pricing": {
           "completion": "0.000002",
           "input_cache_read": "0.00000003",
-          "prompt": "0.00000025"
+          "prompt": "0.00000025",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -24031,7 +24059,8 @@
         "pricing": {
           "completion": "0.000002",
           "input_cache_read": "0.00000003",
-          "prompt": "0.00000025"
+          "prompt": "0.00000025",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -24046,7 +24075,8 @@
         "pricing": {
           "completion": "0.000014",
           "input_cache_read": "0.000000175",
-          "prompt": "0.00000175"
+          "prompt": "0.00000175",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -24061,7 +24091,8 @@
         "pricing": {
           "completion": "0.000014",
           "input_cache_read": "0.000000175",
-          "prompt": "0.00000175"
+          "prompt": "0.00000175",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -24076,7 +24107,8 @@
         "pricing": {
           "completion": "0.000014",
           "input_cache_read": "0.000000175",
-          "prompt": "0.00000175"
+          "prompt": "0.00000175",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -24091,7 +24123,8 @@
         "pricing": {
           "completion": "0.000014",
           "input_cache_read": "0.000000175",
-          "prompt": "0.00000175"
+          "prompt": "0.00000175",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -24106,7 +24139,8 @@
         "pricing": {
           "completion": "0.000014",
           "input_cache_read": "0.000000175",
-          "prompt": "0.00000175"
+          "prompt": "0.00000175",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -24121,7 +24155,8 @@
         "pricing": {
           "completion": "0.000014",
           "input_cache_read": "0.000000175",
-          "prompt": "0.00000175"
+          "prompt": "0.00000175",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -24684,7 +24719,8 @@
         "pricing": {
           "completion": "0.00006",
           "input_cache_read": "0.0000075",
-          "prompt": "0.000015"
+          "prompt": "0.000015",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -24699,7 +24735,8 @@
         "pricing": {
           "completion": "0.00006",
           "input_cache_read": "0.0000075",
-          "prompt": "0.000015"
+          "prompt": "0.000015",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -24713,7 +24750,8 @@
       "raw": {
         "pricing": {
           "completion": "0.0006",
-          "prompt": "0.00015"
+          "prompt": "0.00015",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -24727,7 +24765,8 @@
       "raw": {
         "pricing": {
           "completion": "0.0006",
-          "prompt": "0.00015"
+          "prompt": "0.00015",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -24806,7 +24845,8 @@
         "pricing": {
           "completion": "0.0000044",
           "input_cache_read": "0.00000055",
-          "prompt": "0.0000011"
+          "prompt": "0.0000011",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -24821,7 +24861,8 @@
         "pricing": {
           "completion": "0.0000044",
           "input_cache_read": "0.00000055",
-          "prompt": "0.0000011"
+          "prompt": "0.0000011",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -24836,7 +24877,8 @@
         "pricing": {
           "completion": "0.0000044",
           "input_cache_read": "0.00000055",
-          "prompt": "0.0000011"
+          "prompt": "0.0000011",
+          "web_search": "0.01"
         },
         "source_metric": "prompt"
       },
@@ -24851,7 +24893,8 @@
         "pricing": {
           "completion": "0.0000044",
           "input_cache_read": "0.00000055",
-          "prompt": "0.0000011"
+          "prompt": "0.0000011",
+          "web_search": "0.01"
         },
         "source_metric": "completion"
       },
@@ -26459,7 +26502,6 @@
       "raw": {
         "pricing": {
           "completion": "0.00000234",
-          "input_cache_read": "0.000000195",
           "prompt": "0.00000039"
         },
         "source_metric": "prompt"
@@ -26474,7 +26516,6 @@
       "raw": {
         "pricing": {
           "completion": "0.00000234",
-          "input_cache_read": "0.000000195",
           "prompt": "0.00000039"
         },
         "source_metric": "completion"
@@ -26633,12 +26674,11 @@
       "raw": {
         "pricing": {
           "completion": "0.000001",
-          "input_cache_read": "0.00000005",
-          "prompt": "0.00000015"
+          "prompt": "0.000000149"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "1.5E-7"
+      "unit_price": "1.49E-7"
     },
     {
       "currency": "USD",
@@ -26648,8 +26688,7 @@
       "raw": {
         "pricing": {
           "completion": "0.000001",
-          "input_cache_read": "0.00000005",
-          "prompt": "0.00000015"
+          "prompt": "0.000000149"
         },
         "source_metric": "completion"
       },
@@ -27408,6 +27447,38 @@
         "source_metric": "completion"
       },
       "unit_price": "0.0000025"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "input_token",
+      "model": "x-ai/grok-build-0.1",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0.000002",
+          "input_cache_read": "0.0000002",
+          "prompt": "0.000001",
+          "web_search": "0.005"
+        },
+        "source_metric": "prompt"
+      },
+      "unit_price": "0.000001"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "output_token",
+      "model": "x-ai/grok-build-0.1",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0.000002",
+          "input_cache_read": "0.0000002",
+          "prompt": "0.000001",
+          "web_search": "0.005"
+        },
+        "source_metric": "completion"
+      },
+      "unit_price": "0.000002"
     },
     {
       "currency": "USD",
