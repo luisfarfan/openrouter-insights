@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-05-23T00:32:01.871248+00:00"
+    "generated_at": "2026-05-26T00:32:04.780899+00:00"
   },
   "prices": [
     {
@@ -90,19 +90,6 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "bria/bria_video_eraser/erase/keypoints",
-        "unit": "seconds",
-        "unit_price": 0.14
-      },
-      "unit_price": "0.14"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
-      "model": "bria/bria_video_eraser/erase/mask",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "bria/bria_video_eraser/erase/mask",
         "unit": "seconds",
         "unit_price": 0.14
       },
@@ -10069,19 +10056,6 @@
     {
       "currency": "USD",
       "metric_type": "generations",
-      "model": "fal-ai/meshy/v6/text-to-3d",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/meshy/v6/text-to-3d",
-        "unit": "generations",
-        "unit_price": 0.8
-      },
-      "unit_price": "0.8"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "generations",
       "model": "fal-ai/minimax-music",
       "provider": "fal",
       "raw": {
@@ -12616,19 +12590,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/qwen-image-edit-2509-lora-gallery/shirt-design",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/qwen-image-edit-2509-lora-gallery/shirt-design",
-        "unit": "megapixels",
-        "unit_price": 0.035
-      },
-      "unit_price": "0.035"
-    },
-    {
-      "currency": "USD",
       "metric_type": "steps",
       "model": "fal-ai/qwen-image-edit-2509-trainer",
       "provider": "fal",
@@ -12850,16 +12811,16 @@
     },
     {
       "currency": "USD",
-      "metric_type": "steps",
-      "model": "fal-ai/qwen-image-edit-plus-trainer",
+      "metric_type": "megapixels",
+      "model": "fal-ai/qwen-image-edit-plus-lora-gallery/shirt-design",
       "provider": "fal",
       "raw": {
         "currency": "USD",
-        "endpoint_id": "fal-ai/qwen-image-edit-plus-trainer",
-        "unit": "steps",
-        "unit_price": 0.004
+        "endpoint_id": "fal-ai/qwen-image-edit-plus-lora-gallery/shirt-design",
+        "unit": "megapixels",
+        "unit_price": 0.035
       },
-      "unit_price": "0.004"
+      "unit_price": "0.035"
     },
     {
       "currency": "USD",
@@ -17493,36 +17454,6 @@
     {
       "currency": "USD",
       "metric_type": "input_token",
-      "model": "alibaba/tongyi-deepresearch-30b-a3b",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00000045",
-          "input_cache_read": "0.00000009",
-          "prompt": "0.00000009"
-        },
-        "source_metric": "prompt"
-      },
-      "unit_price": "9E-8"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "output_token",
-      "model": "alibaba/tongyi-deepresearch-30b-a3b",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00000045",
-          "input_cache_read": "0.00000009",
-          "prompt": "0.00000009"
-        },
-        "source_metric": "completion"
-      },
-      "unit_price": "4.5E-7"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "input_token",
       "model": "allenai/olmo-3-32b-think",
       "provider": "openrouter",
       "raw": {
@@ -18869,12 +18800,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000089",
-          "prompt": "0.00000032"
+          "completion": "0.0000009144",
+          "prompt": "0.0000002288"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "3.2E-7"
+      "unit_price": "2.288E-7"
     },
     {
       "currency": "USD",
@@ -18883,12 +18814,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000089",
-          "prompt": "0.00000032"
+          "completion": "0.0000009144",
+          "prompt": "0.0000002288"
         },
         "source_metric": "completion"
       },
-      "unit_price": "8.9E-7"
+      "unit_price": "9.144E-7"
     },
     {
       "currency": "USD",
