@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-05-26T00:32:04.780899+00:00"
+    "generated_at": "2026-05-27T00:34:02.237637+00:00"
   },
   "prices": [
     {
@@ -90,6 +90,19 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "bria/bria_video_eraser/erase/keypoints",
+        "unit": "seconds",
+        "unit_price": 0.14
+      },
+      "unit_price": "0.14"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "bria/bria_video_eraser/erase/mask",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "bria/bria_video_eraser/erase/mask",
         "unit": "seconds",
         "unit_price": 0.14
       },
@@ -722,19 +735,6 @@
     {
       "currency": "USD",
       "metric_type": "seconds",
-      "model": "fal-ai/ai-avatar",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/ai-avatar",
-        "unit": "seconds",
-        "unit_price": 0.2
-      },
-      "unit_price": "0.2"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
       "model": "fal-ai/ai-avatar/multi",
       "provider": "fal",
       "raw": {
@@ -792,58 +792,6 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/amt-interpolation/frame-interpolation",
-        "unit": "compute seconds",
-        "unit_price": 0.00111
-      },
-      "unit_price": "0.00111"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/animatediff-sparsectrl-lcm",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/animatediff-sparsectrl-lcm",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
-      },
-      "unit_price": "0.00125"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/arbiter/image",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/arbiter/image",
-        "unit": "compute seconds",
-        "unit_price": 0.00111
-      },
-      "unit_price": "0.00111"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/arbiter/image/image",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/arbiter/image/image",
-        "unit": "compute seconds",
-        "unit_price": 0.00111
-      },
-      "unit_price": "0.00111"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/arbiter/image/text",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/arbiter/image/text",
         "unit": "compute seconds",
         "unit_price": 0.00111
       },
@@ -1423,19 +1371,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "images",
-      "model": "fal-ai/chain-of-zoom",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/chain-of-zoom",
-        "unit": "images",
-        "unit_price": 0.025
-      },
-      "unit_price": "0.025"
-    },
-    {
-      "currency": "USD",
       "metric_type": "minutes",
       "model": "fal-ai/chatterbox/speech-to-speech",
       "provider": "fal",
@@ -1628,19 +1563,6 @@
         "unit_price": 0.002
       },
       "unit_price": "0.002"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/controlnext",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/controlnext",
-        "unit": "compute seconds",
-        "unit_price": 0.00111
-      },
-      "unit_price": "0.00111"
     },
     {
       "currency": "USD",
@@ -1878,19 +1800,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/dreamo",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/dreamo",
-        "unit": "megapixels",
-        "unit_price": 0.05
-      },
-      "unit_price": "0.05"
-    },
-    {
-      "currency": "USD",
       "metric_type": "images",
       "model": "fal-ai/dreamomni2/edit",
       "provider": "fal",
@@ -1914,19 +1823,6 @@
         "unit_price": 0.00125
       },
       "unit_price": "0.00125"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "minute of video ",
-      "model": "fal-ai/dubbing",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/dubbing",
-        "unit": "minute of video ",
-        "unit_price": 1
-      },
-      "unit_price": "1"
     },
     {
       "currency": "USD",
@@ -2151,19 +2047,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/era-3d",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/era-3d",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
-      },
-      "unit_price": "0.00125"
-    },
-    {
-      "currency": "USD",
       "metric_type": "megapixels",
       "model": "fal-ai/ernie-image",
       "provider": "fal",
@@ -2255,32 +2138,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/f-lite/standard",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/f-lite/standard",
-        "unit": "megapixels",
-        "unit_price": 0.025
-      },
-      "unit_price": "0.025"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/f-lite/texture",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/f-lite/texture",
-        "unit": "megapixels",
-        "unit_price": 0.025
-      },
-      "unit_price": "0.025"
-    },
-    {
-      "currency": "USD",
       "metric_type": "1000 characters",
       "model": "fal-ai/f5-tts",
       "provider": "fal",
@@ -2291,19 +2148,6 @@
         "unit_price": 0.05
       },
       "unit_price": "0.05"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/face-to-sticker",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/face-to-sticker",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
-      },
-      "unit_price": "0.00125"
     },
     {
       "currency": "USD",
@@ -3205,32 +3049,6 @@
     {
       "currency": "USD",
       "metric_type": "units",
-      "model": "fal-ai/flux-2-klein-4b-base-trainer",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/flux-2-klein-4b-base-trainer",
-        "unit": "units",
-        "unit_price": 0.005
-      },
-      "unit_price": "0.005"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "units",
-      "model": "fal-ai/flux-2-klein-4b-base-trainer/edit",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/flux-2-klein-4b-base-trainer/edit",
-        "unit": "units",
-        "unit_price": 0.0046
-      },
-      "unit_price": "0.0046"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "units",
       "model": "fal-ai/flux-2-klein-9b-base-trainer",
       "provider": "fal",
       "raw": {
@@ -3881,19 +3699,6 @@
     {
       "currency": "USD",
       "metric_type": "megapixels",
-      "model": "fal-ai/flux-differential-diffusion",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/flux-differential-diffusion",
-        "unit": "megapixels",
-        "unit_price": 0.05
-      },
-      "unit_price": "0.05"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
       "model": "fal-ai/flux-general",
       "provider": "fal",
       "raw": {
@@ -4072,19 +3877,6 @@
         "unit_price": 0.035
       },
       "unit_price": "0.035"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "steps",
-      "model": "fal-ai/flux-krea-trainer",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/flux-krea-trainer",
-        "unit": "steps",
-        "unit_price": 0.02
-      },
-      "unit_price": "0.02"
     },
     {
       "currency": "USD",
@@ -4751,32 +4543,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/genfocus",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/genfocus",
-        "unit": "megapixels",
-        "unit_price": 0.025
-      },
-      "unit_price": "0.025"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/genfocus/all-in-focus",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/genfocus/all-in-focus",
-        "unit": "megapixels",
-        "unit_price": 0.025
-      },
-      "unit_price": "0.025"
-    },
-    {
-      "currency": "USD",
       "metric_type": "images",
       "model": "fal-ai/ghiblify",
       "provider": "fal",
@@ -4813,19 +4579,6 @@
         "unit_price": 0.05
       },
       "unit_price": "0.05"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "units",
-      "model": "fal-ai/goal-force",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/goal-force",
-        "unit": "units",
-        "unit_price": 0.1
-      },
-      "unit_price": "0.1"
     },
     {
       "currency": "USD",
@@ -5050,19 +4803,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "images",
-      "model": "fal-ai/hidream-e1-1",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/hidream-e1-1",
-        "unit": "images",
-        "unit_price": 0.06
-      },
-      "unit_price": "0.06"
-    },
-    {
-      "currency": "USD",
       "metric_type": "megapixels",
       "model": "fal-ai/hidream-i1-dev",
       "provider": "fal",
@@ -5245,32 +4985,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/hunyuan-avatar",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/hunyuan-avatar",
-        "unit": "videos",
-        "unit_price": 0.4
-      },
-      "unit_price": "0.4"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/hunyuan-custom",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/hunyuan-custom",
-        "unit": "videos",
-        "unit_price": 0.8
-      },
-      "unit_price": "0.8"
-    },
-    {
-      "currency": "USD",
       "metric_type": "megapixels",
       "model": "fal-ai/hunyuan-image/v2.1/text-to-image",
       "provider": "fal",
@@ -5349,32 +5063,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "generations",
-      "model": "fal-ai/hunyuan-part",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/hunyuan-part",
-        "unit": "generations",
-        "unit_price": 0.04
-      },
-      "unit_price": "0.04"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
-      "model": "fal-ai/hunyuan-portrait",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/hunyuan-portrait",
-        "unit": "seconds",
-        "unit_price": 0.08
-      },
-      "unit_price": "0.08"
-    },
-    {
-      "currency": "USD",
       "metric_type": "videos",
       "model": "fal-ai/hunyuan-video",
       "provider": "fal",
@@ -5424,32 +5112,6 @@
         "unit_price": 0.3
       },
       "unit_price": "0.3"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "steps",
-      "model": "fal-ai/hunyuan-video-lora-training",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/hunyuan-video-lora-training",
-        "unit": "steps",
-        "unit_price": 0.005
-      },
-      "unit_price": "0.005"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/hunyuan-video-lora/video-to-video",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/hunyuan-video-lora/video-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
-      },
-      "unit_price": "0.00125"
     },
     {
       "currency": "USD",
@@ -8131,45 +7793,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "seconds",
-      "model": "fal-ai/lava-sr",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/lava-sr",
-        "unit": "seconds",
-        "unit_price": 0.00015
-      },
-      "unit_price": "0.00015"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/layer-diffusion",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/layer-diffusion",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
-      },
-      "unit_price": "0.00125"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/lcm",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/lcm",
-        "unit": "compute seconds",
-        "unit_price": 0.000575
-      },
-      "unit_price": "0.000575"
-    },
-    {
-      "currency": "USD",
       "metric_type": "compute seconds",
       "model": "fal-ai/lcm-sd15-i2i",
       "provider": "fal",
@@ -8206,19 +7829,6 @@
         "unit_price": 0.1
       },
       "unit_price": "0.1"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/lightning-models",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/lightning-models",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
-      },
-      "unit_price": "0.00125"
     },
     {
       "currency": "USD",
@@ -8310,32 +7920,6 @@
         "unit_price": 0.15
       },
       "unit_price": "0.15"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "units",
-      "model": "fal-ai/longcat-multi-avatar/image-audio-to-video",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/longcat-multi-avatar/image-audio-to-video",
-        "unit": "units",
-        "unit_price": 0.15
-      },
-      "unit_price": "0.15"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "units",
-      "model": "fal-ai/longcat-multi-avatar/image-audio-to-video/multi-speaker",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/longcat-multi-avatar/image-audio-to-video/multi-speaker",
-        "unit": "units",
-        "unit_price": 0.1
-      },
-      "unit_price": "0.1"
     },
     {
       "currency": "USD",
@@ -9250,58 +8834,6 @@
     {
       "currency": "USD",
       "metric_type": "videos",
-      "model": "fal-ai/ltx-video-13b-dev",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/ltx-video-13b-dev",
-        "unit": "videos",
-        "unit_price": 0.2
-      },
-      "unit_price": "0.2"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/ltx-video-13b-dev/extend",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/ltx-video-13b-dev/extend",
-        "unit": "videos",
-        "unit_price": 0.2
-      },
-      "unit_price": "0.2"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/ltx-video-13b-dev/image-to-video",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/ltx-video-13b-dev/image-to-video",
-        "unit": "videos",
-        "unit_price": 0.2
-      },
-      "unit_price": "0.2"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/ltx-video-13b-dev/multiconditioning",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/ltx-video-13b-dev/multiconditioning",
-        "unit": "videos",
-        "unit_price": 0.2
-      },
-      "unit_price": "0.2"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "videos",
       "model": "fal-ai/ltx-video-13b-distilled",
       "provider": "fal",
       "raw": {
@@ -9327,13 +8859,13 @@
     },
     {
       "currency": "USD",
-      "metric_type": "videos",
+      "metric_type": "units",
       "model": "fal-ai/ltx-video-13b-distilled/image-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/ltx-video-13b-distilled/image-to-video",
-        "unit": "videos",
+        "unit": "units",
         "unit_price": 0.04
       },
       "unit_price": "0.04"
@@ -9350,45 +8882,6 @@
         "unit_price": 0.04
       },
       "unit_price": "0.04"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/ltx-video-lora/image-to-video",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/ltx-video-lora/image-to-video",
-        "unit": "videos",
-        "unit_price": 0.2
-      },
-      "unit_price": "0.2"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/ltx-video-lora/multiconditioning",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/ltx-video-lora/multiconditioning",
-        "unit": "videos",
-        "unit_price": 0.2
-      },
-      "unit_price": "0.2"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "steps",
-      "model": "fal-ai/ltx-video-trainer",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/ltx-video-trainer",
-        "unit": "steps",
-        "unit_price": 0.002
-      },
-      "unit_price": "0.002"
     },
     {
       "currency": "USD",
@@ -9441,19 +8934,6 @@
         "unit_price": 0.02
       },
       "unit_price": "0.02"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "steps",
-      "model": "fal-ai/ltx2-video-trainer",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/ltx2-video-trainer",
-        "unit": "steps",
-        "unit_price": 0.0048
-      },
-      "unit_price": "0.0048"
     },
     {
       "currency": "USD",
@@ -9532,19 +9012,6 @@
         "unit_price": 0.02
       },
       "unit_price": "0.02"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/lucidflux",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/lucidflux",
-        "unit": "megapixels",
-        "unit_price": 0.05
-      },
-      "unit_price": "0.05"
     },
     {
       "currency": "USD",
@@ -9743,32 +9210,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "1000 characters",
-      "model": "fal-ai/lux-tts",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/lux-tts",
-        "unit": "1000 characters",
-        "unit_price": 0.0014
-      },
-      "unit_price": "0.0014"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "5 seconds",
-      "model": "fal-ai/lyra-2/zoom",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/lyra-2/zoom",
-        "unit": "5 seconds",
-        "unit_price": 0.1
-      },
-      "unit_price": "0.1"
-    },
-    {
-      "currency": "USD",
       "metric_type": "30 seconds",
       "model": "fal-ai/lyria2",
       "provider": "fal",
@@ -9809,19 +9250,6 @@
     {
       "currency": "USD",
       "metric_type": "seconds",
-      "model": "fal-ai/magi",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/magi",
-        "unit": "seconds",
-        "unit_price": 0.2
-      },
-      "unit_price": "0.2"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
       "model": "fal-ai/magi-distilled",
       "provider": "fal",
       "raw": {
@@ -9857,32 +9285,6 @@
         "unit_price": 0.08
       },
       "unit_price": "0.08"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
-      "model": "fal-ai/magi/extend-video",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/magi/extend-video",
-        "unit": "seconds",
-        "unit_price": 0.2
-      },
-      "unit_price": "0.2"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
-      "model": "fal-ai/magi/image-to-video",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/magi/image-to-video",
-        "unit": "seconds",
-        "unit_price": 0.2
-      },
-      "unit_price": "0.2"
     },
     {
       "currency": "USD",
@@ -10052,6 +9454,19 @@
         "unit_price": 0.4
       },
       "unit_price": "0.4"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "generations",
+      "model": "fal-ai/meshy/v6/text-to-3d",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/meshy/v6/text-to-3d",
+        "unit": "generations",
+        "unit_price": 0.8
+      },
+      "unit_price": "0.8"
     },
     {
       "currency": "USD",
@@ -10510,19 +9925,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/mix-dehaze-net",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/mix-dehaze-net",
-        "unit": "megapixels",
-        "unit_price": 0.025
-      },
-      "unit_price": "0.025"
-    },
-    {
-      "currency": "USD",
       "metric_type": "seconds",
       "model": "fal-ai/mmaudio-v2",
       "provider": "fal",
@@ -10546,19 +9948,6 @@
         "unit_price": 0.001
       },
       "unit_price": "0.001"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/mochi-v1",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/mochi-v1",
-        "unit": "videos",
-        "unit_price": 0.4
-      },
-      "unit_price": "0.4"
     },
     {
       "currency": "USD",
@@ -10731,19 +10120,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "units",
-      "model": "fal-ai/multishot-master",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/multishot-master",
-        "unit": "units",
-        "unit_price": 0.1
-      },
-      "unit_price": "0.1"
-    },
-    {
-      "currency": "USD",
       "metric_type": "compute seconds",
       "model": "fal-ai/musetalk",
       "provider": "fal",
@@ -10871,19 +10247,6 @@
         "unit_price": 0.005
       },
       "unit_price": "0.005"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
-      "model": "fal-ai/nova-sr",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/nova-sr",
-        "unit": "seconds",
-        "unit_price": 0.0001
-      },
-      "unit_price": "0.0001"
     },
     {
       "currency": "USD",
@@ -11017,19 +10380,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "requests",
-      "model": "fal-ai/omnipart",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/omnipart",
-        "unit": "requests",
-        "unit_price": 0.2
-      },
-      "unit_price": "0.2"
-    },
-    {
-      "currency": "USD",
       "metric_type": "seconds",
       "model": "fal-ai/one-to-all-animation/1.3b",
       "provider": "fal",
@@ -11053,19 +10403,6 @@
         "unit_price": 0.06
       },
       "unit_price": "0.06"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/onereward",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/onereward",
-        "unit": "megapixels",
-        "unit_price": 0.035
-      },
-      "unit_price": "0.035"
     },
     {
       "currency": "USD",
@@ -11174,32 +10511,6 @@
     {
       "currency": "USD",
       "metric_type": "units",
-      "model": "fal-ai/personaplex",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/personaplex",
-        "unit": "units",
-        "unit_price": 0.001
-      },
-      "unit_price": "0.001"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "units",
-      "model": "fal-ai/personaplex/realtime",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/personaplex/realtime",
-        "unit": "units",
-        "unit_price": 0.001
-      },
-      "unit_price": "0.001"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "units",
       "model": "fal-ai/phota",
       "provider": "fal",
       "raw": {
@@ -11261,32 +10572,6 @@
         "unit_price": 0.00125
       },
       "unit_price": "0.00125"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/physic-edit",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/physic-edit",
-        "unit": "megapixels",
-        "unit_price": 0.1
-      },
-      "unit_price": "0.1"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/piflow",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/piflow",
-        "unit": "megapixels",
-        "unit_price": 0.025
-      },
-      "unit_price": "0.025"
     },
     {
       "currency": "USD",
@@ -12018,19 +11303,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "images",
-      "model": "fal-ai/plushify",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/plushify",
-        "unit": "images",
-        "unit_price": 0.1
-      },
-      "unit_price": "0.1"
-    },
-    {
-      "currency": "USD",
       "metric_type": "megapixels",
       "model": "fal-ai/pony-v7",
       "provider": "fal",
@@ -12213,19 +11485,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "generations",
-      "model": "fal-ai/pshuman",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/pshuman",
-        "unit": "generations",
-        "unit_price": 0.75
-      },
-      "unit_price": "0.75"
-    },
-    {
-      "currency": "USD",
       "metric_type": "compute seconds",
       "model": "fal-ai/pulid",
       "provider": "fal",
@@ -12236,19 +11495,6 @@
         "unit_price": 0.00111
       },
       "unit_price": "0.00111"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "1000 tokens",
-      "model": "fal-ai/qwen-3-guard",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/qwen-3-guard",
-        "unit": "1000 tokens",
-        "unit_price": 0.002
-      },
-      "unit_price": "0.002"
     },
     {
       "currency": "USD",
@@ -12405,19 +11651,6 @@
         "unit_price": 0.0015
       },
       "unit_price": "0.0015"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "steps",
-      "model": "fal-ai/qwen-image-2512-trainer-v2",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/qwen-image-2512-trainer-v2",
-        "unit": "steps",
-        "unit_price": 0.00095
-      },
-      "unit_price": "0.00095"
     },
     {
       "currency": "USD",
@@ -12590,6 +11823,19 @@
     },
     {
       "currency": "USD",
+      "metric_type": "megapixels",
+      "model": "fal-ai/qwen-image-edit-2509-lora-gallery/shirt-design",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/qwen-image-edit-2509-lora-gallery/shirt-design",
+        "unit": "megapixels",
+        "unit_price": 0.035
+      },
+      "unit_price": "0.035"
+    },
+    {
+      "currency": "USD",
       "metric_type": "steps",
       "model": "fal-ai/qwen-image-edit-2509-trainer",
       "provider": "fal",
@@ -12626,19 +11872,6 @@
         "unit_price": 0.035
       },
       "unit_price": "0.035"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "steps",
-      "model": "fal-ai/qwen-image-edit-2511-trainer",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/qwen-image-edit-2511-trainer",
-        "unit": "steps",
-        "unit_price": 0.004
-      },
-      "unit_price": "0.004"
     },
     {
       "currency": "USD",
@@ -12824,19 +12057,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "steps",
-      "model": "fal-ai/qwen-image-edit-trainer",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/qwen-image-edit-trainer",
-        "unit": "steps",
-        "unit_price": 0.004
-      },
-      "unit_price": "0.004"
-    },
-    {
-      "currency": "USD",
       "metric_type": "megapixels",
       "model": "fal-ai/qwen-image-edit/image-to-image",
       "provider": "fal",
@@ -12876,19 +12096,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "units",
-      "model": "fal-ai/qwen-image-layered-trainer",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/qwen-image-layered-trainer",
-        "unit": "units",
-        "unit_price": 0.00425
-      },
-      "unit_price": "0.00425"
-    },
-    {
-      "currency": "USD",
       "metric_type": "images",
       "model": "fal-ai/qwen-image-layered/lora",
       "provider": "fal",
@@ -12925,32 +12132,6 @@
         "unit_price": 0.075
       },
       "unit_price": "0.075"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "steps",
-      "model": "fal-ai/qwen-image-trainer",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/qwen-image-trainer",
-        "unit": "steps",
-        "unit_price": 0.002
-      },
-      "unit_price": "0.002"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "steps",
-      "model": "fal-ai/qwen-image-trainer-v2",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/qwen-image-trainer-v2",
-        "unit": "steps",
-        "unit_price": 0.002
-      },
-      "unit_price": "0.002"
     },
     {
       "currency": "USD",
@@ -13578,19 +12759,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/sana-video",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/sana-video",
-        "unit": "videos",
-        "unit_price": 0.15
-      },
-      "unit_price": "0.15"
-    },
-    {
-      "currency": "USD",
       "metric_type": "megapixels",
       "model": "fal-ai/sana/sprint",
       "provider": "fal",
@@ -13627,32 +12795,6 @@
         "unit_price": 0.01
       },
       "unit_price": "0.01"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
-      "model": "fal-ai/scail",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/scail",
-        "unit": "seconds",
-        "unit_price": 0.08
-      },
-      "unit_price": "0.08"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/sd15-depth-controlnet",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/sd15-depth-controlnet",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
-      },
-      "unit_price": "0.00125"
     },
     {
       "currency": "USD",
@@ -13744,19 +12886,6 @@
         "unit_price": 1e-05
       },
       "unit_price": "0.00001"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/skyreels-i2v",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/skyreels-i2v",
-        "unit": "videos",
-        "unit_price": 0.3
-      },
-      "unit_price": "0.3"
     },
     {
       "currency": "USD",
@@ -13968,19 +13097,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "seconds",
-      "model": "fal-ai/stable-avatar",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/stable-avatar",
-        "unit": "seconds",
-        "unit_price": 0.1
-      },
-      "unit_price": "0.1"
-    },
-    {
-      "currency": "USD",
       "metric_type": "compute seconds",
       "model": "fal-ai/stable-cascade",
       "provider": "fal",
@@ -14086,32 +13202,6 @@
     {
       "currency": "USD",
       "metric_type": "megapixels",
-      "model": "fal-ai/star-vector",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/star-vector",
-        "unit": "megapixels",
-        "unit_price": 0.1
-      },
-      "unit_price": "0.1"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/step1x-edit",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/step1x-edit",
-        "unit": "megapixels",
-        "unit_price": 0.03
-      },
-      "unit_price": "0.03"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
       "model": "fal-ai/stepx-edit2",
       "provider": "fal",
       "raw": {
@@ -14121,45 +13211,6 @@
         "unit_price": 0.2
       },
       "unit_price": "0.2"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/swin2sr",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/swin2sr",
-        "unit": "megapixels",
-        "unit_price": 0.025
-      },
-      "unit_price": "0.025"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/switti",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/switti",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
-      },
-      "unit_price": "0.00125"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/switti/512",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/switti/512",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
-      },
-      "unit_price": "0.00125"
     },
     {
       "currency": "USD",
@@ -14267,19 +13318,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/thera",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/thera",
-        "unit": "megapixels",
-        "unit_price": 0.0021
-      },
-      "unit_price": "0.0021"
-    },
-    {
-      "currency": "USD",
       "metric_type": "seconds",
       "model": "fal-ai/thinksound",
       "provider": "fal",
@@ -14332,19 +13370,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/transpixar",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/transpixar",
-        "unit": "videos",
-        "unit_price": 0.4
-      },
-      "unit_price": "0.4"
-    },
-    {
-      "currency": "USD",
       "metric_type": "units",
       "model": "fal-ai/trellis-2",
       "provider": "fal",
@@ -14394,19 +13419,6 @@
         "unit_price": 0.0024
       },
       "unit_price": "0.0024"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "generations",
-      "model": "fal-ai/ultrashape",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/ultrashape",
-        "unit": "generations",
-        "unit_price": 0.15
-      },
-      "unit_price": "0.15"
     },
     {
       "currency": "USD",
@@ -14745,19 +13757,6 @@
         "unit_price": 0.04
       },
       "unit_price": "0.04"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/video-as-prompt",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/video-as-prompt",
-        "unit": "videos",
-        "unit_price": 1
-      },
-      "unit_price": "1"
     },
     {
       "currency": "USD",
@@ -15177,32 +14176,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "seconds",
-      "model": "fal-ai/wan-alpha",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/wan-alpha",
-        "unit": "seconds",
-        "unit_price": 0.04
-      },
-      "unit_price": "0.04"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/wan-ati",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/wan-ati",
-        "unit": "videos",
-        "unit_price": 0.15
-      },
-      "unit_price": "0.15"
-    },
-    {
-      "currency": "USD",
       "metric_type": "videos",
       "model": "fal-ai/wan-effects",
       "provider": "fal",
@@ -15226,19 +14199,6 @@
         "unit_price": 0.4
       },
       "unit_price": "0.4"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
-      "model": "fal-ai/wan-fun-control",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/wan-fun-control",
-        "unit": "seconds",
-        "unit_price": 0.1
-      },
-      "unit_price": "0.1"
     },
     {
       "currency": "USD",
@@ -15278,19 +14238,6 @@
         "unit_price": 0.00017
       },
       "unit_price": "0.00017"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/wan-move",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/wan-move",
-        "unit": "videos",
-        "unit_price": 0.2
-      },
-      "unit_price": "0.2"
     },
     {
       "currency": "USD",
@@ -15347,32 +14294,6 @@
     {
       "currency": "USD",
       "metric_type": "steps",
-      "model": "fal-ai/wan-trainer",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/wan-trainer",
-        "unit": "steps",
-        "unit_price": 0.005
-      },
-      "unit_price": "0.005"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "steps",
-      "model": "fal-ai/wan-trainer/flf2v-720p",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/wan-trainer/flf2v-720p",
-        "unit": "steps",
-        "unit_price": 0.005
-      },
-      "unit_price": "0.005"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "steps",
       "model": "fal-ai/wan-trainer/i2v-720p",
       "provider": "fal",
       "raw": {
@@ -15408,19 +14329,6 @@
         "unit_price": 0.005
       },
       "unit_price": "0.005"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "videos",
-      "model": "fal-ai/wan-vace",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/wan-vace",
-        "unit": "videos",
-        "unit_price": 0.2
-      },
-      "unit_price": "0.2"
     },
     {
       "currency": "USD",
@@ -15525,19 +14433,6 @@
         "unit_price": 0.1
       },
       "unit_price": "0.1"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
-      "model": "fal-ai/wan-vision-enhancer",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/wan-vision-enhancer",
-        "unit": "seconds",
-        "unit_price": 0.06
-      },
-      "unit_price": "0.06"
     },
     {
       "currency": "USD",
@@ -16045,32 +14940,6 @@
         "unit_price": 0.001
       },
       "unit_price": "0.001"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
-      "model": "fal-ai/yue",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/yue",
-        "unit": "seconds",
-        "unit_price": 0.05
-      },
-      "unit_price": "0.05"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "steps",
-      "model": "fal-ai/z-image-base-trainer",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/z-image-base-trainer",
-        "unit": "steps",
-        "unit_price": 0.00085
-      },
-      "unit_price": "0.00085"
     },
     {
       "currency": "USD",
@@ -18202,34 +17071,6 @@
         "source_metric": "completion"
       },
       "unit_price": "8.5E-7"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "input_token",
-      "model": "arcee-ai/trinity-large-thinking:free",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0",
-          "prompt": "0"
-        },
-        "source_metric": "prompt"
-      },
-      "unit_price": "0"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "output_token",
-      "model": "arcee-ai/trinity-large-thinking:free",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0",
-          "prompt": "0"
-        },
-        "source_metric": "completion"
-      },
-      "unit_price": "0"
     },
     {
       "currency": "USD",
@@ -25509,7 +24350,6 @@
       "raw": {
         "pricing": {
           "completion": "0.00000078",
-          "input_cache_write": "0.000000325",
           "prompt": "0.00000026"
         },
         "source_metric": "prompt"
@@ -25524,7 +24364,6 @@
       "raw": {
         "pricing": {
           "completion": "0.00000078",
-          "input_cache_write": "0.000000325",
           "prompt": "0.00000026"
         },
         "source_metric": "completion"
@@ -26513,7 +25352,6 @@
       "raw": {
         "pricing": {
           "completion": "0.00000026",
-          "input_cache_write": "0.00000008125",
           "prompt": "0.000000065"
         },
         "source_metric": "prompt"
@@ -26528,7 +25366,6 @@
       "raw": {
         "pricing": {
           "completion": "0.00000026",
-          "input_cache_write": "0.00000008125",
           "prompt": "0.000000065"
         },
         "source_metric": "completion"
@@ -26543,7 +25380,6 @@
       "raw": {
         "pricing": {
           "completion": "0.00000156",
-          "input_cache_write": "0.000000325",
           "prompt": "0.00000026"
         },
         "source_metric": "prompt"
@@ -26558,7 +25394,6 @@
       "raw": {
         "pricing": {
           "completion": "0.00000156",
-          "input_cache_write": "0.000000325",
           "prompt": "0.00000026"
         },
         "source_metric": "completion"
@@ -26573,6 +25408,7 @@
       "raw": {
         "pricing": {
           "completion": "0.0000018",
+          "input_cache_write": "0.000000375",
           "prompt": "0.0000003"
         },
         "source_metric": "prompt"
@@ -26587,6 +25423,7 @@
       "raw": {
         "pricing": {
           "completion": "0.0000018",
+          "input_cache_write": "0.000000375",
           "prompt": "0.0000003"
         },
         "source_metric": "completion"
@@ -26600,7 +25437,8 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000032",
+          "completion": "0.000002",
+          "input_cache_read": "0.00000015",
           "prompt": "0.0000003"
         },
         "source_metric": "prompt"
@@ -26614,12 +25452,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000032",
+          "completion": "0.000002",
+          "input_cache_read": "0.00000015",
           "prompt": "0.0000003"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.0000032"
+      "unit_price": "0.000002"
     },
     {
       "currency": "USD",
@@ -26629,6 +25468,7 @@
       "raw": {
         "pricing": {
           "completion": "0.000001",
+          "input_cache_read": "0.00000005",
           "prompt": "0.00000015"
         },
         "source_metric": "prompt"
@@ -26643,6 +25483,7 @@
       "raw": {
         "pricing": {
           "completion": "0.000001",
+          "input_cache_read": "0.00000005",
           "prompt": "0.00000015"
         },
         "source_metric": "completion"
@@ -26746,13 +25587,14 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000075",
-          "input_cache_write": "0.000003125",
-          "prompt": "0.0000025"
+          "completion": "0.00000375",
+          "input_cache_read": "0.00000025",
+          "input_cache_write": "0.0000015625",
+          "prompt": "0.00000125"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "0.0000025"
+      "unit_price": "0.00000125"
     },
     {
       "currency": "USD",
@@ -26761,13 +25603,14 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000075",
-          "input_cache_write": "0.000003125",
-          "prompt": "0.0000025"
+          "completion": "0.00000375",
+          "input_cache_read": "0.00000025",
+          "input_cache_write": "0.0000015625",
+          "prompt": "0.00000125"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.0000075"
+      "unit_price": "0.00000375"
     },
     {
       "currency": "USD",
@@ -27564,13 +26407,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000002",
-          "input_cache_read": "0.00000008",
-          "prompt": "0.0000004"
+          "completion": "0.00000028",
+          "input_cache_read": "0.0000000028",
+          "prompt": "0.00000014"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "4E-7"
+      "unit_price": "1.4E-7"
     },
     {
       "currency": "USD",
@@ -27579,13 +26422,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000002",
-          "input_cache_read": "0.00000008",
-          "prompt": "0.0000004"
+          "completion": "0.00000028",
+          "input_cache_read": "0.0000000028",
+          "prompt": "0.00000014"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.000002"
+      "unit_price": "2.8E-7"
     },
     {
       "currency": "USD",
@@ -27594,13 +26437,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000003",
-          "input_cache_read": "0.0000002",
-          "prompt": "0.000001"
+          "completion": "0.00000087",
+          "input_cache_read": "0.0000000036",
+          "prompt": "0.000000435"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "0.000001"
+      "unit_price": "4.35E-7"
     },
     {
       "currency": "USD",
@@ -27609,13 +26452,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000003",
-          "input_cache_read": "0.0000002",
-          "prompt": "0.000001"
+          "completion": "0.00000087",
+          "input_cache_read": "0.0000000036",
+          "prompt": "0.000000435"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.000003"
+      "unit_price": "8.7E-7"
     },
     {
       "currency": "USD",
@@ -27682,13 +26525,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000085",
-          "input_cache_read": "0.000000025",
-          "prompt": "0.00000013"
+          "completion": "0.00000084",
+          "prompt": "0.000000125"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "1.3E-7"
+      "unit_price": "1.25E-7"
     },
     {
       "currency": "USD",
@@ -27697,13 +26539,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000085",
-          "input_cache_read": "0.000000025",
-          "prompt": "0.00000013"
+          "completion": "0.00000084",
+          "prompt": "0.000000125"
         },
         "source_metric": "completion"
       },
-      "unit_price": "8.5E-7"
+      "unit_price": "8.4E-7"
     },
     {
       "currency": "USD",
