@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-05-30T00:33:03.150164+00:00"
+    "generated_at": "2026-05-31T00:33:02.293964+00:00"
   },
   "prices": [
     {
@@ -17279,34 +17279,6 @@
     {
       "currency": "USD",
       "metric_type": "input_token",
-      "model": "baidu/ernie-4.5-21b-a3b-thinking",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00000028",
-          "prompt": "0.00000007"
-        },
-        "source_metric": "prompt"
-      },
-      "unit_price": "7E-8"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "output_token",
-      "model": "baidu/ernie-4.5-21b-a3b-thinking",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00000028",
-          "prompt": "0.00000007"
-        },
-        "source_metric": "completion"
-      },
-      "unit_price": "2.8E-7"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "input_token",
       "model": "baidu/ernie-4.5-300b-a47b",
       "provider": "openrouter",
       "raw": {
@@ -20488,11 +20460,11 @@
       "raw": {
         "pricing": {
           "completion": "0.0000012",
-          "prompt": "0.000000279"
+          "prompt": "0.00000026"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "2.79E-7"
+      "unit_price": "2.6E-7"
     },
     {
       "currency": "USD",
@@ -20502,7 +20474,7 @@
       "raw": {
         "pricing": {
           "completion": "0.0000012",
-          "prompt": "0.000000279"
+          "prompt": "0.00000026"
         },
         "source_metric": "completion"
       },
@@ -20717,34 +20689,6 @@
         "source_metric": "completion"
       },
       "unit_price": "1.5E-7"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "input_token",
-      "model": "mistralai/mistral-7b-instruct-v0.1",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00000019",
-          "prompt": "0.00000011"
-        },
-        "source_metric": "prompt"
-      },
-      "unit_price": "1.1E-7"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "output_token",
-      "model": "mistralai/mistral-7b-instruct-v0.1",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00000019",
-          "prompt": "0.00000011"
-        },
-        "source_metric": "completion"
-      },
-      "unit_price": "1.9E-7"
     },
     {
       "currency": "USD",
@@ -23460,11 +23404,11 @@
       "raw": {
         "pricing": {
           "completion": "0.00000014",
-          "prompt": "0.00000003"
+          "prompt": "0.000000029"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "3E-8"
+      "unit_price": "2.9E-8"
     },
     {
       "currency": "USD",
@@ -23474,7 +23418,7 @@
       "raw": {
         "pricing": {
           "completion": "0.00000014",
-          "prompt": "0.00000003"
+          "prompt": "0.000000029"
         },
         "source_metric": "completion"
       },
@@ -24551,12 +24495,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000001495",
-          "prompt": "0.0000001495"
+          "completion": "0.0000001",
+          "input_cache_read": "0.0000001",
+          "prompt": "0.0000001"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "1.495E-7"
+      "unit_price": "1E-7"
     },
     {
       "currency": "USD",
@@ -24565,12 +24510,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000001495",
-          "prompt": "0.0000001495"
+          "completion": "0.0000001",
+          "input_cache_read": "0.0000001",
+          "prompt": "0.0000001"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.000001495"
+      "unit_price": "1E-7"
     },
     {
       "currency": "USD",
@@ -25300,11 +25246,12 @@
       "raw": {
         "pricing": {
           "completion": "0.000001",
-          "prompt": "0.000000139"
+          "input_cache_read": "0.00000005",
+          "prompt": "0.00000014"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "1.39E-7"
+      "unit_price": "1.4E-7"
     },
     {
       "currency": "USD",
@@ -25314,7 +25261,8 @@
       "raw": {
         "pricing": {
           "completion": "0.000001",
-          "prompt": "0.000000139"
+          "input_cache_read": "0.00000005",
+          "prompt": "0.00000014"
         },
         "source_metric": "completion"
       },
@@ -26181,36 +26129,6 @@
         "source_metric": "completion"
       },
       "unit_price": "6.5E-7"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "input_token",
-      "model": "upstage/solar-pro-3",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.0000006",
-          "input_cache_read": "0.000000015",
-          "prompt": "0.00000015"
-        },
-        "source_metric": "prompt"
-      },
-      "unit_price": "1.5E-7"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "output_token",
-      "model": "upstage/solar-pro-3",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.0000006",
-          "input_cache_read": "0.000000015",
-          "prompt": "0.00000015"
-        },
-        "source_metric": "completion"
-      },
-      "unit_price": "6E-7"
     },
     {
       "currency": "USD",
