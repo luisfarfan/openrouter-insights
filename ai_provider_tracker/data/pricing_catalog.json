@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-06-03T00:43:02.531747+00:00"
+    "generated_at": "2026-06-04T00:43:05.519526+00:00"
   },
   "prices": [
     {
@@ -81,19 +81,6 @@
         "unit_price": 0.00125
       },
       "unit_price": "0.00125"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
-      "model": "bria/bria_video_eraser/erase/keypoints",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "bria/bria_video_eraser/erase/keypoints",
-        "unit": "seconds",
-        "unit_price": 0.14
-      },
-      "unit_price": "0.14"
     },
     {
       "currency": "USD",
@@ -6415,71 +6402,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "images",
-      "model": "fal-ai/imagen3",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/imagen3",
-        "unit": "images",
-        "unit_price": 0.05
-      },
-      "unit_price": "0.05"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "images",
-      "model": "fal-ai/imagen3/fast",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/imagen3/fast",
-        "unit": "images",
-        "unit_price": 0.025
-      },
-      "unit_price": "0.025"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "images",
-      "model": "fal-ai/imagen4/preview",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/imagen4/preview",
-        "unit": "images",
-        "unit_price": 0.04
-      },
-      "unit_price": "0.04"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "images",
-      "model": "fal-ai/imagen4/preview/fast",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/imagen4/preview/fast",
-        "unit": "images",
-        "unit_price": 0.02
-      },
-      "unit_price": "0.02"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "images",
-      "model": "fal-ai/imagen4/preview/ultra",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/imagen4/preview/ultra",
-        "unit": "images",
-        "unit_price": 0.06
-      },
-      "unit_price": "0.06"
-    },
-    {
-      "currency": "USD",
       "metric_type": "compute seconds",
       "model": "fal-ai/imageutils/depth",
       "provider": "fal",
@@ -9636,19 +9558,6 @@
         "unit_price": 0.4
       },
       "unit_price": "0.4"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "generations",
-      "model": "fal-ai/meshy/v6/text-to-3d",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/meshy/v6/text-to-3d",
-        "unit": "generations",
-        "unit_price": 0.8
-      },
-      "unit_price": "0.8"
     },
     {
       "currency": "USD",
@@ -12980,6 +12889,19 @@
     },
     {
       "currency": "USD",
+      "metric_type": "input seconds",
+      "model": "fal-ai/scene-finder",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/scene-finder",
+        "unit": "input seconds",
+        "unit_price": 0.0042
+      },
+      "unit_price": "0.0042"
+    },
+    {
+      "currency": "USD",
       "metric_type": "compute seconds",
       "model": "fal-ai/sdxl-controlnet-union",
       "provider": "fal",
@@ -13276,6 +13198,318 @@
         "unit_price": 0.2
       },
       "unit_price": "0.2"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/medium/audio-inpainting",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/medium/audio-inpainting",
+        "unit": "audios",
+        "unit_price": 0.0442
+      },
+      "unit_price": "0.0442"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/medium/audio-outpainting",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/medium/audio-outpainting",
+        "unit": "audios",
+        "unit_price": 0.0446
+      },
+      "unit_price": "0.0446"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/medium/audio-to-audio",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/medium/audio-to-audio",
+        "unit": "audios",
+        "unit_price": 0.0417
+      },
+      "unit_price": "0.0417"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/medium/base/audio-inpainting",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/medium/base/audio-inpainting",
+        "unit": "audios",
+        "unit_price": 0.0537
+      },
+      "unit_price": "0.0537"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/medium/base/audio-outpainting",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/medium/base/audio-outpainting",
+        "unit": "audios",
+        "unit_price": 0.0554
+      },
+      "unit_price": "0.0554"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/medium/base/audio-to-audio",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/medium/base/audio-to-audio",
+        "unit": "audios",
+        "unit_price": 0.0523
+      },
+      "unit_price": "0.0523"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/medium/base/text-to-audio",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/medium/base/text-to-audio",
+        "unit": "audios",
+        "unit_price": 0.0479
+      },
+      "unit_price": "0.0479"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/medium/text-to-audio",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/medium/text-to-audio",
+        "unit": "audios",
+        "unit_price": 0.0376
+      },
+      "unit_price": "0.0376"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/music/audio-inpainting",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/music/audio-inpainting",
+        "unit": "audios",
+        "unit_price": 0.026
+      },
+      "unit_price": "0.026"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/music/audio-outpainting",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/music/audio-outpainting",
+        "unit": "audios",
+        "unit_price": 0.0265
+      },
+      "unit_price": "0.0265"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/music/audio-to-audio",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/music/audio-to-audio",
+        "unit": "audios",
+        "unit_price": 0.0248
+      },
+      "unit_price": "0.0248"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/music/base/audio-inpainting",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/music/base/audio-inpainting",
+        "unit": "audios",
+        "unit_price": 0.0333
+      },
+      "unit_price": "0.0333"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/music/base/audio-outpainting",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/music/base/audio-outpainting",
+        "unit": "audios",
+        "unit_price": 0.0339
+      },
+      "unit_price": "0.0339"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/music/base/audio-to-audio",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/music/base/audio-to-audio",
+        "unit": "audios",
+        "unit_price": 0.032
+      },
+      "unit_price": "0.032"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/music/base/text-to-audio",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/music/base/text-to-audio",
+        "unit": "audios",
+        "unit_price": 0.0281
+      },
+      "unit_price": "0.0281"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/music/text-to-audio",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/music/text-to-audio",
+        "unit": "audios",
+        "unit_price": 0.0217
+      },
+      "unit_price": "0.0217"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/sfx/audio-inpainting",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/sfx/audio-inpainting",
+        "unit": "audios",
+        "unit_price": 0.0259
+      },
+      "unit_price": "0.0259"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/sfx/audio-outpainting",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/sfx/audio-outpainting",
+        "unit": "audios",
+        "unit_price": 0.0271
+      },
+      "unit_price": "0.0271"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/sfx/audio-to-audio",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/sfx/audio-to-audio",
+        "unit": "audios",
+        "unit_price": 0.024
+      },
+      "unit_price": "0.024"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/sfx/base/audio-inpainting",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/sfx/base/audio-inpainting",
+        "unit": "audios",
+        "unit_price": 0.0331
+      },
+      "unit_price": "0.0331"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/sfx/base/audio-outpainting",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/sfx/base/audio-outpainting",
+        "unit": "audios",
+        "unit_price": 0.0337
+      },
+      "unit_price": "0.0337"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/sfx/base/audio-to-audio",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/sfx/base/audio-to-audio",
+        "unit": "audios",
+        "unit_price": 0.0315
+      },
+      "unit_price": "0.0315"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/sfx/base/text-to-audio",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/sfx/base/text-to-audio",
+        "unit": "audios",
+        "unit_price": 0.0283
+      },
+      "unit_price": "0.0283"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "audios",
+      "model": "fal-ai/stable-audio-3/small/sfx/text-to-audio",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/stable-audio-3/small/sfx/text-to-audio",
+        "unit": "audios",
+        "unit_price": 0.0206
+      },
+      "unit_price": "0.0206"
     },
     {
       "currency": "USD",
@@ -15320,6 +15554,19 @@
     },
     {
       "currency": "USD",
+      "metric_type": "units",
+      "model": "ideogram/v4",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "ideogram/v4",
+        "unit": "units",
+        "unit_price": 0.01
+      },
+      "unit_price": "0.01"
+    },
+    {
+      "currency": "USD",
       "metric_type": "compute seconds",
       "model": "imagineart/imagineart-1.5-preview/text-to-image",
       "provider": "fal",
@@ -15408,6 +15655,19 @@
         "unit_price": 7e-05
       },
       "unit_price": "0.00007"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "credits",
+      "model": "microsoft/mai-image-2.5/edit",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "microsoft/mai-image-2.5/edit",
+        "unit": "credits",
+        "unit_price": 1
+      },
+      "unit_price": "1"
     },
     {
       "currency": "USD",
@@ -15957,6 +16217,32 @@
     },
     {
       "currency": "USD",
+      "metric_type": "seconds",
+      "model": "sonilo/v1.1/text-to-music",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "sonilo/v1.1/text-to-music",
+        "unit": "seconds",
+        "unit_price": 0.0025
+      },
+      "unit_price": "0.0025"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "sonilo/v1.1/video-to-music",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "sonilo/v1.1/video-to-music",
+        "unit": "seconds",
+        "unit_price": 0.009
+      },
+      "unit_price": "0.009"
+    },
+    {
+      "currency": "USD",
       "metric_type": "credits",
       "model": "tripo3d/h3.1/image-to-3d",
       "provider": "fal",
@@ -16045,6 +16331,19 @@
         "unit_price": 7e-05
       },
       "unit_price": "0.00007"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "generations",
+      "model": "tripo3d/triposplat",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "tripo3d/triposplat",
+        "unit": "generations",
+        "unit_price": 0.05
+      },
+      "unit_price": "0.05"
     },
     {
       "currency": "USD",
@@ -25481,6 +25780,38 @@
     {
       "currency": "USD",
       "metric_type": "input_token",
+      "model": "qwen/qwen3.7-plus",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0.0000016",
+          "input_cache_read": "0.00000008",
+          "input_cache_write": "0.0000005",
+          "prompt": "0.0000004"
+        },
+        "source_metric": "prompt"
+      },
+      "unit_price": "4E-7"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "output_token",
+      "model": "qwen/qwen3.7-plus",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0.0000016",
+          "input_cache_read": "0.00000008",
+          "input_cache_write": "0.0000005",
+          "prompt": "0.0000004"
+        },
+        "source_metric": "completion"
+      },
+      "unit_price": "0.0000016"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "input_token",
       "model": "rekaai/reka-edge",
       "provider": "openrouter",
       "raw": {
@@ -26569,7 +26900,7 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000208",
+          "completion": "0.00000192",
           "input_cache_read": "0.00000012",
           "prompt": "0.0000006"
         },
@@ -26584,13 +26915,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000208",
+          "completion": "0.00000192",
           "input_cache_read": "0.00000012",
           "prompt": "0.0000006"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.00000208"
+      "unit_price": "0.00000192"
     },
     {
       "currency": "USD",
