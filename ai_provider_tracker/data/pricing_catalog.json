@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-06-04T00:43:05.519526+00:00"
+    "generated_at": "2026-06-05T00:35:01.430194+00:00"
   },
   "prices": [
     {
@@ -81,6 +81,19 @@
         "unit_price": 0.00125
       },
       "unit_price": "0.00125"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "bria/bria_video_eraser/erase/keypoints",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "bria/bria_video_eraser/erase/keypoints",
+        "unit": "seconds",
+        "unit_price": 0.14
+      },
+      "unit_price": "0.14"
     },
     {
       "currency": "USD",
@@ -9562,6 +9575,19 @@
     {
       "currency": "USD",
       "metric_type": "generations",
+      "model": "fal-ai/meshy/v6/text-to-3d",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/meshy/v6/text-to-3d",
+        "unit": "generations",
+        "unit_price": 0.8
+      },
+      "unit_price": "0.8"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "generations",
       "model": "fal-ai/minimax-music",
       "provider": "fal",
       "raw": {
@@ -12115,19 +12141,6 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/qwen-image-edit-plus-lora-gallery/remove-element",
-        "unit": "megapixels",
-        "unit_price": 0.035
-      },
-      "unit_price": "0.035"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/qwen-image-edit-plus-lora-gallery/remove-lighting",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/qwen-image-edit-plus-lora-gallery/remove-lighting",
         "unit": "megapixels",
         "unit_price": 0.035
       },
@@ -15638,6 +15651,19 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "krea/v2/medium/text-to-image",
+        "unit": "units",
+        "unit_price": 0.001
+      },
+      "unit_price": "0.001"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "units",
+      "model": "krea/v2/medium/turbo/text-to-image",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "krea/v2/medium/turbo/text-to-image",
         "unit": "units",
         "unit_price": 0.001
       },
@@ -20142,7 +20168,7 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000005",
+          "completion": "0.00000003",
           "prompt": "0.00000002"
         },
         "source_metric": "prompt"
@@ -20156,12 +20182,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000005",
+          "completion": "0.00000003",
           "prompt": "0.00000002"
         },
         "source_metric": "completion"
       },
-      "unit_price": "5E-8"
+      "unit_price": "3E-8"
     },
     {
       "currency": "USD",
@@ -21918,6 +21944,92 @@
     {
       "currency": "USD",
       "metric_type": "input_token",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0.0000025",
+          "input_cache_read": "0.00000015",
+          "prompt": "0.0000005"
+        },
+        "source_metric": "prompt"
+      },
+      "unit_price": "5E-7"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "output_token",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0.0000025",
+          "input_cache_read": "0.00000015",
+          "prompt": "0.0000005"
+        },
+        "source_metric": "completion"
+      },
+      "unit_price": "0.0000025"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "input_token",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0",
+          "prompt": "0"
+        },
+        "source_metric": "prompt"
+      },
+      "unit_price": "0"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "output_token",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0",
+          "prompt": "0"
+        },
+        "source_metric": "completion"
+      },
+      "unit_price": "0"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "input_token",
+      "model": "nvidia/nemotron-3.5-content-safety:free",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0",
+          "prompt": "0"
+        },
+        "source_metric": "prompt"
+      },
+      "unit_price": "0"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "output_token",
+      "model": "nvidia/nemotron-3.5-content-safety:free",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0",
+          "prompt": "0"
+        },
+        "source_metric": "completion"
+      },
+      "unit_price": "0"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "input_token",
       "model": "nvidia/nemotron-nano-12b-v2-vl:free",
       "provider": "openrouter",
       "raw": {
@@ -22129,34 +22241,6 @@
       "currency": "USD",
       "metric_type": "output_token",
       "model": "openai/gpt-4",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00006",
-          "prompt": "0.00003"
-        },
-        "source_metric": "completion"
-      },
-      "unit_price": "0.00006"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "input_token",
-      "model": "openai/gpt-4-0314",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00006",
-          "prompt": "0.00003"
-        },
-        "source_metric": "prompt"
-      },
-      "unit_price": "0.00003"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "output_token",
-      "model": "openai/gpt-4-0314",
       "provider": "openrouter",
       "raw": {
         "pricing": {
@@ -24742,12 +24826,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000001716",
-          "prompt": "0.0000000428"
+          "completion": "0.00000019305",
+          "prompt": "0.00000004815"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "4.28E-8"
+      "unit_price": "4.815E-8"
     },
     {
       "currency": "USD",
@@ -24756,12 +24840,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000001716",
-          "prompt": "0.0000000428"
+          "completion": "0.00000019305",
+          "prompt": "0.00000004815"
         },
         "source_metric": "completion"
       },
-      "unit_price": "1.716E-7"
+      "unit_price": "1.9305E-7"
     },
     {
       "currency": "USD",
