@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-06-06T00:35:02.524311+00:00"
+    "generated_at": "2026-06-07T00:33:01.223164+00:00"
   },
   "prices": [
     {
@@ -4345,19 +4345,6 @@
         "unit_price": 0.003
       },
       "unit_price": "0.003"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/flux/schnell/redux",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/flux/schnell/redux",
-        "unit": "megapixels",
-        "unit_price": 0.025
-      },
-      "unit_price": "0.025"
     },
     {
       "currency": "USD",
@@ -12175,19 +12162,6 @@
     {
       "currency": "USD",
       "metric_type": "megapixels",
-      "model": "fal-ai/qwen-image-edit-plus-lora-gallery/shirt-design",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/qwen-image-edit-plus-lora-gallery/shirt-design",
-        "unit": "megapixels",
-        "unit_price": 0.035
-      },
-      "unit_price": "0.035"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
       "model": "fal-ai/qwen-image-edit/image-to-image",
       "provider": "fal",
       "raw": {
@@ -17668,34 +17642,6 @@
     {
       "currency": "USD",
       "metric_type": "input_token",
-      "model": "arcee-ai/spotlight",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00000018",
-          "prompt": "0.00000018"
-        },
-        "source_metric": "prompt"
-      },
-      "unit_price": "1.8E-7"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "output_token",
-      "model": "arcee-ai/spotlight",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00000018",
-          "prompt": "0.00000018"
-        },
-        "source_metric": "completion"
-      },
-      "unit_price": "1.8E-7"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "input_token",
       "model": "arcee-ai/trinity-large-thinking",
       "provider": "openrouter",
       "raw": {
@@ -17778,34 +17724,6 @@
         "source_metric": "completion"
       },
       "unit_price": "0.0000012"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "input_token",
-      "model": "baidu/ernie-4.5-vl-28b-a3b",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00000056",
-          "prompt": "0.00000014"
-        },
-        "source_metric": "prompt"
-      },
-      "unit_price": "1.4E-7"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "output_token",
-      "model": "baidu/ernie-4.5-vl-28b-a3b",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00000056",
-          "prompt": "0.00000014"
-        },
-        "source_metric": "completion"
-      },
-      "unit_price": "5.6E-7"
     },
     {
       "currency": "USD",
@@ -20140,12 +20058,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000004",
-          "prompt": "0.00000004"
+          "completion": "0.00000014",
+          "prompt": "0.00000014"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "4E-8"
+      "unit_price": "1.4E-7"
     },
     {
       "currency": "USD",
@@ -20154,12 +20072,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000004",
-          "prompt": "0.00000004"
+          "completion": "0.00000014",
+          "prompt": "0.00000014"
         },
         "source_metric": "completion"
       },
-      "unit_price": "4E-8"
+      "unit_price": "1.4E-7"
     },
     {
       "currency": "USD",
@@ -22250,36 +22168,6 @@
         "source_metric": "completion"
       },
       "unit_price": "0.00006"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "input_token",
-      "model": "openai/gpt-4-1106-preview",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00003",
-          "prompt": "0.00001",
-          "web_search": "0.01"
-        },
-        "source_metric": "prompt"
-      },
-      "unit_price": "0.00001"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "output_token",
-      "model": "openai/gpt-4-1106-preview",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00003",
-          "prompt": "0.00001",
-          "web_search": "0.01"
-        },
-        "source_metric": "completion"
-      },
-      "unit_price": "0.00003"
     },
     {
       "currency": "USD",
