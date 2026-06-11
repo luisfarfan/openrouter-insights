@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-06-10T00:38:01.558513+00:00"
+    "generated_at": "2026-06-11T00:39:01.099937+00:00"
   },
   "prices": [
     {
@@ -370,6 +370,19 @@
     },
     {
       "currency": "USD",
+      "metric_type": "megapixels",
+      "model": "bria/genfill/v2",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "bria/genfill/v2",
+        "unit": "megapixels",
+        "unit_price": 0.04
+      },
+      "unit_price": "0.04"
+    },
+    {
+      "currency": "USD",
       "metric_type": "images",
       "model": "bria/replace-background",
       "provider": "fal",
@@ -406,6 +419,32 @@
         "unit_price": 0.14
       },
       "unit_price": "0.14"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "compute seconds",
+      "model": "bria/video/background-removal/realtime",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "bria/video/background-removal/realtime",
+        "unit": "compute seconds",
+        "unit_price": 0.00125
+      },
+      "unit_price": "0.00125"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "compute seconds",
+      "model": "bria/video/background-removal/v3",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "bria/video/background-removal/v3",
+        "unit": "compute seconds",
+        "unit_price": 3e-05
+      },
+      "unit_price": "0.00003"
     },
     {
       "currency": "USD",
@@ -15645,6 +15684,19 @@
     },
     {
       "currency": "USD",
+      "metric_type": "steps",
+      "model": "ideogram/v4/trainer",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "ideogram/v4/trainer",
+        "unit": "steps",
+        "unit_price": 0.00675
+      },
+      "unit_price": "0.00675"
+    },
+    {
+      "currency": "USD",
       "metric_type": "compute seconds",
       "model": "imagineart/imagineart-1.5-preview/text-to-image",
       "provider": "fal",
@@ -16071,6 +16123,19 @@
         "unit_price": 0.006
       },
       "unit_price": "0.006"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "compute seconds",
+      "model": "nvidia/nemotron-asr-multilingual/asr",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "nvidia/nemotron-asr-multilingual/asr",
+        "unit": "compute seconds",
+        "unit_price": 0.00111
+      },
+      "unit_price": "0.00111"
     },
     {
       "currency": "USD",
@@ -21593,34 +21658,6 @@
         "source_metric": "completion"
       },
       "unit_price": "0.00000341"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "input_token",
-      "model": "moonshotai/kimi-k2.6:free",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0",
-          "prompt": "0"
-        },
-        "source_metric": "prompt"
-      },
-      "unit_price": "0"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "output_token",
-      "model": "moonshotai/kimi-k2.6:free",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0",
-          "prompt": "0"
-        },
-        "source_metric": "completion"
-      },
-      "unit_price": "0"
     },
     {
       "currency": "USD",
