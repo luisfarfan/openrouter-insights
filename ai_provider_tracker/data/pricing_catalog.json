@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-06-13T00:38:01.106441+00:00"
+    "generated_at": "2026-06-14T00:35:03.758177+00:00"
   },
   "prices": [
     {
@@ -18717,13 +18717,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000000196",
+          "completion": "0.00000018",
           "input_cache_read": "0.00000002",
-          "prompt": "0.000000098"
+          "prompt": "0.00000009"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "9.8E-8"
+      "unit_price": "9E-8"
     },
     {
       "currency": "USD",
@@ -18732,13 +18732,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000000196",
+          "completion": "0.00000018",
           "input_cache_read": "0.00000002",
-          "prompt": "0.000000098"
+          "prompt": "0.00000009"
         },
         "source_metric": "completion"
       },
-      "unit_price": "1.96E-7"
+      "unit_price": "1.8E-7"
     },
     {
       "currency": "USD",
@@ -21779,13 +21779,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000004",
-          "input_cache_read": "0.00000019",
-          "prompt": "0.00000095"
+          "completion": "0.0000035",
+          "input_cache_read": "0.00000016",
+          "prompt": "0.00000075"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "9.5E-7"
+      "unit_price": "7.5E-7"
     },
     {
       "currency": "USD",
@@ -21794,13 +21794,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000004",
-          "input_cache_read": "0.00000019",
-          "prompt": "0.00000095"
+          "completion": "0.0000035",
+          "input_cache_read": "0.00000016",
+          "prompt": "0.00000075"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.000004"
+      "unit_price": "0.0000035"
     },
     {
       "currency": "USD",
