@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-06-17T00:41:01.085279+00:00"
+    "generated_at": "2026-06-18T00:42:03.220959+00:00"
   },
   "prices": [
     {
@@ -1056,6 +1056,32 @@
         "unit_price": 0.01
       },
       "unit_price": "0.01"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "megapixels",
+      "model": "fal-ai/boogu-image",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/boogu-image",
+        "unit": "megapixels",
+        "unit_price": 0.04
+      },
+      "unit_price": "0.04"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "megapixels",
+      "model": "fal-ai/boogu-image/edit",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/boogu-image/edit",
+        "unit": "megapixels",
+        "unit_price": 0.04
+      },
+      "unit_price": "0.04"
     },
     {
       "currency": "USD",
@@ -4465,19 +4491,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/flux/srpo/image-to-image",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/flux/srpo/image-to-image",
-        "unit": "megapixels",
-        "unit_price": 0.025
-      },
-      "unit_price": "0.025"
-    },
-    {
-      "currency": "USD",
       "metric_type": "compute seconds",
       "model": "fal-ai/fooocus",
       "provider": "fal",
@@ -7676,6 +7689,58 @@
     },
     {
       "currency": "USD",
+      "metric_type": "seconds",
+      "model": "fal-ai/kling-video/v3/turbo/pro/image-to-video",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/kling-video/v3/turbo/pro/image-to-video",
+        "unit": "seconds",
+        "unit_price": 0.14
+      },
+      "unit_price": "0.14"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "fal-ai/kling-video/v3/turbo/pro/text-to-video",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/kling-video/v3/turbo/pro/text-to-video",
+        "unit": "seconds",
+        "unit_price": 0.14
+      },
+      "unit_price": "0.14"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "fal-ai/kling-video/v3/turbo/standard/image-to-video",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/kling-video/v3/turbo/standard/image-to-video",
+        "unit": "seconds",
+        "unit_price": 0.112
+      },
+      "unit_price": "0.112"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "fal-ai/kling-video/v3/turbo/standard/text-to-video",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/kling-video/v3/turbo/standard/text-to-video",
+        "unit": "seconds",
+        "unit_price": 0.112
+      },
+      "unit_price": "0.112"
+    },
+    {
+      "currency": "USD",
       "metric_type": "videos",
       "model": "fal-ai/kling-video/video-to-audio",
       "provider": "fal",
@@ -8808,6 +8873,32 @@
     {
       "currency": "USD",
       "metric_type": "megapixels",
+      "model": "fal-ai/ltx-2.3-quality/outpaint",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx-2.3-quality/outpaint",
+        "unit": "megapixels",
+        "unit_price": 0.0024075
+      },
+      "unit_price": "0.0024075"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "megapixels",
+      "model": "fal-ai/ltx-2.3-quality/outpaint/lora",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx-2.3-quality/outpaint/lora",
+        "unit": "megapixels",
+        "unit_price": 0.0024075
+      },
+      "unit_price": "0.0024075"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "megapixels",
       "model": "fal-ai/ltx-2.3-quality/reference-video-to-video",
       "provider": "fal",
       "raw": {
@@ -8830,6 +8921,32 @@
         "unit_price": 0.0027075
       },
       "unit_price": "0.0027075"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "megapixels",
+      "model": "fal-ai/ltx-2.3-quality/text-to-audio",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx-2.3-quality/text-to-audio",
+        "unit": "megapixels",
+        "unit_price": 0.0024075
+      },
+      "unit_price": "0.0024075"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "megapixels",
+      "model": "fal-ai/ltx-2.3-quality/text-to-audio/lora",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx-2.3-quality/text-to-audio/lora",
+        "unit": "megapixels",
+        "unit_price": 0.0024075
+      },
+      "unit_price": "0.0024075"
     },
     {
       "currency": "USD",
@@ -9155,6 +9272,305 @@
         "unit_price": 0.02
       },
       "unit_price": "0.02"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/a2a",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/a2a",
+        "unit": "steps",
+        "unit_price": 0.0023
+      },
+      "unit_price": "0.0023"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/a2v",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/a2v",
+        "unit": "steps",
+        "unit_price": 0.006
+      },
+      "unit_price": "0.006"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/audio-extend-prefix",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/audio-extend-prefix",
+        "unit": "steps",
+        "unit_price": 0.0022
+      },
+      "unit_price": "0.0022"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/audio-extend-suffix",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/audio-extend-suffix",
+        "unit": "steps",
+        "unit_price": 0.0023
+      },
+      "unit_price": "0.0023"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/audio-inpaint",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/audio-inpaint",
+        "unit": "steps",
+        "unit_price": 0.0023
+      },
+      "unit_price": "0.0023"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/av2av",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/av2av",
+        "unit": "steps",
+        "unit_price": 0.0068
+      },
+      "unit_price": "0.0068"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/av2av-masked",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/av2av-masked",
+        "unit": "steps",
+        "unit_price": 0.0068
+      },
+      "unit_price": "0.0068"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/extend-prefix",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/extend-prefix",
+        "unit": "steps",
+        "unit_price": 0.0062
+      },
+      "unit_price": "0.0062"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/extend-suffix",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/extend-suffix",
+        "unit": "steps",
+        "unit_price": 0.0061
+      },
+      "unit_price": "0.0061"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/i2v",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/i2v",
+        "unit": "steps",
+        "unit_price": 0.0024
+      },
+      "unit_price": "0.0024"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/ic-lora/a2a",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/ic-lora/a2a",
+        "unit": "steps",
+        "unit_price": 0.0023
+      },
+      "unit_price": "0.0023"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/ic-lora/av2av",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/ic-lora/av2av",
+        "unit": "steps",
+        "unit_price": 0.0068
+      },
+      "unit_price": "0.0068"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/ic-lora/av2av-masked",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/ic-lora/av2av-masked",
+        "unit": "steps",
+        "unit_price": 0.0068
+      },
+      "unit_price": "0.0068"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/ic-lora/v2v",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/ic-lora/v2v",
+        "unit": "steps",
+        "unit_price": 0.0059
+      },
+      "unit_price": "0.0059"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/ic-lora/v2v-masked",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/ic-lora/v2v-masked",
+        "unit": "steps",
+        "unit_price": 0.0055
+      },
+      "unit_price": "0.0055"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/inpaint",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/inpaint",
+        "unit": "steps",
+        "unit_price": 0.0024
+      },
+      "unit_price": "0.0024"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/interpolate",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/interpolate",
+        "unit": "steps",
+        "unit_price": 0.0024
+      },
+      "unit_price": "0.0024"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/outpaint",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/outpaint",
+        "unit": "steps",
+        "unit_price": 0.006
+      },
+      "unit_price": "0.006"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/t2a",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/t2a",
+        "unit": "steps",
+        "unit_price": 0.0022
+      },
+      "unit_price": "0.0022"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/t2v",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/t2v",
+        "unit": "steps",
+        "unit_price": 0.006
+      },
+      "unit_price": "0.006"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/v2a",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/v2a",
+        "unit": "steps",
+        "unit_price": 0.0049
+      },
+      "unit_price": "0.0049"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/v2v",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/v2v",
+        "unit": "steps",
+        "unit_price": 0.0059
+      },
+      "unit_price": "0.0059"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "steps",
+      "model": "fal-ai/ltx23-trainer-v2/v2v-masked",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx23-trainer-v2/v2v-masked",
+        "unit": "steps",
+        "unit_price": 0.0055
+      },
+      "unit_price": "0.0055"
     },
     {
       "currency": "USD",
@@ -13146,6 +13562,19 @@
         "unit_price": 0.001
       },
       "unit_price": "0.001"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "images",
+      "model": "fal-ai/sensenova-u1-infographic",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/sensenova-u1-infographic",
+        "unit": "images",
+        "unit_price": 0.05
+      },
+      "unit_price": "0.05"
     },
     {
       "currency": "USD",
@@ -18432,6 +18861,34 @@
         "source_metric": "completion"
       },
       "unit_price": "1.5E-7"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "input_token",
+      "model": "cohere/north-mini-code:free",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0",
+          "prompt": "0"
+        },
+        "source_metric": "prompt"
+      },
+      "unit_price": "0"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "output_token",
+      "model": "cohere/north-mini-code:free",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0",
+          "prompt": "0"
+        },
+        "source_metric": "completion"
+      },
+      "unit_price": "0"
     },
     {
       "currency": "USD",
@@ -26802,36 +27259,6 @@
         "source_metric": "completion"
       },
       "unit_price": "0.000002"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "input_token",
-      "model": "xiaomi/mimo-v2-flash",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.0000003",
-          "input_cache_read": "0.00000001",
-          "prompt": "0.0000001"
-        },
-        "source_metric": "prompt"
-      },
-      "unit_price": "1E-7"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "output_token",
-      "model": "xiaomi/mimo-v2-flash",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.0000003",
-          "input_cache_read": "0.00000001",
-          "prompt": "0.0000001"
-        },
-        "source_metric": "completion"
-      },
-      "unit_price": "3E-7"
     },
     {
       "currency": "USD",
