@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-06-19T00:45:03.055362+00:00"
+    "generated_at": "2026-06-20T00:35:04.194617+00:00"
   },
   "prices": [
     {
@@ -871,9 +871,9 @@
         "currency": "USD",
         "endpoint_id": "fal-ai/aura-sr",
         "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit_price": 0.0008
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.0008"
     },
     {
       "currency": "USD",
@@ -3211,9 +3211,9 @@
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2-klein-9b-base-trainer",
         "unit": "units",
-        "unit_price": 0.0086
+        "unit_price": 0.0043
       },
-      "unit_price": "0.0086"
+      "unit_price": "0.0043"
     },
     {
       "currency": "USD",
@@ -3224,9 +3224,9 @@
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2-klein-9b-base-trainer/edit",
         "unit": "units",
-        "unit_price": 0.008
+        "unit_price": 0.002
       },
-      "unit_price": "0.008"
+      "unit_price": "0.002"
     },
     {
       "currency": "USD",
@@ -3445,9 +3445,9 @@
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2-trainer",
         "unit": "train units",
-        "unit_price": 0.008
+        "unit_price": 0.0064
       },
-      "unit_price": "0.008"
+      "unit_price": "0.0064"
     },
     {
       "currency": "USD",
@@ -3458,9 +3458,9 @@
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2-trainer-v2",
         "unit": "units",
-        "unit_price": 0.0255
+        "unit_price": 0.0064
       },
-      "unit_price": "0.0255"
+      "unit_price": "0.0064"
     },
     {
       "currency": "USD",
@@ -3471,9 +3471,9 @@
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2-trainer-v2/edit",
         "unit": "units",
-        "unit_price": 0.0226
+        "unit_price": 0.0056
       },
-      "unit_price": "0.0226"
+      "unit_price": "0.0056"
     },
     {
       "currency": "USD",
@@ -3484,9 +3484,9 @@
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2-trainer/edit",
         "unit": "train units",
-        "unit_price": 0.009
+        "unit_price": 0.0056
       },
-      "unit_price": "0.009"
+      "unit_price": "0.0056"
     },
     {
       "currency": "USD",
@@ -5519,11 +5519,37 @@
     {
       "currency": "USD",
       "metric_type": "generations",
+      "model": "fal-ai/hyper3d/rodin/v2.5/fast",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/hyper3d/rodin/v2.5/fast",
+        "unit": "generations",
+        "unit_price": 0.4
+      },
+      "unit_price": "0.4"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "generations",
       "model": "fal-ai/hyper3d/rodin/v2.5/text-to-3d",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/hyper3d/rodin/v2.5/text-to-3d",
+        "unit": "generations",
+        "unit_price": 0.4
+      },
+      "unit_price": "0.4"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "generations",
+      "model": "fal-ai/hyper3d/rodin/v2.5/text-to-3d/fast",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/hyper3d/rodin/v2.5/text-to-3d/fast",
         "unit": "generations",
         "unit_price": 0.4
       },
@@ -21021,34 +21047,6 @@
     {
       "currency": "USD",
       "metric_type": "input_token",
-      "model": "meta-llama/llama-3-70b-instruct",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00000074",
-          "prompt": "0.00000051"
-        },
-        "source_metric": "prompt"
-      },
-      "unit_price": "5.1E-7"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "output_token",
-      "model": "meta-llama/llama-3-70b-instruct",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.00000074",
-          "prompt": "0.00000051"
-        },
-        "source_metric": "completion"
-      },
-      "unit_price": "7.4E-7"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "input_token",
       "model": "meta-llama/llama-3-8b-instruct",
       "provider": "openrouter",
       "raw": {
@@ -22415,13 +22413,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000035",
-          "input_cache_read": "0.00000015",
-          "prompt": "0.00000074"
+          "completion": "0.00000341",
+          "input_cache_read": "0.000000144",
+          "prompt": "0.00000068"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "7.4E-7"
+      "unit_price": "6.8E-7"
     },
     {
       "currency": "USD",
@@ -22430,13 +22428,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000035",
-          "input_cache_read": "0.00000015",
-          "prompt": "0.00000074"
+          "completion": "0.00000341",
+          "input_cache_read": "0.000000144",
+          "prompt": "0.00000068"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.0000035"
+      "unit_price": "0.00000341"
     },
     {
       "currency": "USD",
