@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-06-21T00:36:03.278381+00:00"
+    "generated_at": "2026-06-22T00:36:01.411678+00:00"
   },
   "prices": [
     {
@@ -467,32 +467,6 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "bria/video/erase/keypoints",
-        "unit": "seconds",
-        "unit_price": 0.14
-      },
-      "unit_price": "0.14"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
-      "model": "bria/video/erase/mask",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "bria/video/erase/mask",
-        "unit": "seconds",
-        "unit_price": 0.14
-      },
-      "unit_price": "0.14"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
-      "model": "bria/video/erase/prompt",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "bria/video/erase/prompt",
         "unit": "seconds",
         "unit_price": 0.14
       },
@@ -27849,13 +27823,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000041",
-          "input_cache_read": "0.0000002",
-          "prompt": "0.0000012"
+          "completion": "0.000004",
+          "input_cache_read": "0.00000018",
+          "prompt": "0.000001"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "0.0000012"
+      "unit_price": "0.000001"
     },
     {
       "currency": "USD",
@@ -27864,13 +27838,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000041",
-          "input_cache_read": "0.0000002",
-          "prompt": "0.0000012"
+          "completion": "0.000004",
+          "input_cache_read": "0.00000018",
+          "prompt": "0.000001"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.0000041"
+      "unit_price": "0.000004"
     },
     {
       "currency": "USD",
