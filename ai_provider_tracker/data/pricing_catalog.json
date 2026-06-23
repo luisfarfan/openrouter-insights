@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-06-22T00:36:01.411678+00:00"
+    "generated_at": "2026-06-23T00:35:02.642973+00:00"
   },
   "prices": [
     {
@@ -38,6 +38,45 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "alibaba/happy-horse/text-to-video",
+        "unit": "seconds",
+        "unit_price": 0.14
+      },
+      "unit_price": "0.14"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "alibaba/happy-horse/v1.1/image-to-video",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "alibaba/happy-horse/v1.1/image-to-video",
+        "unit": "seconds",
+        "unit_price": 0.14
+      },
+      "unit_price": "0.14"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "alibaba/happy-horse/v1.1/reference-to-video",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "alibaba/happy-horse/v1.1/reference-to-video",
+        "unit": "seconds",
+        "unit_price": 0.14
+      },
+      "unit_price": "0.14"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "alibaba/happy-horse/v1.1/text-to-video",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "alibaba/happy-horse/v1.1/text-to-video",
         "unit": "seconds",
         "unit_price": 0.14
       },
@@ -467,6 +506,32 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "bria/video/erase/keypoints",
+        "unit": "seconds",
+        "unit_price": 0.14
+      },
+      "unit_price": "0.14"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "bria/video/erase/mask",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "bria/video/erase/mask",
+        "unit": "seconds",
+        "unit_price": 0.14
+      },
+      "unit_price": "0.14"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "bria/video/erase/prompt",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "bria/video/erase/prompt",
         "unit": "seconds",
         "unit_price": 0.14
       },
@@ -3119,19 +3184,6 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-1/srpo",
-        "unit": "megapixels",
-        "unit_price": 0.025
-      },
-      "unit_price": "0.025"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/flux-1/srpo/image-to-image",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/flux-1/srpo/image-to-image",
         "unit": "megapixels",
         "unit_price": 0.025
       },
@@ -14384,6 +14436,19 @@
     },
     {
       "currency": "USD",
+      "metric_type": "minutes",
+      "model": "fal-ai/sync-lipsync/v3/image-to-video",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/sync-lipsync/v3/image-to-video",
+        "unit": "minutes",
+        "unit_price": 8
+      },
+      "unit_price": "8"
+    },
+    {
+      "currency": "USD",
       "metric_type": "compute seconds",
       "model": "fal-ai/t2v-turbo",
       "provider": "fal",
@@ -14420,6 +14485,19 @@
         "unit_price": 0.08
       },
       "unit_price": "0.08"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "megapixels",
+      "model": "fal-ai/telestyle-v2",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/telestyle-v2",
+        "unit": "megapixels",
+        "unit_price": 0.035
+      },
+      "unit_price": "0.035"
     },
     {
       "currency": "USD",
@@ -18005,40 +18083,6 @@
         "source_metric": "completion"
       },
       "unit_price": "0.00000125"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "input_token",
-      "model": "anthropic/claude-3.5-haiku",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.000004",
-          "input_cache_read": "0.00000008",
-          "input_cache_write": "0.000001",
-          "prompt": "0.0000008",
-          "web_search": "0.01"
-        },
-        "source_metric": "prompt"
-      },
-      "unit_price": "8E-7"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "output_token",
-      "model": "anthropic/claude-3.5-haiku",
-      "provider": "openrouter",
-      "raw": {
-        "pricing": {
-          "completion": "0.000004",
-          "input_cache_read": "0.00000008",
-          "input_cache_write": "0.000001",
-          "prompt": "0.0000008",
-          "web_search": "0.01"
-        },
-        "source_metric": "completion"
-      },
-      "unit_price": "0.000004"
     },
     {
       "currency": "USD",
@@ -22357,8 +22401,8 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000035",
-          "input_cache_read": "0.00000033",
+          "completion": "0.00000341",
+          "input_cache_read": "0.000000144",
           "prompt": "0.00000066"
         },
         "source_metric": "prompt"
@@ -22372,13 +22416,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000035",
-          "input_cache_read": "0.00000033",
+          "completion": "0.00000341",
+          "input_cache_read": "0.000000144",
           "prompt": "0.00000066"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.0000035"
+      "unit_price": "0.00000341"
     },
     {
       "currency": "USD",
@@ -22469,30 +22513,32 @@
     {
       "currency": "USD",
       "metric_type": "input_token",
-      "model": "nex-agi/nex-n2-pro:free",
+      "model": "nex-agi/nex-n2-pro",
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0",
-          "prompt": "0"
+          "completion": "0.0000025",
+          "input_cache_read": "0.00000025",
+          "prompt": "0.0000005"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "0"
+      "unit_price": "5E-7"
     },
     {
       "currency": "USD",
       "metric_type": "output_token",
-      "model": "nex-agi/nex-n2-pro:free",
+      "model": "nex-agi/nex-n2-pro",
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0",
-          "prompt": "0"
+          "completion": "0.0000025",
+          "input_cache_read": "0.00000025",
+          "prompt": "0.0000005"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0"
+      "unit_price": "0.0000025"
     },
     {
       "currency": "USD",
@@ -27823,13 +27869,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000004",
-          "input_cache_read": "0.00000018",
-          "prompt": "0.000001"
+          "completion": "0.00000308",
+          "input_cache_read": "0.000000182",
+          "prompt": "0.00000098"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "0.000001"
+      "unit_price": "9.8E-7"
     },
     {
       "currency": "USD",
@@ -27838,9 +27884,39 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
+          "completion": "0.00000308",
+          "input_cache_read": "0.000000182",
+          "prompt": "0.00000098"
+        },
+        "source_metric": "completion"
+      },
+      "unit_price": "0.00000308"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "input_token",
+      "model": "z-ai/glm-5v-turbo",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
           "completion": "0.000004",
-          "input_cache_read": "0.00000018",
-          "prompt": "0.000001"
+          "input_cache_read": "0.00000024",
+          "prompt": "0.0000012"
+        },
+        "source_metric": "prompt"
+      },
+      "unit_price": "0.0000012"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "output_token",
+      "model": "z-ai/glm-5v-turbo",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0.000004",
+          "input_cache_read": "0.00000024",
+          "prompt": "0.0000012"
         },
         "source_metric": "completion"
       },
@@ -28109,8 +28185,8 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000035",
-          "input_cache_read": "0.00000033",
+          "completion": "0.00000341",
+          "input_cache_read": "0.000000144",
           "prompt": "0.00000066"
         },
         "source_metric": "prompt"
@@ -28124,13 +28200,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000035",
-          "input_cache_read": "0.00000033",
+          "completion": "0.00000341",
+          "input_cache_read": "0.000000144",
           "prompt": "0.00000066"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.0000035"
+      "unit_price": "0.00000341"
     },
     {
       "currency": "USD",
