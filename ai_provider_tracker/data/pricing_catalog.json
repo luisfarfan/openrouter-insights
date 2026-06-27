@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-06-26T00:37:03.407047+00:00"
+    "generated_at": "2026-06-27T00:37:02.296857+00:00"
   },
   "prices": [
     {
@@ -519,19 +519,6 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "bria/video/erase/mask",
-        "unit": "seconds",
-        "unit_price": 0.14
-      },
-      "unit_price": "0.14"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
-      "model": "bria/video/erase/prompt",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "bria/video/erase/prompt",
         "unit": "seconds",
         "unit_price": 0.14
       },
@@ -9211,6 +9198,19 @@
     {
       "currency": "USD",
       "metric_type": "megapixels",
+      "model": "fal-ai/ltx-2.3-quality/render-to-real",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/ltx-2.3-quality/render-to-real",
+        "unit": "megapixels",
+        "unit_price": 0.0024075
+      },
+      "unit_price": "0.0024075"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "megapixels",
       "model": "fal-ai/ltx-2.3-quality/text-to-audio",
       "provider": "fal",
       "raw": {
@@ -12798,19 +12798,6 @@
     },
     {
       "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/qwen-image-edit-2509-lora-gallery/shirt-design",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/qwen-image-edit-2509-lora-gallery/shirt-design",
-        "unit": "megapixels",
-        "unit_price": 0.035
-      },
-      "unit_price": "0.035"
-    },
-    {
-      "currency": "USD",
       "metric_type": "steps",
       "model": "fal-ai/qwen-image-edit-2509-trainer",
       "provider": "fal",
@@ -13012,6 +12999,19 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/qwen-image-edit-plus-lora-gallery/remove-lighting",
+        "unit": "megapixels",
+        "unit_price": 0.035
+      },
+      "unit_price": "0.035"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "megapixels",
+      "model": "fal-ai/qwen-image-edit-plus-lora-gallery/shirt-design",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/qwen-image-edit-plus-lora-gallery/shirt-design",
         "unit": "megapixels",
         "unit_price": 0.035
       },
@@ -19462,6 +19462,7 @@
       "raw": {
         "pricing": {
           "completion": "0.0000003432",
+          "input_cache_read": "0.00000002288",
           "prompt": "0.0000002288"
         },
         "source_metric": "prompt"
@@ -19476,6 +19477,7 @@
       "raw": {
         "pricing": {
           "completion": "0.0000003432",
+          "input_cache_read": "0.00000002288",
           "prompt": "0.0000002288"
         },
         "source_metric": "completion"
@@ -26753,7 +26755,7 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000317",
+          "completion": "0.00000265",
           "prompt": "0.0000002885"
         },
         "source_metric": "prompt"
@@ -26767,12 +26769,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000317",
+          "completion": "0.00000265",
           "prompt": "0.0000002885"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.00000317"
+      "unit_price": "0.00000265"
     },
     {
       "currency": "USD",
