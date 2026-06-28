@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-06-27T00:37:02.296857+00:00"
+    "generated_at": "2026-06-28T00:34:02.615075+00:00"
   },
   "prices": [
     {
@@ -519,6 +519,19 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "bria/video/erase/mask",
+        "unit": "seconds",
+        "unit_price": 0.14
+      },
+      "unit_price": "0.14"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "bria/video/erase/prompt",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "bria/video/erase/prompt",
         "unit": "seconds",
         "unit_price": 0.14
       },
@@ -12791,6 +12804,19 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/qwen-image-edit-2509-lora-gallery/remove-lighting",
+        "unit": "megapixels",
+        "unit_price": 0.035
+      },
+      "unit_price": "0.035"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "megapixels",
+      "model": "fal-ai/qwen-image-edit-2509-lora-gallery/shirt-design",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/qwen-image-edit-2509-lora-gallery/shirt-design",
         "unit": "megapixels",
         "unit_price": 0.035
       },
@@ -26755,12 +26781,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000265",
-          "prompt": "0.0000002885"
+          "completion": "0.000002385",
+          "prompt": "0.0000002596"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "2.885E-7"
+      "unit_price": "2.596E-7"
     },
     {
       "currency": "USD",
@@ -26769,12 +26795,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000265",
-          "prompt": "0.0000002885"
+          "completion": "0.000002385",
+          "prompt": "0.0000002596"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.00000265"
+      "unit_price": "0.000002385"
     },
     {
       "currency": "USD",
