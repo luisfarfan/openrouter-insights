@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-07-05T00:34:01.567657+00:00"
+    "generated_at": "2026-07-06T00:35:02.245377+00:00"
   },
   "prices": [
     {
@@ -4601,6 +4601,19 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/flux/srpo",
+        "unit": "megapixels",
+        "unit_price": 0.025
+      },
+      "unit_price": "0.025"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "megapixels",
+      "model": "fal-ai/flux/srpo/image-to-image",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/flux/srpo/image-to-image",
         "unit": "megapixels",
         "unit_price": 0.025
       },
@@ -28233,13 +28246,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000002376",
-          "input_cache_read": "0.0000001404",
-          "prompt": "0.000000756"
+          "completion": "0.00000176",
+          "input_cache_read": "0.000000104",
+          "prompt": "0.00000056"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "7.56E-7"
+      "unit_price": "5.6E-7"
     },
     {
       "currency": "USD",
@@ -28248,13 +28261,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000002376",
-          "input_cache_read": "0.0000001404",
-          "prompt": "0.000000756"
+          "completion": "0.00000176",
+          "input_cache_read": "0.000000104",
+          "prompt": "0.00000056"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.000002376"
+      "unit_price": "0.00000176"
     },
     {
       "currency": "USD",
