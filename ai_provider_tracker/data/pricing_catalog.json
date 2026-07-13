@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-07-12T00:34:03.846698+00:00"
+    "generated_at": "2026-07-13T00:27:01.978383+00:00"
   },
   "prices": [
     {
@@ -12863,6 +12863,19 @@
     },
     {
       "currency": "USD",
+      "metric_type": "megapixels",
+      "model": "fal-ai/qwen-image-edit-2509-lora-gallery/shirt-design",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/qwen-image-edit-2509-lora-gallery/shirt-design",
+        "unit": "megapixels",
+        "unit_price": 0.035
+      },
+      "unit_price": "0.035"
+    },
+    {
+      "currency": "USD",
       "metric_type": "steps",
       "model": "fal-ai/qwen-image-edit-2509-trainer",
       "provider": "fal",
@@ -13064,19 +13077,6 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/qwen-image-edit-plus-lora-gallery/remove-lighting",
-        "unit": "megapixels",
-        "unit_price": 0.035
-      },
-      "unit_price": "0.035"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "megapixels",
-      "model": "fal-ai/qwen-image-edit-plus-lora-gallery/shirt-design",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/qwen-image-edit-plus-lora-gallery/shirt-design",
         "unit": "megapixels",
         "unit_price": 0.035
       },
@@ -21501,12 +21501,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000006",
-          "prompt": "0.00000015"
+          "completion": "0.0000008",
+          "prompt": "0.0000002"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "1.5E-7"
+      "unit_price": "2E-7"
     },
     {
       "currency": "USD",
@@ -21515,12 +21515,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000006",
-          "prompt": "0.00000015"
+          "completion": "0.0000008",
+          "prompt": "0.0000002"
         },
         "source_metric": "completion"
       },
-      "unit_price": "6E-7"
+      "unit_price": "8E-7"
     },
     {
       "currency": "USD",
@@ -25893,13 +25893,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000001",
-          "input_cache_read": "0.0000004",
-          "prompt": "0.0000008"
+          "completion": "0.00000075",
+          "prompt": "0.00000025"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "8E-7"
+      "unit_price": "2.5E-7"
     },
     {
       "currency": "USD",
@@ -25908,13 +25907,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000001",
-          "input_cache_read": "0.0000004",
-          "prompt": "0.0000008"
+          "completion": "0.00000075",
+          "prompt": "0.00000025"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.000001"
+      "unit_price": "7.5E-7"
     },
     {
       "currency": "USD",
@@ -25979,7 +25977,7 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000001",
+          "completion": "0.00000055",
           "prompt": "0.00000009"
         },
         "source_metric": "prompt"
@@ -25993,12 +25991,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000001",
+          "completion": "0.00000055",
           "prompt": "0.00000009"
         },
         "source_metric": "completion"
       },
-      "unit_price": "1E-7"
+      "unit_price": "5.5E-7"
     },
     {
       "currency": "USD",
@@ -28079,7 +28077,7 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000174",
+          "completion": "0.00000175",
           "input_cache_read": "0.00000008",
           "prompt": "0.00000043"
         },
@@ -28094,13 +28092,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000174",
+          "completion": "0.00000175",
           "input_cache_read": "0.00000008",
           "prompt": "0.00000043"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.00000174"
+      "unit_price": "0.00000175"
     },
     {
       "currency": "USD",
@@ -28289,13 +28287,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000001815",
-          "input_cache_read": "0.0000001072",
-          "prompt": "0.0000005775"
+          "completion": "0.00000132",
+          "input_cache_read": "0.000000078",
+          "prompt": "0.00000042"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "5.775E-7"
+      "unit_price": "4.2E-7"
     },
     {
       "currency": "USD",
@@ -28304,13 +28302,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000001815",
-          "input_cache_read": "0.0000001072",
-          "prompt": "0.0000005775"
+          "completion": "0.00000132",
+          "input_cache_read": "0.000000078",
+          "prompt": "0.00000042"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.000001815"
+      "unit_price": "0.00000132"
     },
     {
       "currency": "USD",
