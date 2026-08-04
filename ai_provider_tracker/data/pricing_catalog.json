@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-08-03T00:23:04.140431+00:00"
+    "generated_at": "2026-08-04T00:24:03.894441+00:00"
   },
   "prices": [
     {
@@ -181,19 +181,6 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "bria/bria_video_eraser/erase/mask",
-        "unit": "seconds",
-        "unit_price": 0.14
-      },
-      "unit_price": "0.14"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "seconds",
-      "model": "bria/bria_video_eraser/erase/prompt",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "bria/bria_video_eraser/erase/prompt",
         "unit": "seconds",
         "unit_price": 0.14
       },
@@ -571,6 +558,19 @@
       "raw": {
         "currency": "USD",
         "endpoint_id": "bria/video/erase/mask",
+        "unit": "seconds",
+        "unit_price": 0.14
+      },
+      "unit_price": "0.14"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "bria/video/erase/prompt",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "bria/video/erase/prompt",
         "unit": "seconds",
         "unit_price": 0.14
       },
@@ -3296,6 +3296,19 @@
     {
       "currency": "USD",
       "metric_type": "megapixels",
+      "model": "fal-ai/flux-1/schnell/redux",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/flux-1/schnell/redux",
+        "unit": "megapixels",
+        "unit_price": 0.025
+      },
+      "unit_price": "0.025"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "megapixels",
       "model": "fal-ai/flux-1/srpo",
       "provider": "fal",
       "raw": {
@@ -5086,6 +5099,19 @@
         "unit_price": 0.034
       },
       "unit_price": "0.034"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "seconds",
+      "model": "fal-ai/heygen/v3/filler-word-removal",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/heygen/v3/filler-word-removal",
+        "unit": "seconds",
+        "unit_price": 0.01
+      },
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
@@ -19992,7 +20018,7 @@
           "image": "0.0000003",
           "input_audio_cache": "0.0000001",
           "input_cache_read": "0.00000003",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000025",
           "prompt": "0.0000003",
           "web_search": "0.014"
@@ -20013,7 +20039,7 @@
           "image": "0.0000003",
           "input_audio_cache": "0.0000001",
           "input_cache_read": "0.00000003",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000025",
           "prompt": "0.0000003",
           "web_search": "0.014"
@@ -20034,7 +20060,7 @@
           "image": "0.0000003",
           "input_audio_cache": "0.0000001",
           "input_cache_read": "0.00000003",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000025",
           "prompt": "0.0000003",
           "web_search": "0.014"
@@ -20056,7 +20082,7 @@
           "image_output": "0.00003",
           "input_audio_cache": "0.0000001",
           "input_cache_read": "0.00000003",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000025",
           "prompt": "0.0000003",
           "web_search": "0.014"
@@ -20078,7 +20104,7 @@
           "image_output": "0.00003",
           "input_audio_cache": "0.0000001",
           "input_cache_read": "0.00000003",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000025",
           "prompt": "0.0000003",
           "web_search": "0.014"
@@ -20100,7 +20126,7 @@
           "image_output": "0.00003",
           "input_audio_cache": "0.0000001",
           "input_cache_read": "0.00000003",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000025",
           "prompt": "0.0000003",
           "web_search": "0.014"
@@ -20121,7 +20147,7 @@
           "image": "0.0000001",
           "input_audio_cache": "0.00000003",
           "input_cache_read": "0.00000001",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000004",
           "prompt": "0.0000001",
           "web_search": "0.014"
@@ -20142,7 +20168,7 @@
           "image": "0.0000001",
           "input_audio_cache": "0.00000003",
           "input_cache_read": "0.00000001",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000004",
           "prompt": "0.0000001",
           "web_search": "0.014"
@@ -20163,7 +20189,7 @@
           "image": "0.0000001",
           "input_audio_cache": "0.00000003",
           "input_cache_read": "0.00000001",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000004",
           "prompt": "0.0000001",
           "web_search": "0.014"
@@ -20463,7 +20489,7 @@
           "image": "0.0000005",
           "input_audio_cache": "0.0000001",
           "input_cache_read": "0.00000005",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.000003",
           "prompt": "0.0000005",
           "web_search": "0.014"
@@ -20484,7 +20510,7 @@
           "image": "0.0000005",
           "input_audio_cache": "0.0000001",
           "input_cache_read": "0.00000005",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.000003",
           "prompt": "0.0000005",
           "web_search": "0.014"
@@ -20505,7 +20531,7 @@
           "image": "0.0000005",
           "input_audio_cache": "0.0000001",
           "input_cache_read": "0.00000005",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.000003",
           "prompt": "0.0000005",
           "web_search": "0.014"
@@ -20722,7 +20748,7 @@
           "image": "0.00000025",
           "input_audio_cache": "0.00000005",
           "input_cache_read": "0.000000025",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000015",
           "prompt": "0.00000025",
           "web_search": "0.014"
@@ -20743,7 +20769,7 @@
           "image": "0.00000025",
           "input_audio_cache": "0.00000005",
           "input_cache_read": "0.000000025",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000015",
           "prompt": "0.00000025",
           "web_search": "0.014"
@@ -20764,7 +20790,7 @@
           "image": "0.00000025",
           "input_audio_cache": "0.00000005",
           "input_cache_read": "0.000000025",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000015",
           "prompt": "0.00000025",
           "web_search": "0.014"
@@ -20817,7 +20843,7 @@
           "image": "0.00000025",
           "input_audio_cache": "0.00000005",
           "input_cache_read": "0.000000025",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000015",
           "prompt": "0.00000025",
           "web_search": "0.014"
@@ -20838,7 +20864,7 @@
           "image": "0.00000025",
           "input_audio_cache": "0.00000005",
           "input_cache_read": "0.000000025",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000015",
           "prompt": "0.00000025",
           "web_search": "0.014"
@@ -20859,7 +20885,7 @@
           "image": "0.00000025",
           "input_audio_cache": "0.00000005",
           "input_cache_read": "0.000000025",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000015",
           "prompt": "0.00000025",
           "web_search": "0.014"
@@ -21066,7 +21092,7 @@
           "image": "0.0000015",
           "input_audio_cache": "0.0000003",
           "input_cache_read": "0.00000015",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.000009",
           "prompt": "0.0000015",
           "web_search": "0.014"
@@ -21087,7 +21113,7 @@
           "image": "0.0000015",
           "input_audio_cache": "0.0000003",
           "input_cache_read": "0.00000015",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.000009",
           "prompt": "0.0000015",
           "web_search": "0.014"
@@ -21108,7 +21134,7 @@
           "image": "0.0000015",
           "input_audio_cache": "0.0000003",
           "input_cache_read": "0.00000015",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.000009",
           "prompt": "0.0000015",
           "web_search": "0.014"
@@ -21129,7 +21155,7 @@
           "image": "0.0000003",
           "input_audio_cache": "0.00000003",
           "input_cache_read": "0.00000003",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000025",
           "prompt": "0.0000003",
           "web_search": "0.014"
@@ -21150,7 +21176,7 @@
           "image": "0.0000003",
           "input_audio_cache": "0.00000003",
           "input_cache_read": "0.00000003",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000025",
           "prompt": "0.0000003",
           "web_search": "0.014"
@@ -21171,7 +21197,7 @@
           "image": "0.0000003",
           "input_audio_cache": "0.00000003",
           "input_cache_read": "0.00000003",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000025",
           "prompt": "0.0000003",
           "web_search": "0.014"
@@ -21192,7 +21218,7 @@
           "image": "0.0000015",
           "input_audio_cache": "0.00000015",
           "input_cache_read": "0.00000015",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000075",
           "prompt": "0.0000015",
           "web_search": "0.014"
@@ -21213,7 +21239,7 @@
           "image": "0.0000015",
           "input_audio_cache": "0.00000015",
           "input_cache_read": "0.00000015",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000075",
           "prompt": "0.0000015",
           "web_search": "0.014"
@@ -21234,7 +21260,7 @@
           "image": "0.0000015",
           "input_audio_cache": "0.00000015",
           "input_cache_read": "0.00000015",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000075",
           "prompt": "0.0000015",
           "web_search": "0.014"
@@ -21562,12 +21588,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000006",
-          "prompt": "0.00000006"
+          "completion": "0.00000011",
+          "prompt": "0.00000008"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "6E-8"
+      "unit_price": "8E-8"
     },
     {
       "currency": "USD",
@@ -21576,12 +21602,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000006",
-          "prompt": "0.00000006"
+          "completion": "0.00000011",
+          "prompt": "0.00000008"
         },
         "source_metric": "completion"
       },
-      "unit_price": "6E-8"
+      "unit_price": "1.1E-7"
     },
     {
       "currency": "USD",
@@ -22058,12 +22084,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000004",
-          "prompt": "0.00000013"
+          "completion": "0.00000032",
+          "prompt": "0.0000001"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "1.3E-7"
+      "unit_price": "1E-7"
     },
     {
       "currency": "USD",
@@ -22072,12 +22098,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000004",
-          "prompt": "0.00000013"
+          "completion": "0.00000032",
+          "prompt": "0.0000001"
         },
         "source_metric": "completion"
       },
-      "unit_price": "4E-7"
+      "unit_price": "3.2E-7"
     },
     {
       "currency": "USD",
@@ -23140,13 +23166,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000341",
-          "input_cache_read": "0.0000002",
-          "prompt": "0.0000006"
+          "completion": "0.00000248",
+          "input_cache_read": "0.0000000992",
+          "prompt": "0.000000589"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "6E-7"
+      "unit_price": "5.89E-7"
     },
     {
       "currency": "USD",
@@ -23155,13 +23181,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000341",
-          "input_cache_read": "0.0000002",
-          "prompt": "0.0000006"
+          "completion": "0.00000248",
+          "input_cache_read": "0.0000000992",
+          "prompt": "0.000000589"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.00000341"
+      "unit_price": "0.00000248"
     },
     {
       "currency": "USD",
@@ -26780,7 +26806,7 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000028",
+          "completion": "0.00000027",
           "prompt": "0.00000007"
         },
         "source_metric": "prompt"
@@ -26794,12 +26820,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000028",
+          "completion": "0.00000027",
           "prompt": "0.00000007"
         },
         "source_metric": "completion"
       },
-      "unit_price": "2.8E-7"
+      "unit_price": "2.7E-7"
     },
     {
       "currency": "USD",
@@ -27083,12 +27109,11 @@
       "raw": {
         "pricing": {
           "completion": "0.0000011",
-          "input_cache_read": "0.00000007",
-          "prompt": "0.0000001"
+          "prompt": "0.00000009"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "1E-7"
+      "unit_price": "9E-8"
     },
     {
       "currency": "USD",
@@ -27098,8 +27123,7 @@
       "raw": {
         "pricing": {
           "completion": "0.0000011",
-          "input_cache_read": "0.00000007",
-          "prompt": "0.0000001"
+          "prompt": "0.00000009"
         },
         "source_metric": "completion"
       },
@@ -27594,13 +27618,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000002",
-          "input_cache_read": "0.00000015",
-          "prompt": "0.0000003"
+          "completion": "0.0000024",
+          "prompt": "0.000000289"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "3E-7"
+      "unit_price": "2.89E-7"
     },
     {
       "currency": "USD",
@@ -27609,13 +27632,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000002",
-          "input_cache_read": "0.00000015",
-          "prompt": "0.0000003"
+          "completion": "0.0000024",
+          "prompt": "0.000000289"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.000002"
+      "unit_price": "0.0000024"
     },
     {
       "currency": "USD",
@@ -27928,6 +27950,38 @@
         "source_metric": "completion"
       },
       "unit_price": "0.00000128"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "input_token",
+      "model": "qwen/qwen3.8-max",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0.000006",
+          "input_cache_read": "0.00000025",
+          "input_cache_write": "0.0000025",
+          "prompt": "0.000002"
+        },
+        "source_metric": "prompt"
+      },
+      "unit_price": "0.000002"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "output_token",
+      "model": "qwen/qwen3.8-max",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0.000006",
+          "input_cache_read": "0.00000025",
+          "input_cache_write": "0.0000025",
+          "prompt": "0.000002"
+        },
+        "source_metric": "completion"
+      },
+      "unit_price": "0.000006"
     },
     {
       "currency": "USD",
@@ -29188,13 +29242,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000374",
-          "input_cache_read": "0.000000221",
-          "prompt": "0.00000119"
+          "completion": "0.00000242",
+          "input_cache_read": "0.00000014",
+          "prompt": "0.00000076"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "0.00000119"
+      "unit_price": "7.6E-7"
     },
     {
       "currency": "USD",
@@ -29203,13 +29257,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000374",
-          "input_cache_read": "0.000000221",
-          "prompt": "0.00000119"
+          "completion": "0.00000242",
+          "input_cache_read": "0.00000014",
+          "prompt": "0.00000076"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.00000374"
+      "unit_price": "0.00000242"
     },
     {
       "currency": "USD",
@@ -29427,7 +29481,7 @@
           "image": "0.0000015",
           "input_audio_cache": "0.00000015",
           "input_cache_read": "0.00000015",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000075",
           "prompt": "0.0000015",
           "web_search": "0.014"
@@ -29448,7 +29502,7 @@
           "image": "0.0000015",
           "input_audio_cache": "0.00000015",
           "input_cache_read": "0.00000015",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000075",
           "prompt": "0.0000015",
           "web_search": "0.014"
@@ -29469,7 +29523,7 @@
           "image": "0.0000015",
           "input_audio_cache": "0.00000015",
           "input_cache_read": "0.00000015",
-          "input_cache_write": "0.00000008333333333333334",
+          "input_cache_write": "0.0000000833333333333333",
           "internal_reasoning": "0.0000075",
           "prompt": "0.0000015",
           "web_search": "0.014"
