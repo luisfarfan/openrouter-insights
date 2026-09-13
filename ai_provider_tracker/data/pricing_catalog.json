@@ -1,7 +1,7 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-09-12T00:09:04.280835+00:00"
+    "generated_at": "2026-09-13T00:07:05.744235+00:00"
   },
   "prices": [
     {
@@ -1248,9 +1248,9 @@
         "currency": "USD",
         "endpoint_id": "decart/lucy-2-5/realtime",
         "unit": "seconds",
-        "unit_price": 0.02
+        "unit_price": 0.04
       },
-      "unit_price": "0.02"
+      "unit_price": "0.04"
     },
     {
       "currency": "USD",
@@ -21507,13 +21507,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000013524",
-          "input_cache_read": "0.000000013524",
-          "prompt": "0.00000006762"
+          "completion": "0.00000013132",
+          "input_cache_read": "0.000000013132",
+          "prompt": "0.00000006566"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "6.762E-8"
+      "unit_price": "6.566E-8"
     },
     {
       "currency": "USD",
@@ -21522,13 +21522,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000013524",
-          "input_cache_read": "0.000000013524",
-          "prompt": "0.00000006762"
+          "completion": "0.00000013132",
+          "input_cache_read": "0.000000013132",
+          "prompt": "0.00000006566"
         },
         "source_metric": "completion"
       },
-      "unit_price": "1.3524E-7"
+      "unit_price": "1.3132E-7"
     },
     {
       "currency": "USD",
@@ -21537,13 +21537,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000018",
-          "input_cache_read": "0.000000016",
-          "prompt": "0.000000065"
+          "completion": "0.00000008",
+          "input_cache_read": "0.000000008",
+          "prompt": "0.00000004"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "6.5E-8"
+      "unit_price": "4E-8"
     },
     {
       "currency": "USD",
@@ -21552,13 +21552,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000018",
-          "input_cache_read": "0.000000016",
-          "prompt": "0.000000065"
+          "completion": "0.00000008",
+          "input_cache_read": "0.000000008",
+          "prompt": "0.00000004"
         },
         "source_metric": "completion"
       },
-      "unit_price": "1.8E-7"
+      "unit_price": "8E-8"
     },
     {
       "currency": "USD",
@@ -21657,13 +21657,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000001679448",
-          "input_cache_read": "0.000000069977",
-          "prompt": "0.000000839724"
+          "completion": "0.0000032",
+          "input_cache_read": "0.000000135",
+          "prompt": "0.0000016"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "8.39724E-7"
+      "unit_price": "0.0000016"
     },
     {
       "currency": "USD",
@@ -21672,13 +21672,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000001679448",
-          "input_cache_read": "0.000000069977",
-          "prompt": "0.000000839724"
+          "completion": "0.0000032",
+          "input_cache_read": "0.000000135",
+          "prompt": "0.0000016"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.000001679448"
+      "unit_price": "0.0000032"
     },
     {
       "currency": "USD",
@@ -24695,6 +24695,62 @@
     {
       "currency": "USD",
       "metric_type": "input_token",
+      "model": "inference-net/schematron-v2-small",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0.00000023",
+          "prompt": "0.00000005"
+        },
+        "source_metric": "prompt"
+      },
+      "unit_price": "5E-8"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "output_token",
+      "model": "inference-net/schematron-v2-small",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0.00000023",
+          "prompt": "0.00000005"
+        },
+        "source_metric": "completion"
+      },
+      "unit_price": "2.3E-7"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "input_token",
+      "model": "inference-net/schematron-v2-turbo",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0.00000015",
+          "prompt": "0.00000003"
+        },
+        "source_metric": "prompt"
+      },
+      "unit_price": "3E-8"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "output_token",
+      "model": "inference-net/schematron-v2-turbo",
+      "provider": "openrouter",
+      "raw": {
+        "pricing": {
+          "completion": "0.00000015",
+          "prompt": "0.00000003"
+        },
+        "source_metric": "completion"
+      },
+      "unit_price": "1.5E-7"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "input_token",
       "model": "kwaipilot/kat-coder-pro-v2",
       "provider": "openrouter",
       "raw": {
@@ -26527,13 +26583,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000081054",
-          "input_cache_read": "0.00000018468",
-          "prompt": "0.00000161595"
+          "completion": "0.00001328272425",
+          "input_cache_read": "0.00000030264435",
+          "prompt": "0.000002648138063"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "0.00000161595"
+      "unit_price": "0.000002648138063"
     },
     {
       "currency": "USD",
@@ -26542,13 +26598,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000081054",
-          "input_cache_read": "0.00000018468",
-          "prompt": "0.00000161595"
+          "completion": "0.00001328272425",
+          "input_cache_read": "0.00000030264435",
+          "prompt": "0.000002648138063"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.0000081054"
+      "unit_price": "0.00001328272425"
     },
     {
       "currency": "USD",
@@ -31119,12 +31175,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000088",
-          "prompt": "0.00000022"
+          "completion": "0.00000035",
+          "input_cache_read": "0.0000000175",
+          "prompt": "0.0000000875"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "2.2E-7"
+      "unit_price": "8.75E-8"
     },
     {
       "currency": "USD",
@@ -31133,12 +31190,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000088",
-          "prompt": "0.00000022"
+          "completion": "0.00000035",
+          "input_cache_read": "0.0000000175",
+          "prompt": "0.0000000875"
         },
         "source_metric": "completion"
       },
-      "unit_price": "8.8E-7"
+      "unit_price": "3.5E-7"
     },
     {
       "currency": "USD",
@@ -32593,13 +32651,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000003",
-          "input_cache_read": "0.000000085",
-          "prompt": "0.00000042"
+          "completion": "0.00000255",
+          "input_cache_read": "0.00000015",
+          "prompt": "0.000000214"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "4.2E-7"
+      "unit_price": "2.14E-7"
     },
     {
       "currency": "USD",
@@ -32608,13 +32666,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000003",
-          "input_cache_read": "0.000000085",
-          "prompt": "0.00000042"
+          "completion": "0.00000255",
+          "input_cache_read": "0.00000015",
+          "prompt": "0.000000214"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.000003"
+      "unit_price": "0.00000255"
     },
     {
       "currency": "USD",
@@ -34763,13 +34821,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000016",
-          "input_cache_read": "0.000000013",
-          "prompt": "0.00000005"
+          "completion": "0.00000007",
+          "input_cache_read": "0.000000003",
+          "prompt": "0.00000003"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "5E-8"
+      "unit_price": "3E-8"
     },
     {
       "currency": "USD",
@@ -34778,13 +34836,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000016",
-          "input_cache_read": "0.000000013",
-          "prompt": "0.00000005"
+          "completion": "0.00000007",
+          "input_cache_read": "0.000000003",
+          "prompt": "0.00000003"
         },
         "source_metric": "completion"
       },
-      "unit_price": "1.6E-7"
+      "unit_price": "7E-8"
     },
     {
       "currency": "USD",
@@ -34949,13 +35007,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000081054",
-          "input_cache_read": "0.00000018468",
-          "prompt": "0.00000161595"
+          "completion": "0.0000133",
+          "input_cache_read": "0.0000002755",
+          "prompt": "0.000002375"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "0.00000161595"
+      "unit_price": "0.000002375"
     },
     {
       "currency": "USD",
@@ -34964,13 +35022,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.0000081054",
-          "input_cache_read": "0.00000018468",
-          "prompt": "0.00000161595"
+          "completion": "0.0000133",
+          "input_cache_read": "0.0000002755",
+          "prompt": "0.000002375"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.0000081054"
+      "unit_price": "0.0000133"
     },
     {
       "currency": "USD",
